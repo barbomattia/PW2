@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <p> buongiorno</p>
+    <p>buongiono</p>
 </head>
 <body>
 <h1><%= "Hello World!" %>
