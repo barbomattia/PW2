@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <jsp:include page="intestazione/intestazione.jsp" />
-<jsp:include page="menu/menu.jsp"/>
 
-<main>
+<main id="mainBody">
+        <meta name="wiewport" content="width-device-width, initial-scale=1.0">
         <h3>DESCRIZIONE</h3>
         <p>
             Eh ça c'est Vegedream de Gagnoa

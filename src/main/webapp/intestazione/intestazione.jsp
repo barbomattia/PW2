@@ -5,11 +5,22 @@
     <meta charset="utf-8">
     <title>Tum4World</title>
     <link rel="icon" href="../Images/Logo.ico">
-    <link rel="stylesheet" type="text/css" href="intestazione.css">
+    <link rel="stylesheet" type="text/css" href="intestazione/intestazione.css">
 </head>
 
-<body>
-    <div id="intestazione">
+<body id="bodyIntestazione">
+    <div id="divIntestazione">
         <h1 class="titolo">Tum4World</h1>
     </div>
+    <nav id="navIntestazione">
+        <ul>
+            <li> <a href="#"> Home page</a> </li>
+            <li> <a href="#"> Chi siamo</a> </li>
+            <li> <a href="#"> Attività</a> </li>
+            <li> <a href="#"> Contatti</a> </li>
+            <li> <a href="#"> Sign-in</a> </li>
+            <li> <a href="#"> Log-in</a> </li>
+        </ul>
+    </nav>
+
 </body>
