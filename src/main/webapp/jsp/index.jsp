@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<jsp:include page="intestazione/intestazione.jsp" />
+<jsp:include page="intestazione.jsp" />
 
 <main id="mainBody">
         <meta name="wiewport" content="width-device-width, initial-scale=1.0">
@@ -90,7 +90,7 @@
             On est ensemble
             On est ensemble
         </p>
-        <img src="./Images/ciao.jpg" alt="IMMAGINE">
+        <img src="../Images/ciao.jpg" alt="IMMAGINE">
         <form action="#" method="get">
             <label>Volantino A5</label>
             <button type="button">Download</button>

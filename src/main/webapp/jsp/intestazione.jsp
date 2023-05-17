@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Tum4World</title>
     <link rel="icon" href="../Images/Logo.ico">
-    <link rel="stylesheet" type="text/css" href="intestazione/intestazione.css">
+    <link rel="stylesheet" type="text/css" href="./css/intestazione.css">
 </head>
 
 <body id="bodyIntestazione">
