@@ -10,10 +10,6 @@ h1.titolo{
     justify-content: center;
 }
 
-#mainBody{
-    padding-top: 110px;
-}
-
 #divIntestazione{
     position: fixed;
     text-align: center;
@@ -71,4 +67,9 @@ h1.titolo{
     text-transform: uppercase;
     font-weight: 300;
     font-size: 0.83rem;
+}
+
+
+#mainBody{
+    padding-top: 110px;
 }
