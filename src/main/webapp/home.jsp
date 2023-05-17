@@ -90,7 +90,7 @@
             On est ensemble
             On est ensemble
         </p>
-        <img src="../Images/ciao.jpg" alt="IMMAGINE">
+        <img src="Images/ciao.jpg" alt="IMMAGINE">
         <form action="#" method="get">
             <label>Volantino A5</label>
             <button type="button">Download</button>
