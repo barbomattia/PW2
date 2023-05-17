@@ -16,7 +16,7 @@
     <nav id="navIntestazione">
         <ul>
             <li> <a href="home.jsp"> Home page</a> </li>
-            <li> <a href="#"> Chi siamo</a> </li>
+            <li> <a href="chiSiamo.jsp"> Chi siamo</a> </li>
             <li> <a href="attivita.jsp"> Attività</a> </li>
             <li> <a href="#"> Contatti</a> </li>
             <li> <a href="#"> Sign-in</a> </li>
