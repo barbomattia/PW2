@@ -1,11 +1,11 @@
 #divFooter{
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
     display: block;
-    width: 100%;
+    position: relative;
     bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    width: 100%;
+
     background-color: black;
     color: white;
 }

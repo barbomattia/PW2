@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp" />
 
+
 <link rel="stylesheet" type="text/css" href="css/attivita.css">
 
 <main id="mainBody">
@@ -16,7 +17,7 @@
     </div>
 
     <div id="rigaAttivita">
-        <a href="#" class="noSottolineatura">
+        <a href="attivita1.jsp" class="noSottolineatura">
             <div class="card" style="background-image: url('Images/Scuola.jpg')">
                 <div class="cardInfo">
                     <h3 class="cardInfoText"> SCUOLA </h3>
@@ -28,7 +29,7 @@
             </div>
         </a>
 
-        <a href="#" class="noSottolineatura">
+        <a href="attivita2.jsp" class="noSottolineatura">
             <div class="card" style="background-image: url('Images/School-Bus.jpg')">
                 <div class="cardInfo">
                     <h3 class="cardInfoText"> BUS </h3>
@@ -40,7 +41,7 @@
         </div>
         </a>
 
-        <a href="#" class="noSottolineatura">
+        <a href="attivita3.jsp" class="noSottolineatura">
             <div class="card" style="background-image: url('Images/Mensa.jpg')">
                 <div class="cardInfo">
                     <h3 class="cardInfoText"> MENSA </h3>
