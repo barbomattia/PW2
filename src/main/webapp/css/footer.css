@@ -1,0 +1,15 @@
+#divFooter{
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    background-color: black;
+    color: white;
+}
+
+#divFooter p{
+    margin: 0;
+}
