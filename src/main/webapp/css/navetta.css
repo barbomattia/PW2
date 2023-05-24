@@ -1,0 +1,128 @@
+#row-bus{
+    padding: 0;
+    max-width: 1250px;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.col-50-bus{
+    flex: 1;
+    width: 50%;
+    height: auto;
+    position: relative;
+    padding: 0 0px;
+}
+
+
+.container-bus-rows{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.bus-row{
+    flex: 1;
+    background-color: yellow;
+
+    border-radius: 10px 10px;
+    min-height: 100px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.elm-scorre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    transform: translateX(-355px);
+}
+
+.bus-row-first-el{
+    flex: 1;
+    background-color: yellow;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nomeBusThunder{
+    margin-left: 10px ;
+    font-family: 'Smokum', cursive;
+    font-size: 40px;
+}
+
+
+.nomeBusMcQueen{
+    margin-left: 10px ;
+    font-family: 'Chokokutai', cursive;
+    font-size: 30px;
+}
+
+
+.iconaBus{
+    max-height: 100px;
+    height: inherit;
+    width: auto;
+    margin-left: 10px;
+}
+
+.bus-description{
+    flex: 0;
+    min-width: 350px;
+    max-width: 350px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+
+    background-color: black;
+    color: whitesmoke;
+
+    visibility: visible;
+}
+
+.bus-description p{
+    margin: 0;
+}
+
+[colore-testo = "giallo"]{
+    color: yellow;
+}
+
+@media screen and (max-width: 1000px){
+    #row-bus{
+        flex-flow: column;
+    }
+    .col-50-bus{
+        flex: 1;
+        width: 100%;
+        min-height: 300px;
+        position: relative;
+        padding: 0 0px;
+        padding-bottom: 20px;
+    }
+    .container-bus-rows{
+        min-height: 300px;
+        margin-left: 0px;
+    }
+    .bus-row-first-el{
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .bus-description{
+        flex-wrap: nowrap;
+        overflow: hidden;
+        max-height: 100px;
+    }
+}

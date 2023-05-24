@@ -57,3 +57,13 @@ Body{
 #mainBody{
     padding-top: 70px;
 }
+
+[setMargin="true"]{         /* Tutti gli elementi con atributo setMargin true avranno un margine di defoult*/
+    margin: 0 5%;
+}
+
+.spaziatura{                /* definisco una classe spaziatura per definire un elemento ricorrente nell'intera pagina web */
+    height: 20px;
+    width: 100%;
+    margin:20px;
+}
