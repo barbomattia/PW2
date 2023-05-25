@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp" />
 
 <main id="loginBody">
@@ -21,7 +22,7 @@
     <br>
     <a id="description"></a>
 
-    <form action="signUp.html">
+    <form action="signUp.jsp">
       <p>Non hai un account?</p>
       <button type="submit">Registrati</button>
     </form>

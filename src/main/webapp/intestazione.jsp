@@ -20,7 +20,7 @@
                 <li> <a href="chiSiamo.jsp"> Chi siamo</a> </li>
                 <li> <a href="attivita.jsp"> Attività</a> </li>
                 <li> <a href="#"> Contatti</a> </li>
-                <li> <a href="#"> Sign-in</a> </li>
+                <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
             </ul>
         </nav>
