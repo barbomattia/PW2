@@ -1,16 +1,12 @@
-#loginBody{
+.signupElement{
+    text-align: center;
+}
+
+#signUp-Body{
     /*background-image: URL("../images/login.jpg");*
     /*background-repeat: no-repeat;*
     /*background-size: 100%;*/
     padding-top: 90px;
     background-color: rgb(88, 129, 87);
     height: 70%;
-}
-
-.elementSignup {
-    text-align: center;
-}
-
-.elementLogin h1{
-    font-size: 30px;
 }
