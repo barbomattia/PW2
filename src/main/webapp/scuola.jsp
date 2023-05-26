@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/cardScrolUp.css">
 
 <main id="mainBody">
-    <div class="cover" style="background-image: url('Images/Scuola/Scuola.jpg')">
+    <div class="cover" style="background-image: url('Images/Attivita/Scuola.jpg')">
         <h1> SCUOLA </h1>
         <h3> Istituto Tecnino Tum4World</h3>
     </div>
@@ -35,7 +35,7 @@
             </p>
         </div>
         <div class="col-50 pl-2">
-             <div class="cover" style="background-image: url('Images/Scuola/Scuola1.jpg')"></div>
+             <div class="cover" style="background-image: url('Images/Attivita/Scuola1.jpg')"></div>
         </div>
     </div>
 
@@ -60,7 +60,7 @@
     <div id="rigaCards" style="padding-bottom: 100px">
         <div class="cardSU">
             <p class="new-tag"> NEW </p>
-            <div class="imgCard" new="true" style="background-image: url('Images/Scuola/Chimica.jpg')">
+            <div class="imgCard" new="true" style="background-image: url('Images/Attivita/Chimica.jpg')">
                 <div class="covering sfondoGiallo"> <h2> CHIMICA </h2> </div>
             </div>
             <div class="tendinaCard" >
@@ -70,7 +70,7 @@
         </div>
 
         <div class="cardSU">
-            <div class="imgCard" style="background-image: url('Images/Scuola/Meccanica.jpg')">
+            <div class="imgCard" style="background-image: url('Images/Attivita/Meccanica.jpg')">
                 <div class="covering sfondoRed"> <h2> MECCANICA </h2></div>
             </div>
             <div class="tendinaCard" >
@@ -80,7 +80,7 @@
         </div>
 
         <div class="cardSU">
-            <div class="imgCard" style="background-image: url('Images/Scuola/Alberghiero.jpg')">
+            <div class="imgCard" style="background-image: url('Images/Attivita/Alberghiero.jpg')">
                 <div class="covering sfondoVerde"> <h2> ALBERGHIERO </h2> </div>
             </div>
             <div class="tendinaCard" >
@@ -92,7 +92,7 @@
 
         <div class="cardSU">
             <p class="next-tag">NEXT</p>
-            <div class="imgCard" next="true" style="background-image: url('Images/Scuola/Informatica.jpg')">
+            <div class="imgCard" next="true" style="background-image: url('Images/Attivita/Informatica.jpg')">
                 <div class="covering sfondoBlu"> <h2> INFORMATICA </h2> </div>
             </div>
             <div class="tendinaCard" >

@@ -28,7 +28,7 @@
 
 .bus-row{
     flex: 1;
-    background-color: yellow;
+    max-height: 100px;
 
     border-radius: 10px 10px;
     min-height: 100px;
@@ -41,15 +41,24 @@
     flex-direction: row;
     flex-wrap: nowrap;
 
-    transform: translateX(-355px);
+    transform: translateX(-365px);
+    transition: transform 1s;
 }
 
 .bus-row-first-el{
     flex: 1;
-    background-color: yellow;
-    height: 100%;
+    height: 100px;
     display: flex;
     align-items: center;
+}
+
+[acquired="false"]{
+    background-color: gray;
+}
+
+
+[acquired="true"]{
+    background-color: yellow;
 }
 
 .nomeBusThunder{
@@ -74,9 +83,12 @@
 }
 
 .bus-description{
-    flex: 0;
+    flex: 1;
     min-width: 350px;
     max-width: 350px;
+    height: 100px;
+
+    padding-left: 10px;
 
     display: flex;
     flex-direction: column;
@@ -98,6 +110,10 @@
     color: yellow;
 }
 
+[scroll = "true"]{
+    transform: translateX(0);
+}
+
 @media screen and (max-width: 1000px){
     #row-bus{
         flex-flow: column;
@@ -114,15 +130,71 @@
         min-height: 300px;
         margin-left: 0px;
     }
-    .bus-row-first-el{
-        height: 100px;
-    }
+
 }
 
-@media screen and (max-width: 700px){
-    .bus-description{
-        flex-wrap: nowrap;
-        overflow: hidden;
-        max-height: 100px;
-    }
+#popUp{
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+[pop-up = "true"]{
+    visibility: visible;
+}
+
+[pop-up = "false"]{
+    visibility: hidden;
+}
+
+#formDonazione{
+    position: relative;
+    aspect-ratio: 4/3;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgb(255,255,255);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+#closer{
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+#formReale{
+
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#formReale input{
+    width: 50%;
+    margin-top: 20px;
+}
+
+#formReale label{
+    margin-top: 20px;
+}
+
+
+#formReale button{
+    margin-top: 20px;
 }

@@ -18,7 +18,7 @@
 
     <div id="rigaAttivita">
         <a href="scuola.jsp" class="noSottolineatura">
-            <div class="card" style="background-image: url('Images/Scuola/Scuola.jpg')">
+            <div class="card" style="background-image: url('Images/Attivita/Scuola.jpg')">
                 <div class="cardInfo">
                     <h3 class="cardInfoText"> SCUOLA </h3>
                     <p class="cardInfoText">
@@ -30,7 +30,7 @@
         </a>
 
         <a href="navetta.jsp" class="noSottolineatura">
-            <div class="card" style="background-image: url('Images/School-Bus.jpg')">
+            <div class="card" style="background-image: url('Images/Attivita/School-Bus.jpg')">
                 <div class="cardInfo">
                     <h3 class="cardInfoText"> BUS </h3>
                     <p class="cardInfoText">
@@ -42,7 +42,7 @@
         </a>
 
         <a href="mensa.jsp" class="noSottolineatura">
-            <div class="card" style="background-image: url('Images/Mensa.jpg')">
+            <div class="card" style="background-image: url('Images/Attivita/Mensa.jpg')">
                 <div class="cardInfo">
                     <h3 class="cardInfoText"> MENSA </h3>
                     <p class="cardInfoText">

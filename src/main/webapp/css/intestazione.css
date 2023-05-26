@@ -2,9 +2,11 @@ Body{
     padding:0;
     margin:0;
     background-color: white;
+    width: 100%;
 }
 
 #bodyIntestazione{
+    max-width: 100%;
     background-color: rgb(88, 129, 87);
 }
 
@@ -56,6 +58,7 @@ Body{
 
 #mainBody{
     padding-top: 70px;
+    width: 100%;
 }
 
 [setMargin="true"]{         /* Tutti gli elementi con atributo setMargin true avranno un margine di defoult*/
@@ -64,6 +67,5 @@ Body{
 
 .spaziatura{                /* definisco una classe spaziatura per definire un elemento ricorrente nell'intera pagina web */
     height: 20px;
-    width: 100%;
     margin:20px;
 }
