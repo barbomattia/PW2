@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp" />
 
+<% float percDon = (float)request.getAttribute("percDonazioni"); %>
+
 <main>
     <link rel="stylesheet" type="text/css" href="css/rowStruttura.css">
     <link rel="stylesheet" type="text/css" href="css/navetta.css">
@@ -13,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chokokutai&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap" rel="stylesheet">
 </main>
 
 <main id="mainBody">
@@ -35,15 +40,25 @@
           <p>
               Quando è nata l' idea del servizio navetta come associazione abbiamo stimato che con 3 vetture saremmo
               riusciti a coprire a 360° l' intera area circostante. Ad oggi Tum4World è arrivata a finaziare solo 2 navette,
-              Attualmente come associazioe stiamo cercando i fondi per completare questo progetto.
+              <% if(percDon < 100.0) { %>
+              attualmente come associazioe stiamo cercando i fondi per completare questo progetto.
+              <% } else{ %>
+              ma grazie alle vostre donazioni siamo riusciti a raggiungere i soldi necessari per comprare la terza navetta.
+              Attualmente il nostro team sta lavorando per effettuare l'acquisto.
+              <% } %>
           </p>
           <p>
               Con i ragazzi che usufruiscono di questo servizio abbiamo deciso di dare dei nomi alle 2 navette: "Thunder" e "McQueen"
           </p>
           <p>
+              <% if(percDon < 100.0) { %>
               Se volete contribuire al completamto del parco vetture cliccate sul bottone DONA, Il costo totale della nuova navetta è
-              di 75.000$.
+              di 100.000$.
               Dalla barra a destra potete vedere la percentuale del fondo raggiunto, rappresentata dalla barra gialla.
+              <% } else{ %>
+              Anche se l'obbiettivo dei 100.000$ sono stati raggiunti lasciamo attivo il link per la donazione, eventuali fondi
+              aggiuntivi saranno usati per la manutenzione dei mezzi.
+              <% } %>
           </p>
           <button type="button" onclick="showFormDona()"> DONA </button>
       </div>
@@ -77,16 +92,13 @@
                 </div>
             </div>
 
-            <div class="bus-row" acquired="false">
-                <div class="elm-scorre">
-                    <div class="bus-description">
-                        <p>Work in Progess</p>
-                        <p>Dona per far aumentare la barra del budget </p>
-                    </div>
-                    <div class="bus-row-first-el" acquired="false">
-                        <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
-                    </div>
+            <div class="bus-row-static" acquired="false">
+                <div class="barra-completamento" style="width: <%=percDon%>% "></div>
+                <div class="barra-completamento-info">
+                    <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
+                    <div class="percentuale"><%=percDon%>%</div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -102,10 +114,10 @@
               <img src="Images/Attivita/iconaX.png" style="width: 30px">
           </div>
           <h2> DONA </h2>
-          <form id="formReale" action="src/main/java/com/example/pw2/GestoreDonazioniNavetta.java" method="post">
+          <form id="formReale" action="${pageContext.request.contextPath}/GestoreDonazioniNavetta" method="post">
               <p setMargin="true">La tua donazione sarà destinata all'acuisto della terza navetta</p>
               <label for="importo">Importo Donazione</label>
-              <input type="number" placeholder="0" name="importo" required>
+              <input type="number" placeholder="0" name="importo" id="importo" required>
               <button type="submit"> DONA </button>
           </form>
       </div>

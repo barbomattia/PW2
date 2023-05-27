@@ -29,7 +29,7 @@
             </div>
         </a>
 
-        <a href="navetta.jsp" class="noSottolineatura">
+        <a href="${pageContext.request.contextPath}/GestoreDonazioniNavetta" methods="GET" class="noSottolineatura">
             <div class="card" style="background-image: url('Images/Attivita/School-Bus.jpg')">
                 <div class="cardInfo">
                     <h3 class="cardInfoText"> BUS </h3>

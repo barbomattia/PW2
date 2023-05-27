@@ -36,6 +36,40 @@
     overflow: hidden;
 }
 
+.bus-row-static{
+    flex: 1;
+
+    max-height: 100px;
+    min-height: 100px;
+    border-radius: 10px 10px;
+    margin: 10px 0;
+}
+
+.barra-completamento{
+    position: absolute;
+    border-radius: 10px 10px;
+    height: 100px;
+    max-width: 100%;
+    background-color: yellow;
+}
+
+.barra-completamento-info{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra-completamento-info div{
+    margin-right: 2%;
+    min-width: 100px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: x-large;
+}
+
 .elm-scorre{
     display: flex;
     flex-direction: row;
