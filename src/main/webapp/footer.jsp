@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="css/footer.css">
 
 <div id="divFooter">
-    <p>Dati associazione:</p>
+    <label>Dati associazione:</label>
     <ul id="ulFooter">
         <li>Nome: Tum4World</li>
         <li>Indirizzo: Via Sommarive, 9</li>

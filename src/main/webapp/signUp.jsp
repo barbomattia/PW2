@@ -7,8 +7,8 @@
 
     <div class="signupElement">
         <h1 class="signupElement" id="title"> Registrati qua</h1>
-        <form class="signupElement">
-            <input style="margin: 5px" class="signupElement" type="text" placeholder="Nome">
+        <input class="signupElement">
+            <input style="margin: 5px" class="signupElement" type="text" placeholder="Nome"/>
 
             <input style="margin: 5px" class="signupElement" type="text" placeholder="Cognome">
 

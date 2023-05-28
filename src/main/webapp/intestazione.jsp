@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="./css/intestazione.css">
 </head>
 
-<body id="Body">
-    <main id="bodyIntestazione">
+<body id="bodyIntestazione">
+    <main id="mainIntestazione">
         <div id="divIntestazione">
             <h1>Tum4World</h1>
         </div>
@@ -24,8 +24,8 @@
                 <li> <a href="login.jsp"> Log-in</a> </li>
             </ul>
         </nav>
+        <br>
+        <br>
+        <br>
+        <br>
     </main>
-
-
-//prova
-
