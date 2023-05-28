@@ -20,10 +20,9 @@ public class GestoreDonazioniNavetta extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // elamborazione dati
-        float perc = ((float)donazioniNavetta /obbiettivoDonazioni) *100;
-        float percDonazioni = (float) (Math.round(perc*100)/100.0);
-        request.setAttribute("percDonazioni",percDonazioni);
-        System.out.println(request.getAttribute("percDonazioni"));
+        float perc = ((float)donazioniNavetta /obbiettivoDonazioni) *100;   // caloclo la percentuale
+        float percDonazioni = (float) (Math.round(perc*100)/100.0);         // arrotondo la percentuale a 2 cifre dopo la virgola
+        request.setAttribute("percDonazioni",percDonazioni);             // inserisco nella richiesta la percentuale calcolata
 
         // chiama il file JSP per la parte view
         try{
@@ -43,12 +42,11 @@ public class GestoreDonazioniNavetta extends HttpServlet {
         int improve = Integer.valueOf(request.getParameter("importo"));
         System.out.println("improve: " + improve);
 
-        donazioniNavetta = donazioniNavetta + improve; // aumetno le donazioni totali
+        donazioniNavetta = donazioniNavetta + improve;                      // aumetno le donazioni totali
 
-        float perc = ((float)donazioniNavetta /obbiettivoDonazioni) *100; // trovo la percentuale
-        float percDonazioni = (float) (Math.round(perc*100)/100.0); // arrotondo la percentuale
+        float perc = ((float)donazioniNavetta /obbiettivoDonazioni) *100;   // trovo la percentuale
+        float percDonazioni = (float) (Math.round(perc*100)/100.0);         // arrotondo la percentuale
         request.setAttribute("percDonazioni",percDonazioni);
-        System.out.println(request.getAttribute("percDonazioni"));
 
 
         RequestDispatcher requestDispatcher;

@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap" rel="stylesheet">
 </main>
 
-<main id="mainBody">
+<main>
 
   <div class="cover" style="background-image: url('Images/Attivita/School-Bus.jpg')">
     <h1> NAVETTA </h1>

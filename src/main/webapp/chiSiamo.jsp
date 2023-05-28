@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/chiSiamo.css">
 
-<main id="mainBody">
+<main>
     <div class="cover" style="background-image: url('Images/chisiamo.jpg')">
         <h1> CHI SIAMO? </h1>
         <h3> Istituto Tecnino Tum4World</h3>

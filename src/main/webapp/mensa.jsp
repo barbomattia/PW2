@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/rowStruttura.css">
 
-<main id="mainBody">
+<main>
 
     <div class="cover" style="background-image: url('Images/Attivita/Mensa.jpg')">
         <h1 style="color: darkolivegreen"> MENSA </h1>

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <jsp:include page="intestazione.jsp" />
 
-<main id="mainBody">
+<main>
         <meta name="wiewport" content="width-device-width, initial-scale=1.0">
         <h3>DESCRIZIONE</h3>
         <p>

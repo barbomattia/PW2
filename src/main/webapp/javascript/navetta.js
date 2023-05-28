@@ -20,14 +20,12 @@ for (var busRow of busRows) {
 // CODICE per il FORM di DONAZIONE
 
 showFormDona = function(){
-    console.log("CIAO")
     popUp = document.getElementById("popUp");
     popUp.setAttribute("pop-up","true")
 }
 
 
 closeFormDona = function(){
-    console.log("CIAO")
     popUp = document.getElementById("popUp");
     popUp.setAttribute("pop-up","false")
 }

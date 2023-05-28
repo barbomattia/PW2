@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="css/rowStruttura.css">
 <link rel="stylesheet" type="text/css" href="css/cardScrolUp.css">
 
-<main id="mainBody">
+<main id="main-scuola">
     <div class="cover" style="background-image: url('Images/Attivita/Scuola.jpg')">
         <h1> SCUOLA </h1>
         <h3> Istituto Tecnino Tum4World</h3>
@@ -41,7 +41,7 @@
 
     <div class="spaziatura"></div>
 
-    <div class = row setMargin="true">
+    <div class="row" setMargin="true">
         <div class="col-100">
             <h1>CORSI</h1>
             <p>
@@ -102,7 +102,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="javascript/cardScolUp.js"></script>
+    <script type="text/javascript" src="javascript/scuola.js"></script>
 
 </main>
 

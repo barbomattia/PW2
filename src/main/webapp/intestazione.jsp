@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/intestazione.css">
 </head>
 
-<body id="bodyIntestazione">
+<body id="body">
     <main id="mainIntestazione">
         <div id="divIntestazione">
             <h1>Tum4World</h1>
