@@ -10,7 +10,7 @@ import java.sql.*;
 @WebServlet(name = "HelloServletDB", value = "/HelloServletDB")
 public class HelloServletDB extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/provaDB;create=true";
+    String dbURL = "jdbc:derby://localhost:1527/MyDerbyDB;create=true;";
 
     String user = "App";
 
@@ -18,13 +18,32 @@ public class HelloServletDB extends HttpServlet {
 
     Connection conn = null;
 
-    public void init(){
+    HelloServletDB() {
+        /*
         try{
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            System.out.println("Tentativo di connessione - HelloServletDB - 1");
+            //Class.forName("org.apache.derby.jdbc.ClientDriver");
             conn = DriverManager.getConnection(dbURL, user, password);
-        } catch (ClassNotFoundException | SQLException ex){
+        } catch (SQLException ex){  //ClassNotFoundException |
+            System.out.println("Errore di connessione - HelloServletDB - 1");
             System.out.println(ex);
         }
+
+         */
+
+
+
+        try{
+            System.out.println("Tentativo di connessione - HelloServletDB - 2");
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MyDerbyDB;create=true");
+        } catch (ClassNotFoundException | SQLException ex){  //
+            System.out.println("Errore di connessione - HelloServletDB - 2");
+            System.out.println(ex);
+        }
+
+
+
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException{

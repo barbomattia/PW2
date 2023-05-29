@@ -12,6 +12,8 @@ import java.sql.SQLException;
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
 
+
+    //Connection conn2 = new HelloServletDB().conn;
     Connection conn = connect.connectdb();
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -34,7 +36,7 @@ public class LoginServlet extends HttpServlet {
             ps.setString(2, password);
             rs = ps.executeQuery();
             if(rs.next()){
-                ruolo = rs.getString(3);    //Ruolo dell'utente
+                ruolo = rs.getString("ROLE");    //Ruolo dell'utente
 
                 //Recupero la sessione
                 HttpSession oldSession = request.getSession(false); //Verifico se esiste già una sessione (false mi permette di evtiare che se ne crei una nuova nel caso non ce ne sia una già esistente)
