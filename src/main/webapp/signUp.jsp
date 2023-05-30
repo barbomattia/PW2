@@ -8,26 +8,25 @@
     <div class="signupElement">
         <form action="${pageContext.request.contextPath}/signUp" method="POST">
         <h1 class="signupElement" id="title"> Registrati qua</h1>
-        <input class="signupElement">
-            <input style="margin: 5px" class="signupElement" type="text" placeholder="Nome" name="name"/>
+            <input style="margin: 5px" class="signupElement" type="text" placeholder="Nome" name="name" required/>
 
-            <input style="margin: 5px" class="signupElement" type="text" placeholder="Cognome" name="surname">
-
-            <br><br>
-
-            <input class="signupElement" type="date" name="date">
-            <p><sup>*</sup>devi essere maggiorenne</p>
-
-
-            <input class="signupElement" type="email" placeholder="youremail@domain" name="mail">
+            <input style="margin: 5px" class="signupElement" type="text" placeholder="Cognome" name="surname" required>
 
             <br><br>
 
-            <input class="signupElement" type="integer" id="phoneNumber" placeholder="phone number" name="phone_number">
+            <input class="signupElement" type="date" name="date" required>
+            <p><sup>*</sup>Devi essere maggiorenne</p>
+
+
+            <input class="signupElement" type="email" placeholder="youremail@domain" name="mail" required>
 
             <br><br>
 
-            <label for="affiliazione">tipo di affiliazione:</label>
+            <input class="signupElement" type="integer" id="phoneNumber" placeholder="Numero di telefono" name="phone_number" required>
+
+            <br><br>
+
+            <label for="affiliazione">Tipo di affiliazione:</label>
             <select class="signupElement" id="affiliazione" name="role">
                 <option value="aderente"> Aderente</option>
                 <option value="simpatizzante"> Simpatizzante</option>
@@ -35,16 +34,18 @@
 
             <br><br>
 
-            <input class="signupElement" type="text" placeholder="username" name="username">
+            <input class="signupElement" type="text" placeholder="Username" name="username" required>
 
             <br><br>
 
-            <input class="signupElement" type="password" placeholder="password" name="password">
+            <input class="signupElement" type="password" placeholder="Password" name="password" required>
+
+            <input class="signupElement" type="password" placeholder="Conferma password" required>
+
+            <br><br>
 
             <p id="infoPassword"><sup>*</sup> La password deve essere lunga 8 caratteri, deve contenere almeno un carattere numerico, un carattere
                 maiuscolo e un carattere tra $, ! e ?</p>
-
-            <input class="signupElement" type="password" placeholder="conferma password">
 
             <br><br>
             <button style="margin: 5px" type="submit">Registrati</button>

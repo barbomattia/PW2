@@ -1,20 +1,3 @@
-let username = "username", password;
-
-/*
-*   CREDO VADA FATTA UNA SERVLET ANZICHè UN JAVASCRIPT
-*
-*
-*
-* */
-function recuperaInformazioni(){
-    console.log("dentro recuperaInformazioni")
-    if(session.getAttribute("username") == null){
-        console.log("username nullo");
-        response.sendRedirect("login.jsp");
-    }
-    else{
-        console.log("username non nullo");
-        username = session.getAttribute("username");
-        document.getElementById("messaggioAutenticazione").innerText = "Benvenuto, " + username;
-    }
+function visualizzaDati(username, password, role, name, surname, date_of_birth, mail, phone_number){
+    console.log("ciao");
 }

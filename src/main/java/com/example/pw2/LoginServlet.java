@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,17 +27,18 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
         String ruolo;
+        int id;
         String query = "SELECT * FROM loginTable WHERE username=? AND password=?";
 
         try {
             ps = conn.prepareStatement(query);
             ps.setString(1, username);
-            ps.setString(2, password);
+            ps.setString(2, request.getParameter("password"));
             rs = ps.executeQuery();
             if(rs.next()){
                 ruolo = rs.getString("ROLE");    //Ruolo dell'utente
+                id = rs.getInt("ID");
 
                 //Recupero la sessione
                 HttpSession oldSession = request.getSession(false); //Verifico se esiste già una sessione (false mi permette di evtiare che se ne crei una nuova nel caso non ce ne sia una già esistente)
@@ -45,13 +47,28 @@ public class LoginServlet extends HttpServlet {
                 }
                 //Creo una nuova sessione, con i nuovi parametri username e password
                 HttpSession currentSession = request.getSession();  //Di default è true, crea una nuova sessione
+                currentSession.setAttribute("id", id);
                 currentSession.setAttribute("username", username);
-                currentSession.setAttribute("password", password);
+                //currentSession.setAttribute("password", password);
+                currentSession.setAttribute("role", ruolo);
                 currentSession.setMaxInactiveInterval(5*60);    //5 minuti e poi elimina la sessione automaticamente
-                response.sendRedirect(ruolo + ".jsp");
+
+                request.setAttribute("username", username);
+                request.setAttribute("password", rs.getString("PASSWORD"));
+                request.setAttribute("role", ruolo);
+                request.setAttribute("name", rs.getString("NAME"));
+                request.setAttribute("surname", rs.getString("SURNAME"));
+                request.setAttribute("date_of_birth", rs.getDate("DATE_OF_BIRTH"));
+                request.setAttribute("mail", rs.getString("MAIL"));
+                request.setAttribute("phone_number", rs.getString("PHONE_NUMBER"));
+
+                request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
+                //response.sendRedirect(ruolo + ".jsp");
             }
             else {
                 //Torno alla pagina di login
+                //PrintWriter out = response.getWriter();
+                //out.println("Errore nel login");
                 response.sendRedirect("login.jsp");
             }
         } catch (SQLException e) {

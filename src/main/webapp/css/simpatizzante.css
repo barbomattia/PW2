@@ -1,0 +1,14 @@
+#mainSimpatizzante{
+    background-color: rgb(88, 129, 87);
+    padding: 10px;
+    height: 65%;
+}
+
+.classSimpatizzante{
+    text-align: center;
+    background-color: rgb(88, 129, 87);
+}
+
+a{
+    color: white;
+}

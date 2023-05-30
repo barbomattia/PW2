@@ -2,12 +2,12 @@
     /*background-image: URL("../images/login.jpg");*
     /*background-repeat: no-repeat;*
     /*background-size: 100%;*/
-    padding-top: 90px;
+    padding-top: 32px;
     background-color: rgb(88, 129, 87);
-    height: 70%;
+    height: 56%;
 }
 
-.elementSignup {
+.elementLogin {
     text-align: center;
 }
 
