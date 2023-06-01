@@ -52,7 +52,8 @@ public class LoginServlet extends HttpServlet {
                 //currentSession.setAttribute("password", password);
                 currentSession.setAttribute("role", ruolo);
                 currentSession.setMaxInactiveInterval(5*60);    //5 minuti e poi elimina la sessione automaticamente
-
+/*
+                request.setAttribute("id", rs.getString("ID"));
                 request.setAttribute("username", username);
                 request.setAttribute("password", rs.getString("PASSWORD"));
                 request.setAttribute("role", ruolo);
@@ -61,9 +62,10 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("date_of_birth", rs.getDate("DATE_OF_BIRTH"));
                 request.setAttribute("mail", rs.getString("MAIL"));
                 request.setAttribute("phone_number", rs.getString("PHONE_NUMBER"));
+ */
+                //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
 
-                request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
-                //response.sendRedirect(ruolo + ".jsp");
+                response.sendRedirect(ruolo + ".jsp");
             }
             else {
                 //Torno alla pagina di login
