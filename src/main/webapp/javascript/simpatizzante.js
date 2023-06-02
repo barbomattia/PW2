@@ -1,3 +1,30 @@
+let popupMD = document.getElementById("idPopupMostraDati");
+let popupVA = document.getElementById("idPopupIscrizioneAttivita");
+let popuEA = document.getElementById("idPopupEliminaAccount");
+function mostraDati(){
+    popupMD.classList.add("open-popup");
+}
+
+function chiudiMostraDati(){
+    popupMD.classList.remove("open-popup");
+}
+
+function selezionaAttivita(){
+    popupVA.classList.add("open-popup");
+}
+
+function chiudiSelezionaAttivita(){
+    popupVA.classList.remove("open-popup");
+}
+
+function mostraEliminaAccount(){
+    popuEA.classList.add("open-popup");
+}
+
+function chiudiMostraEliminaAccount(){
+    popuEA.classList.remove("open-popup");
+}
+
 function OLDvisualizzaDati(id, username){
 
     console.log("dentro visualizzaDati.js, id = " + id + ", username = " + username);
@@ -47,6 +74,8 @@ function visualizzaDati(id, username){
         if (xhr.readyState === 4 && xhr.status === 200) {
             console.log("Dentro l'if")
             var response = JSON.parse(xhr.responseText);
+            console.log(xhr.responseText);
+            console.log(JSON.parse(xhr.responseText));
             console.log("Invoco la funzione stampaDati")
             console.log("Response = " + response);
             stampaDati(response);
@@ -66,10 +95,27 @@ function stampaDati_v2(data) {
         outputDiv.appendChild(item);
     }
 }
+function agag(){
+    let newWin = window.open("about:blank", "hello", "width=200,height=200");
 
+    newWin.document.write(
+        "<script>window.opener.document.body.innerHTML = 'Test'<\/script>"
+    );
+
+    if(document.getElementById("h1").getAttribute("style") == "visibility:hidden"){
+        document.getElementById("h1").setAttribute("style", "visibility:visible");
+    }
+    else{
+        document.getElementById("h1").setAttribute("style", "visibility:hidden");
+    }
+
+}
 
 function stampaDati(data) {
+    console.log("Dentro stampaDati");
+    console.log("data = " + data);
     for (var i = 0; i < data.length; i++) {
+
         var item = data[i].campo1 + " - " + data[i].campo2; // Modificare campo1 e campo2 con i nomi dei campi desiderati
         console.log(item);
     }
