@@ -1,14 +1,74 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp" />
 
-<link rel="stylesheet" type="text/css" href="css/signUp.css">
+<main id="signUpBody">
+    <link rel="stylesheet" type="text/css" href="css/signUp.css">
 
-<main id="signUp-Body">
+    <section style="background-image: url('Images/sfondoSignUp.jpg')">
+        <div class="riquadro">
+            <form action="${pageContext.request.contextPath}/signUp" method="POST">
+                <h2>Registrazione</h2>
+                <div class="userinfo">
+                    <div class="inputregistrazione">
+                        <input type="text" required>
+                        <label>Nome</label>
+                    </div>
+                    <div class="inputregistrazione">
+                        <input type="text" required>
+                        <label>Cognome</label>
+                    </div>
+                    <div class="inputregistrazione">
+                        <input type="text" required>
+                        <label>Data di nascita</label>
+                    </div>
+                    <div class="inputregistrazione">
+                        <input type="text" required>
+                        <label>Telefono</label>
+                    </div>
+                    <div class="inputregistrazione">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="inputregistrazione">
+                        <input type="text" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="inputregistrazione">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="inputregistrazione">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" required>
+                        <label>Conferma Password</label>
+                    </div>
+                </div>
+                <div class="affiliazione">
+                    <span class="titolo-affiliazione">Tipo affiliazione</span>
+                    <div class="tipo-affiliazione">
+                        <input type="radio" required>
+                        <label>simpatizzante</label>
+                        <input type="radio" required>
+                        <label>aderente</label>
+                    </div>
+                </div>
+                <button>Registrati</button>
+                <div class="login">
+                    <p>Hai già un account? <a href="login.jsp">Accedi</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</main>
 
-    <div class="signupElement">
-        <form action="${pageContext.request.contextPath}/signUp" method="POST">
-        <h1 class="signupElement" id="title"> Registrati qua</h1>
-            <input style="margin: 5px" class="signupElement" type="text" placeholder="Nome" name="name" required/>
+
+
+        <!-- <h1 class="signupElement" id="title"> Registrati qua</h1>
+             <input style="margin: 5px" class="signupElement" type="text" placeholder="Nome" name="name" required/>
 
             <input style="margin: 5px" class="signupElement" type="text" placeholder="Cognome" name="surname" required>
 
@@ -54,9 +114,7 @@
             <br><br>
             <br><br>
             <br><br>
-            <br><br>
-        </form>
-    </div>
-</main>
+            <br><br> -->
+
 
 <jsp:include page="footer.jsp" />
