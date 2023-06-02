@@ -65,6 +65,8 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </main>
 
+
+
         <!-- <h1 class="signupElement" id="title"> Registrati qua</h1>
              <input style="margin: 5px" class="signupElement" type="text" placeholder="Nome" name="name" required/>
 
