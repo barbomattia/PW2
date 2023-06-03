@@ -10,33 +10,33 @@
                 <h2>Registrazione</h2>
                 <div class="userinfo">
                     <div class="inputregistrazione">
-                        <input type="text" required>
+                        <input type="text" required name="name">
                         <label>Nome</label>
                     </div>
                     <div class="inputregistrazione">
-                        <input type="text" required>
+                        <input type="text" required name="surname">
                         <label>Cognome</label>
                     </div>
                     <div class="inputregistrazione">
-                        <input type="text" required>
+                        <input type="date" required name="date">
                         <label>Data di nascita</label>
                     </div>
                     <div class="inputregistrazione">
-                        <input type="text" required>
+                        <input type="text" required name="phone_number">
                         <label>Telefono</label>
                     </div>
                     <div class="inputregistrazione">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
+                        <input type="email" required name="mail">
                         <label>Email</label>
                     </div>
                     <div class="inputregistrazione">
-                        <input type="text" required>
+                        <input type="text" required name="username">
                         <label>Username</label>
                     </div>
                     <div class="inputregistrazione">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input type="password" required name="password">
                         <label>Password</label>
                     </div>
                     <div class="inputregistrazione">
@@ -45,6 +45,12 @@
                         <label>Conferma Password</label>
                     </div>
                 </div>
+                <label for="affiliazione">Tipo di affiliazione:</label>
+                <select class="signupElement" id="affiliazione" name="role">
+                    <option value="aderente"> Aderente</option>
+                    <option value="simpatizzante"> Simpatizzante</option>
+                </select>
+                <!--
                 <div class="affiliazione">
                     <span class="titolo-affiliazione">Tipo affiliazione</span>
                     <div class="tipo-affiliazione">
@@ -54,7 +60,8 @@
                         <label>aderente</label>
                     </div>
                 </div>
-                <button>Registrati</button>
+                -->
+                <button type="submit">Registrati</button>
                 <div class="login">
                     <p>Hai già un account? <a href="login.jsp">Accedi</a></p>
                 </div>

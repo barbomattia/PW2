@@ -5,10 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
@@ -26,10 +23,22 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String query = "SELECT * FROM loginTable WHERE username=? AND password=?";
 
         try {
+            String query;
+
+            if (!connect.isTableExists(conn, "LOGINTABLE")) {
+                query = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), username VARCHAR(30), password VARCHAR(30), role VARCHAR(30), name VARCHAR(30), surname VARCHAR(30), date_of_birth DATE, mail VARCHAR(70), phone_number VARCHAR(15))";
+                ps = conn.prepareStatement(query);
+                ps.executeUpdate();
+                System.out.println("Table 'loginTable' creata");
+            } else {
+                System.out.println("Tabella 'loginTable' già esistente");
+            }
+
+            String username = request.getParameter("username");
+            query = "SELECT * FROM loginTable WHERE username=? AND password=?";
+
             ps = conn.prepareStatement(query);
             ps.setString(1, username);
             ps.setString(2, request.getParameter("password"));
@@ -65,6 +74,13 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("login.jsp");
             }
         } catch (SQLException e) {
+            System.out.println("Errore: " + e);
+
+            /*if(!e.getSQLState().equals("X0Y32")){
+                System.out.println("Tabella di login già esistente");
+            }
+
+             */
             throw new RuntimeException(e);
         }
     }
