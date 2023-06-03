@@ -1,28 +1,20 @@
 package com.example.pw2;
 
-import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
 
 
-    //Connection conn2 = new HelloServletDB().conn;
     Connection conn = connect.connectdb();
     PreparedStatement ps = null;
     ResultSet rs = null;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try {
             String query;
@@ -69,18 +61,11 @@ public class LoginServlet extends HttpServlet {
             }
             else {
                 //Torno alla pagina di login
-                //PrintWriter out = response.getWriter();
-                //out.println("Errore nel login");
+                System.out.println("Errore nel login");
                 response.sendRedirect("login.jsp");
             }
         } catch (SQLException e) {
             System.out.println("Errore: " + e);
-
-            /*if(!e.getSQLState().equals("X0Y32")){
-                System.out.println("Tabella di login già esistente");
-            }
-
-             */
             throw new RuntimeException(e);
         }
     }

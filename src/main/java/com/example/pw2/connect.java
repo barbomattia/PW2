@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class connect {
 
     public static Connection connectdb() {
-        Connection conn = null;
+        Connection conn;
         try {
             System.out.println("Tentativo di connessione");
             //DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
@@ -17,7 +17,6 @@ public class connect {
             return conn;
         } catch (ClassNotFoundException | SQLException ex) {  //
             System.out.println("Connessione fallita");
-            System.out.println(ex);
         }
         return null;
     }
