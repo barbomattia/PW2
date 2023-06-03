@@ -1,10 +1,10 @@
-#mainSimpatizzante{
+#mainSimpOrAd{
     background-color: rgb(88, 129, 87);
     padding: 10px;
     height: 65%;
 }
 
-.classSimpatizzante{
+.classSimpOrAd{
     width: 100%;
     /*height: 100vh;*/
     background-color: rgb(88, 129, 87);

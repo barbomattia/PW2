@@ -57,7 +57,13 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setMaxInactiveInterval(5*60);    //5 minuti e poi elimina la sessione automaticamente
                 //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
 
-                response.sendRedirect(rs.getString("ROLE") + ".jsp");
+                if(rs.getString("ROLE").equals("amministratore")){
+                    response.sendRedirect("amministratore.jsp");
+                }
+                else {
+                    response.sendRedirect("amministratore.jsp");
+                }
+
             }
             else {
                 //Torno alla pagina di login
