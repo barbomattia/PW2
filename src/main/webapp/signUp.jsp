@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp" />
 
 <main id="signUpBody">
@@ -6,7 +5,7 @@
 
     <section style="background-image: url('Images/sfondoSignUp.jpg')">
         <div class="riquadro">
-            <form action="${pageContext.request.contextPath}/signUp" method="POST">
+            <form onsubmit="return controllaCampi()" action="${pageContext.request.contextPath}/signUp" method="POST">
                 <h2>Registrazione</h2>
                 <div class="userinfo">
                     <div class="inputregistrazione">
@@ -18,16 +17,16 @@
                         <label>Cognome</label>
                     </div>
                     <div class="inputregistrazione">
-                        <input type="date" required name="date">
+                        <input type="date" required name="date" id="idDataDiNascita">
                         <label>Data di nascita</label>
                     </div>
                     <div class="inputregistrazione">
-                        <input type="text" required name="phone_number">
+                        <input type="text" required name="phone_number" id="idNumeroDiTelefono">
                         <label>Telefono</label>
                     </div>
                     <div class="inputregistrazione">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required name="mail">
+                        <input type="email" required name="mail" id="idMail">
                         <label>Email</label>
                     </div>
                     <div class="inputregistrazione">
@@ -36,12 +35,12 @@
                     </div>
                     <div class="inputregistrazione">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required name="password">
+                        <input type="password" required name="password" id="idPassword1">
                         <label>Password</label>
                     </div>
                     <div class="inputregistrazione">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input type="password" required id="idPassword2">
                         <label>Conferma Password</label>
                     </div>
                 </div>
@@ -62,12 +61,15 @@
                 </div>
                 -->
                 <button type="submit">Registrati</button>
+                <button type="reset">Reset</button>
+                <!-- type="submit" -->
                 <div class="login">
                     <p>Hai già un account? <a href="login.jsp">Accedi</a></p>
                 </div>
             </form>
         </div>
     </section>
+    <script src="./javascript/signUp.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </main>
