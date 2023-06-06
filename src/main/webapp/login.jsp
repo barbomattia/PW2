@@ -3,7 +3,7 @@
 <main id="loginBody">
     <link rel="stylesheet" type="text/css" href="css/login.css">
 
-    <section style="background-image: url('Images/sfondologin.jpg')">
+    <section style="background-image: url('Images/sfondoLogin.jpg')">
         <div class="riquadro">
             <form action="${pageContext.request.contextPath}/login" method="POST">
                 <h2>Login</h2>

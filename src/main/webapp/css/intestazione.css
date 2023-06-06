@@ -6,6 +6,9 @@
     max-width: 100%;
     background-color: whitesmoke;
 }
+#mainIntestazione{
+    font-family: 'poppins', sans-serif;
+}
 
 #divIntestazione h1{
     color: black;
@@ -24,7 +27,7 @@
 }
 
 #navIntestazione{
-    background-color: black;
+    background-color: #386641;
     margin: 60px 0 0;
     position: fixed;
     width: 100%;

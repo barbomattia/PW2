@@ -38,7 +38,7 @@
                 <li> <a href="home.jsp"> Home page</a> </li>
                 <li> <a href="chiSiamo.jsp"> Chi siamo</a> </li>
                 <li> <a href="attivita.jsp"> Attività</a> </li>
-                <li> <a href="#"> Contatti</a> </li>
+                <li> <a href="contatti.jsp"> Contatti</a> </li>
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
             </ul>
