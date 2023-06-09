@@ -11,9 +11,7 @@ import java.sql.*;
 public class HelloServletDB extends HttpServlet {
 
     String dbURL = "jdbc:derby://localhost:1527/MyDerbyDB;create=true;";
-
     String user = "App";
-
     String password = "kante";
 
     Connection conn = null;

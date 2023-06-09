@@ -10,6 +10,10 @@
     font-family: 'poppins', sans-serif;
 }
 
+#mainIntestazione{
+    height: 150px;
+}
+
 #divIntestazione h1{
     color: black;
     display: flex;
@@ -22,13 +26,74 @@
     height: 60px;
     width: 100%;
     background-color: rgb(88, 129, 87);
+
+    display: flex;
     align-items: center;
+    justify-content: center;
     z-index: 99;
 }
 
-#navIntestazione{
-    background-color: #386641;
+
+#rigaFrasi{
+    color: whitesmoke;
+    position: fixed;
+    text-align: center;
+    height: 60px;
     margin: 60px 0 0;
+    width: 100%;
+    background-color: black;
+
+    font-family: 'Tangerine', cursive;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+#corpoFrase{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    max-height: 60px;
+    width: 100%;
+    align-items: end;
+}
+
+
+#frase{
+    overflow: hidden;
+    font-size: 40px;
+
+    margin-top:0;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+#cit{
+    overflow: hidden;
+
+    margin-top:0;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    #frase{
+        font-size: 5vw;
+        margin-right: 1vw;
+    }
+    #cit{
+        overflow: hidden;
+        font-size: 2.5vw;
+    }
+}
+
+#navIntestazione{
+
+    background-color: #386641;
+    margin: 120px 0 0;
+
     position: fixed;
     width: 100%;
     border-bottom: 1px solid rgba(255,255,255,0.1);

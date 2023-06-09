@@ -8,6 +8,10 @@
     <link rel="icon" href="Images/Logo.ico">
     <link rel="stylesheet" type="text/css" href="./css/intestazione.css">
     <link rel="stylesheet" type="text/css" href="./css/cookiePopUp.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body id="body">
@@ -30,9 +34,19 @@
 
 
     <main id="mainIntestazione">
+
         <div id="divIntestazione">
             <h1>Tum4World</h1>
         </div>
+
+        <div id="rigaFrasi">
+            <div id="corpoFrase">
+                <h1 id="frase">frase</h1>
+                <h1 id="cit">cit</h1>
+            </div>
+            <script src="javascript/gestoreFrasi.js"></script>
+        </div>
+
         <nav id="navIntestazione">
             <ul>
                 <li> <a href="home.jsp"> Home page</a> </li>
