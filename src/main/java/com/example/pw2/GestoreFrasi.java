@@ -57,7 +57,7 @@ public class GestoreFrasi extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("GETSORE CHIAMAT0");
+        //System.out.println("GETSORE FRASI CHIAMAT0");
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
 
@@ -87,5 +87,5 @@ public class GestoreFrasi extends HttpServlet {
 
     public void destroy(){
         connect.closeConnection(conn);
-    }
+    } //chiudo la connessione
 }

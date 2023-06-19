@@ -41,8 +41,8 @@
 
         <div id="rigaFrasi">
             <div id="corpoFrase">
-                <h1 id="frase">frase</h1>
-                <h1 id="cit">cit</h1>
+                <h1 id="frase"></h1>
+                <h1 id="cit"></h1>
             </div>
             <script src="javascript/gestoreFrasi.js"></script>
         </div>

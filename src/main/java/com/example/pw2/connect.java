@@ -5,14 +5,23 @@ import java.sql.*;
 
 public class connect {
 
+    static boolean init = false;            //variabile per vedere se il database è gia stato inizializzato
+
     public static Connection connectdb() {
         Connection conn;
         try {
             System.out.println("Tentativo di connessione");
-            Class.forName("org.apache.derby.jdbc.ClientDriver");                                // definisco il Driver
-            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/DataBasePW;create=true");// creo la connessione
+            Class.forName("org.apache.derby.jdbc.ClientDriver");                                    // definisco il Driver
+            conn = DriverManager.getConnection("jdbc:derby://localhost:1527/DataBasePW;create=true");    // creo la connessione
             System.out.println("Connesso");
-            initDataBase(conn);             // inizializzo il database
+
+            if(!init) {                     // inizializzo il database
+                initDataBase(conn);
+                init = true;
+            }else{
+                System.out.println("DATABASE GIA ESISTENTE");
+            }
+
             return conn;
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("Connessione fallita");
@@ -41,6 +50,7 @@ public class connect {
 
         Statement ps = null;
 
+        //TABELLA FRASI
         if (!isTableExists(connection, "FRASITABLE")) {     // controllo che non sia gia stata creata la tabella
             String queryCreazione = "CREATE TABLE FRASITABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), frase VARCHAR(100), cit VARCHAR(50))"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
@@ -64,6 +74,24 @@ public class connect {
             System.out.println("Tabella 'FRASITABLE' già esistente");
         }
 
+        //TABELLA DONAZIONI NAVETTA
+
+        if (!isTableExists(connection, "DONAZIONINAVETTATABLE")){
+            String queryCreazione = "CREATE TABLE DONAZIONINAVETTATABLE ( donazioni int)"; //query per creare la tabella
+            ps = connection.createStatement();              // creo la query
+            ps.executeUpdate(queryCreazione);               // eseguo la query
+            System.out.println("Table 'FRASITABLE' creata");
+
+            try {                                           // Inizializzo la tabella
+                ps.executeUpdate("INSERT INTO DONAZIONINAVETTATABLE VALUES (0)");
+            } catch (SQLException e) {
+                System.out.println("Errore inizializzazione DONAZIONINAVETTATABLE" + e);
+                throw new RuntimeException(e);
+            }
+            System.out.println("Table 'DONAZIONINAVETTATABLE' inizializzata");
+        }else {
+            System.out.println("Tabella 'DONAZIONINAVETTATABLE' già esistente");
+        }
 
     }
 

@@ -114,7 +114,7 @@
               <img src="Images/Attivita/iconaX.png" style="width: 30px">
           </div>
           <h2> DONA </h2>
-          <form id="formReale" action="${pageContext.request.contextPath}/GestoreDonazioniNavetta" method="post">
+          <form id="formReale" action="/PW2_war_exploded/GestoreDonazioniNavetta" method="post">
               <p setMargin="true">La tua donazione sarà destinata all'acuisto della terza navetta</p>
               <label for="importo">Importo Donazione</label>
               <input type="number" placeholder="0" name="importo" id="importo" required>
