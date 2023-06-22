@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="css/contatti.css">
 
 <main id="contatti">
-    <div class="cover" style="background-image: url('Images/chisiamo.jpg')">
+    <div class="cover">
         <h1> CONTATTI </h1>
         <h3> Istituto Tecnico Tum4World</h3>
     </div>

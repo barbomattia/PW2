@@ -10,10 +10,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-position: center center;
+    background-image: linear-gradient(rgba(100,100,100,0.7),rgba(100,100,100,0.7)), url("../Images/chisiamo.jpg");
+    background-position: center;
     background-size: cover;
 }
-
 .cover h1{
     padding: 0px;
     color: whitesmoke;

@@ -1,100 +1,57 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <jsp:include page="intestazione.jsp" />
 
-<main>
-        <meta name="wiewport" content="width-device-width, initial-scale=1.0">
-        <h3>DESCRIZIONE</h3>
-        <p>
-            Eh ça c'est Vegedream de Gagnoa
-            Casse la démarche comme Samuel, Samuel Umtiti
-            Casse la démarche comme Samuel, Samuel Umtiti
-            Casse la démarche comme Samuel, Samuel Umtiti
-            Casse la démarche comme Samuel, Samuel Umtiti
-            Et si y'a drah on peut toujours appeler Benjamin Mendy
-            Et si y'a drah on peut toujours appeler Benjamin Mendy
-            Ramenez la coupe à la maison
-            Allez les bleus, allez
-            20 ans après c'est le moment
-            Allez les bleus, allez
-            Ramenez la coupe à la maison
-            Allez les bleus, allez
-            20 ans après on est champion
-            Allez les bleus, allez
-            Qui contrôle le terrain? (Matuidi)
-            Blaise Matuidi, eh (Matuidi)
-            Avec lui on est serein (Matuidi)
-            Blaise Matuidi, eh (Matuidi)
-            Qui contrôle le terrain? (Matuidi)
-            Blaise Matuidi, eh (Matuidi)
-            Avec lui on est serein (Matuidi)
-            Blaise Matuidi, eh (Matuidi)
-            Passement de jambe, crochet à gauche, à droite
-            Kylian Mbappé
-            Accélération, virgule, petit-pont, frappe
-            Kylian Mbappé
-            J'sais plus si j'suis gaucher ou droitier
-            Je tire des deux pieds, Ousmane Dembélé
-            J'sais plus si j'suis gaucher ou droitier
-            Je tire des deux pieds, Ousmane Dembélé
-            Ramenez la coupe à la maison
-            Allez les bleus, allez
-            20 ans après c'est le moment
-            Allez les bleus, allez
-            Ramenez la coupe à la maison
-            Allez les bleus, allez
-            20 ans après on est champion
-            Allez les bleus, allez
-            Mais comment il s'appelle? Kanté
-            N'golo, N'golo Kanté
-            Mais comment il s'appelle? Kanté
-            N'golo, N'golo Kanté
-            Mais comment il s'appelle? Kanté
-            N'golo, N'golo Kanté
-            Comment il s'appelle? Kanté
-            N'golo, N'golo Kanté
-            Maestro Kimpembe, Kimpembe, Kimpembe, Kimpembe
-            Kimpembe, Kimpembe, Kimpembe
-            Le milieu est assuré
-            Attaquant, défense
-            Paulo, Paulo Paul Pogba
-            La Pioche Paulo, Paulo Paul Pogba
-            Ramenez la coupe à la maison
-            Allez les bleus, allez
-            20 ans après c'est le moment
-            Allez les bleus, allez
-            Ramenez la coupe à la maison
-            Allez les bleus, allez
-            20 ans après on est champion
-            Allez les bleus, allez
-            On est ensemble
-            Antoine Griezmann, pénalty
-            On est ensemble
-            On est ensemble
-            Nabil Fékir, Tolisso
-            On est ensemble
-            On est ensemble
-            Pavard, Ramy, Hernandez
-            On est ensemble
-            On est ensemble
-            Mandanda, Lloris, Sidibé
-            On est ensemble
-            On est ensemble
-            Olivier Giroud, Nzonzi
-            On est ensemble
-            Raphaël Varane, Flo' Thauvin
-            On est ensemble
-            Thomas Lemar, Areola
-            On est ensemble
-            Et ça c'est Vegedream de Gagnoa
-            Didier Deschamps, merci beaucoup
-            On est ensemble
-            On est ensemble
-        </p>
-        <img src="Images/ciao.jpg" alt="IMMAGINE">
-        <form action="#" method="get">
-            <label>Volantino A5</label>
-            <button type="button">Download</button>
-        </form>
+
+<link rel="stylesheet" type="text/css" href="css/home.css">
+
+<main id="home">
+    <div class="cover">
+
+        <h1>Tum4World</h1>
+
+    </div>
+
+    <section>
+        <div class="titolo">Tum4World</div>
+        <div class="row">
+            <p>
+                Tum4world è un'associazione di beneficenza che ha reso l'educazione un obiettivo prioritario nella sua missione di diffondere il benessere e l'uguaglianza nel mondo. Attraverso una vasta gamma di attività scolastiche, Tum4world lavora instancabilmente per offrire opportunità educative a coloro che altrimenti avrebbero difficoltà ad accedervi.
+                Una delle principali attività svolte da Tum4world è la creazione e il sostegno di scuole in comunità svantaggiate. In queste scuole, i bambini ricevono un'istruzione di qualità e gli insegnanti vengono selezionati e formati per garantire un ambiente di apprendimento stimolante e inclusivo. L'associazione si impegna anche a fornire le risorse necessarie, come libri di testo, materiale didattico e attrezzature scolastiche, per garantire che gli studenti abbiano tutto ciò di cui hanno bisogno per progredire nel loro percorso educativo.
+            </p>
+        </div>
+        <div>
+            <p>
+                Non solo, ogni edificio scolastico vanta una mensa. Qui, cuochi appassionati preparano pasti deliziosi e nutrienti per coloro che si trovano in situazioni di difficoltà. Che tu sia senza fissa dimora, in cerca di lavoro o semplicemente in una situazione di temporanea difficoltà economica, la nostra mensa è aperta a tutti. Ogni pasto è realizzato con cura, utilizzando ingredienti freschi e salutari, per garantire che ogni boccone sia un momento di conforto e nutrimento per il corpo e lo spirito.
+                Ma non ci fermiamo alla sola mensa. Per facilitare l'accesso ai nostri servizi, offriamo anche un servizio di navetta gratuito per coloro che non possono raggiungerci facilmente. Sappiamo quanto sia importante garantire che tutti abbiano la possibilità di accedere ai servizi che offriamo, indipendentemente dalla loro ubicazione geografica. La nostra navetta, guidata da autisti volontari premurosi, fornisce un mezzo sicuro e affidabile per raggiungere le nostre strutture e partecipare alle attività comunitarie che offriamo.
+                Inoltre, Tum4world è molto di più di una semplice mensa e un servizio di navetta. Ci preoccupiamo del benessere globale delle persone che assistiamo. Pertanto, offriamo anche programmi di formazione professionale, consulenza legale e supporto psicologico per aiutare le persone a ricostruire le proprie vite e ottenere una stabilità a lungo termine.
+                Siamo un'associazione di beneficenza dedicata a fornire non solo assistenza materiale, ma anche un sostegno emotivo e un senso di comunità a coloro che si rivolgono a noi. Lavoriamo instancabilmente per diffondere un messaggio di speranza e riscatto per tutti coloro che attraversano momenti difficili.
+                Sia che tu abbia bisogno di un pasto caldo, di un passaggio sicuro o di un sostegno completo per ricostruire la tua vita, l'associazione di beneficenza Tum4world è qui per te. Insieme, possiamo creare un futuro migliore per tutti, affrontando le sfide che il mondo ci presenta e costruendo una società più inclusiva e solidale.
+            </p>
+        </div>
+        <div class="row">
+            <img src="Images/chisiamo.jpg">
+        </div>
+        <div class="row">
+            <form action="#" method="get">
+                <label>Scarica qui il nostro volantino</label>
+                <button type="button">Download</button>
+            </form>
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+
+    <div class="spaziatura"></div>
+    <div class="spaziatura"></div>
+
 </main>
 
+
 <jsp:include page="footer.jsp"/>
+

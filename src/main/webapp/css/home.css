@@ -1,4 +1,4 @@
-#contatti{
+#home{
     margin: 0;
     padding: 0;
     font-family: 'poppins', sans-serif;
@@ -19,6 +19,7 @@
     color: whitesmoke;
     font-size: 10vw;
 }
+
 .cover h3{
     padding: 0px;
     color: whitesmoke;
@@ -29,11 +30,6 @@ section{
     margin: auto;
     padding-top: 80px;
     padding-bottom: 80px;
-    text-align: center;
-}
-titolo{
-    font-size: 36px;
-    font-weight: 600;
 }
 p{
     color: #777;
@@ -47,33 +43,30 @@ p{
     display: flex;
     justify-content: space-between;
 }
-.col{
-    flex-basis: 31%;
-    background-color: #f0ead2;
+.row img{
+    width: 100%;
     border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 20px 12px;
-    box-sizing: border-box;
-    transition: 0.5s;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.5);
 }
-.col a{
+.row h1{
+    padding-top: 0;
+}
+
+.row label{
     color: #777;
-    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row p{
+    padding: 15px 0 25px;
+}
+
+.titolo{
+    font-size: 36px;
     font-weight: 600;
-}
-.col a:hover{
-    text-decoration: underline;
-}
-h3{
+    justify-content: center;
     text-align: center;
-    font-weight: 600;
-    margin: 10px 0;
 }
-.col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
-}
-@media(max-width: 700px){
-    .row{
-        flex-direction: column;
-    }
-}
+
