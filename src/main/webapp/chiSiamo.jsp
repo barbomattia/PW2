@@ -19,7 +19,7 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/chisiamo.jpg">
+                <img src="Images/bambini.jpg">
             </div>
         </div>
 
@@ -30,7 +30,7 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/chisiamo.jpg">
+                <img src="Images/scuola.jpg">
             </div>
         </div>
 
@@ -41,7 +41,7 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/chisiamo.jpg">
+                <img src="Images/volotario.jpg">
             </div>
         </div>
     </section>

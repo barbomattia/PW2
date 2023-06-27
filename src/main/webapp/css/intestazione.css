@@ -8,14 +8,11 @@
 }
 #mainIntestazione{
     font-family: 'poppins', sans-serif;
-}
-
-#mainIntestazione{
     height: 150px;
 }
 
 #divIntestazione h1{
-    color: black;
+    color: white;
     display: flex;
     justify-content: center;
 }
@@ -91,7 +88,7 @@
 
 #navIntestazione{
 
-    background-color: #386641;
+    background-color: rgb(88, 129, 87);
     margin: 120px 0 0;
 
     position: fixed;

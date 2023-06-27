@@ -11,6 +11,7 @@ section{
     width: 100%;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(rgba(100,100,100,0.7),rgba(100,100,100,0.7)), url("../Images/sfondoLogin.jpg");
     background-position: center;
     background-size: cover;
 }

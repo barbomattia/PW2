@@ -3,7 +3,7 @@
 <main id="signUpBody">
     <link rel="stylesheet" type="text/css" href="css/signUp.css">
 
-    <section style="background-image: url('Images/sfondoSignUp.jpg')">
+    <section>
         <div class="riquadro">
             <form onsubmit="return controllaCampi()" action="${pageContext.request.contextPath}/signUp" method="POST">
                 <h2>Registrazione</h2>
