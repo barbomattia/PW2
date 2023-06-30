@@ -2,8 +2,9 @@
 <jsp:include page="intestazione.jsp" />
 
 <link rel="stylesheet" type="text/css" href="css/chiSiamo.css">
+<link rel="stylesheet" type="text/css" href="css/struttura.css">
 
-<main id="chisiamo">
+<main>
     <div class="cover">
         <h1> CHI SIAMO? </h1>
         <h3> Istituto Tecnico Tum4World</h3>
@@ -67,9 +68,6 @@
             <div class="spaziatura"></div>
        -->
 
-
-    <div class="spaziatura"></div>
-    <div class="spaziatura"></div>
 
 </main>
 

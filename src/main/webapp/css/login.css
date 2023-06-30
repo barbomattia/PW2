@@ -1,9 +1,4 @@
-#loginBody{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
-}
-section{
+sectionLogin{
     display: flex;
     justify-content: center;
     allign-items: center;
@@ -87,42 +82,13 @@ input:valid ~ label{
     text-decoration: underline;
 }
 
-button{
-    border: 1px solid rgb(88, 129, 87);
-    background: none;
+button {
     width: 100%;
     height: 40px;
-    cursor: pointer;
     font-size: 1em;
     font-weight: 600;
-    transition: 0.8s;
-    position: relative;
-    overflow: hidden;
     border-radius: 10px;
-
 }
-
-button:hover{
-    color: white;
-}
-button::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background: rgb(88, 129, 87);
-    z-index: -1;
-    transition: 0.8s;
-    bottom: 0;
-    border-radius: 50% 50% 0 0;
-}
-button:hover::before{
-    height: 180%;
-}
-
-
-
 .registrazione{
     font-size: .9em;
     color: rgb(88, 129, 87);

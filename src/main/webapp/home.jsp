@@ -3,8 +3,9 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/home.css">
+<link rel="stylesheet" type="text/css" href="css/struttura.css">
 
-<main id="home">
+<main>
     <div class="cover">
         <h1>Tum4World</h1>
     </div>
@@ -53,15 +54,10 @@
         <div class="row">
             <form action="#" method="get">
                 <label>Scarica qui il nostro volantino</label>
-                <button class="btn" type="button">Download</button>
+                <button type="submit">Download</button>
             </form>
         </div>
     </section>
-
-
-
-    <div class="spaziatura"></div>
-    <div class="spaziatura"></div>
 
 </main>
 

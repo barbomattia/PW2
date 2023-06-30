@@ -1,9 +1,10 @@
 <jsp:include page="intestazione.jsp" />
 
-<main id="loginBody">
+<main>
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/struttura.css">
 
-    <section>
+    <sectionLogin>
         <div class="riquadro">
             <form action="${pageContext.request.contextPath}/login" method="POST">
                 <h2>Login</h2>
@@ -28,7 +29,7 @@
                 </div>
             </form>
         </div>
-    </section>
+    </sectionLogin>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
