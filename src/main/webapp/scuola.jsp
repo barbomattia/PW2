@@ -22,68 +22,18 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/Attivita/Scuola1.jpg">
+                <div class="cover" style="background-image: url('Images/Attivita/Scuola1.jpg')"></div>
+                <!-- <img src="Images/Attivita/Scuola1.jpg"> -->
             </div>
         </div>
-
-        <!--
-        <div class="spaziatura"></div>
-        <div class="spaziatura"></div>
-
-        <div class="row" setMargin="true">
-            <div class="col-50">
-                <h1>STRUTTURA</h1>
-                <p>
-                    L'istituto Tum4World è il cuore e punto nevralgico della nostra associazione.
-                </p>
-                <p>
-                    L'istituto Tum4World è il cuore e punto nevralgico della nostra associazione.
-                </p>
-                <p>
-                    Sucessivamenti la scuola ha subito molti ampliamenti per soddisfare la necessità sempre maggiore di aule
-                    per accogliere il numero crescente di studenti. Inoltre questi aggiornamenti hanno permesso l'attivazione delle
-                    altre attivita di tum4World: una cucina e sala pranzo per il servizio di mensa, e uno spiazzale per il servizio
-                    navetta
-                </p>
-                <p>
-                    Attualmente l'associazione sta recuperando i fondi necessari per finanziare un nuovo ampliamento che prevede
-                    la creazione di una aula compiuter necessaria per avviare il nuovo corso di studi di informatica
-                </p>
-            </div>
-            <div class="col-50 pl-2">
-                 <div class="cover" style="background-image: url('Images/Attivita/Scuola1.jpg')"></div>
-            </div>
-        </div>
-        -->
 
         <div class="row-singola">
-            <div class="col">
                 <h1>Corsi</h1>
                 <p>
                     Il nostro istituto storicamente mette a disposizione 2 corsi di studio: meccanico e alberghiero, da quest'anno, grazie a voi, abbiamo una novità al riguardo. Infatti grazie alle vostre cospique donazioni
                     da quest'anno partitrà il nuovo corso di chimica. Ma non è tutto, infatti sono gia iniziati i lavori per la costruzione di una nuova aula computer che permetterà l'avvio di un quarto corso aggiungivo quello informatico.
                 </p>
-            </div>
         </div>
-        <!--
-        <div class="spaziatura"></div>
-
-        <div class="row" setMargin="true">
-            <div class="col-100">
-                <h1>CORSI</h1>
-                <p>
-                    Il nostro istituto storicamente mette a disposizione 2 corsi di studio: meccanico e alberghiero,
-                    da quest'anno, grazie a voi, abbiamo una novità al riguardo. Infatti grazie alle vostre cospique donazioni
-                    da quest'anno partitrà il nuovo corso di chimica.
-                </p>
-                <p>
-                    Ma non è tutto, infatti sono gia iniziati i lavori per la costruzione di una nuova aula computer che permetterà
-                    l'avvio di un quarto corso aggiungivo quello informatico.
-                </p>
-            </div>
-
-        </div>
-        -->
 
         <div id="rigaCards" style="padding-bottom: 100px">
             <div class="cardSU">

@@ -20,7 +20,8 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/scuolaHome.jpg">
+                <div class="cover" style="background-image: url('Images/scuolaHome.jpg')"></div>
+                <!-- <img src="Images/scuolaHome.jpg"> -->
             </div>
         </div>
 
@@ -33,7 +34,8 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/busHome.jpg">
+                <div class="cover" style="background-image: url('Images/busHome.jpg')"></div>
+                <!--    <img src="Images/busHome.jpg">  -->
             </div>
         </div>
 
@@ -47,14 +49,15 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/mensaHome.jpg">
+                <div class="cover" style="background-image: url('Images/mensaHome.jpg')"></div>
+                <!-- <img src="Images/mensaHome.jpg"> -->
             </div>
         </div>
 
         <div class="row">
             <form action="#" method="get">
                 <label>Scarica qui il nostro volantino</label>
-                <button type="submit">Download</button>
+                <button class="button-standard" type="submit">Download</button>
             </form>
         </div>
     </section>

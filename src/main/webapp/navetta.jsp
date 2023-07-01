@@ -4,7 +4,7 @@
 <% float percDon = (float)request.getAttribute("percDonazioni"); %>
 
 <main>
-    <link rel="stylesheet" type="text/css" href="css/rowStruttura.css">
+    <link rel="stylesheet" type="text/css" href="css/struttura.css">
     <link rel="stylesheet" type="text/css" href="css/navetta.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +60,8 @@
               aggiuntivi saranno usati per la manutenzione dei mezzi.
               <% } %>
           </p>
-          <button type="button" onclick="showFormDona()"> DONA </button>
+          <button class="button-standard" type="button" onclick="showFormDona()"> Dona </button>
+
       </div>
     <div class="col-50-bus">
         <div class="container-bus-rows">

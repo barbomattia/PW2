@@ -45,24 +45,48 @@ p{
 
 /*RIGA E COLONNA PER IMMAGINE*/
 .row{
+    /*
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
+    */
+
+    padding: 0;
+    margin-top: 5%;
+    max-width: 1250px;
+    height: auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
 }
 .col{
+    /*
     flex-basis: 48%;
     padding: 30px 2px;
+    */
+
+    flex: 1;
+    width: 50%;
+    height: auto;
+    min-height: 300px;
+    position: relative;
+    padding: 0 0px;
+
 }
 .col img{
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.5);
 }
+
 .col h1{
     padding-top: 0;
 }
 .col p{
-    padding: 15px 0 25px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-left: 0;
+    padding-bottom: 25px;
 }
 
 /*RIGA SENZA IMMAGINE*/
@@ -78,7 +102,13 @@ p{
 }
 
 /*BOTTONE*/
-button{
+.button-standard{
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 10px;
+    color: rgb(88, 129, 87);
+    border-radius: 5px;
+
     border: 1px solid rgb(88, 129, 87);
     background: none;
     cursor: pointer;
@@ -86,10 +116,10 @@ button{
     position: relative;
     overflow: hidden;
 }
-button:hover{
+.button-standard:hover{
     color: white;
 }
-button::before{
+.button-standard::before{
     content: "";
     position: absolute;
     left: 0;
@@ -101,6 +131,24 @@ button::before{
     bottom: 0;
     border-radius: 50% 50% 0 0;
 }
-button:hover::before{
+.button-standard:hover::before{
     height: 180%;
+}
+
+
+@media screen and (max-width: 800px){
+    .row{
+        flex-flow: column;
+    }
+    .col{
+        flex: 1;
+        width: 100%;
+        min-height: 0;
+        position: relative;
+        padding: 0 0px;
+        padding-bottom: 20px;
+    }
+    .cover{
+        min-height: 300px;
+    }
 }

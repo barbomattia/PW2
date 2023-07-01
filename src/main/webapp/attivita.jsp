@@ -23,19 +23,6 @@
                 descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione
             </p>
         </div>
-        <!--
-        <div class="spaziatura"></div>
-
-
-        <h1 setMargin="true">ATTIVITA'</h1>
-        <div setMargin="true">
-            DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA//DESCRIZIONE ATTIVITA/
-            DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA//DESCRIZIONE ATTIVITA/
-            DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA//DESCRIZIONE ATTIVITA/
-            DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA//DESCRIZIONE ATTIVITA/
-            DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA/DESCRIZIONE ATTIVITA//DESCRIZIONE ATTIVITA/
-        </div>
-        -->
 
         <div id="rigaAttivita">
             <a href="scuola.jsp" class="noSottolineatura">

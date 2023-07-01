@@ -20,7 +20,8 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/bambini.jpg">
+                <div class="cover" style="background-image: url('Images/bambini.jpg')"></div>
+                <!-- <img src="Images/bambini.jpg"> -->
             </div>
         </div>
 
@@ -31,7 +32,8 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/scuola.jpg">
+                <div class="cover" style="background-image: url('Images/scuola.jpg')"></div>
+                <!-- <img src="Images/scuola.jpg"> -->
             </div>
         </div>
 
@@ -42,7 +44,8 @@
                 </p>
             </div>
             <div class="col">
-                <img src="Images/volotario.jpg">
+                <div class="cover" style="background-image: url('Images/volotario.jpg')"></div>
+                <!-- <img src="Images/volotario.jpg"> -->
             </div>
         </div>
     </section>
