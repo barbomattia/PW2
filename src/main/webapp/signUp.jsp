@@ -1,9 +1,11 @@
 <jsp:include page="intestazione.jsp" />
 
-<main id="signUpBody">
+<main>
     <link rel="stylesheet" type="text/css" href="css/signUp.css">
+    <link rel="stylesheet" type="text/css" href="css/struttura.css">
 
-    <section>
+
+    <sectionSignUp>
         <div class="riquadro">
             <h2>Registrazione</h2>
             <form class="form" onsubmit="return controllaCampi()" action="${pageContext.request.contextPath}/signUp" method="POST">
@@ -104,6 +106,7 @@
             </form>
         </div>
     </section>
+
     <script src="./javascript/signUp.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
