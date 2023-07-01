@@ -20,7 +20,7 @@ import java.util.List;
 public class GestoreFrasi extends HttpServlet {
 
     Connection conn;
-
+    FrasiModel fm;
     String[] frasi;   // array delle frasi
     String[] cit;     // array delle citazioni delle frasi
 
@@ -30,29 +30,9 @@ public class GestoreFrasi extends HttpServlet {
 
         // prendo dal DataBase le frasi e citazioni da mostrare
         Connection conn = connect.connectdb();
-
-        try {
-            Statement stant = conn.createStatement();       // creo il Statment
-            String sql ="SELECT * FROM FRASITABLE";         // definisco la query
-            ResultSet resultSet = stant.executeQuery(sql);  // eseguo la query e salvo la risposta
-
-            ArrayList<String> listFrasi = new ArrayList<>();        // uso degli ArrayList per facilitare la lettura della risposta
-            ArrayList<String> listCit = new ArrayList<>();
-
-            while(resultSet.next()){
-                listFrasi.add(resultSet.getString(2));      //Leggo e salvo le frasi
-                listCit.add(resultSet.getString(3));        //Leggo e salvo le citazioni
-            }
-
-            frasi = listFrasi.toArray(new String[listFrasi.size()]);    //ripongo i contenuti degli ArrayList negli array
-            cit = listCit.toArray(new String[listCit.size()]);
-
-            //System.out.println(listFrasi);
-            //System.out.println(Arrays.toString(frasi));
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        fm = new FrasiModel(conn);
+        frasi= fm.getFrasi();
+        cit=fm.getCit();
     }
 
     @Override

@@ -25,8 +25,8 @@
         <p>Questo sito usa i cookie per fornire una fruibilità migliore del sito</p>
 
         <div id="cookieBottoni">
-            <button type="button" class="buttonNormal" id="accept">Accetto </button>
-            <button type="button" class="buttonNormal">Declino </button>
+            <button  class="buttonCookie buttonNormal" id="accept">Accetto </button>
+            <button  class="buttonCookie buttonNormal">Declino </button>
         </div>
 
         <script src="javascript/cookiePopUp.js"></script>

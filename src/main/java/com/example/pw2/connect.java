@@ -1,6 +1,5 @@
 package com.example.pw2;
 
-
 import java.sql.*;
 
 public class connect {
@@ -26,8 +25,8 @@ public class connect {
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("Connessione fallita");
             ex.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public static void closeConnection(Connection conn){

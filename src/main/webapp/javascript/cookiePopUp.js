@@ -1,5 +1,5 @@
 var cookiePopUp= document.getElementById("cookiePopUp");
-var bottoni = document.getElementsByTagName("button")
+var bottoni = document.getElementsByClassName("buttonCookie")
 
 //Mostrare il pop-up quando la finestra viene caricata
 

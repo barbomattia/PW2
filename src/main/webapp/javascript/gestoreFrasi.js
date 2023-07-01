@@ -71,7 +71,7 @@ function aggiornaFrase(){
 
 function main(){
     getFrasi()
-    setInterval(aggiornaFrase,5000)
+    setInterval(aggiornaFrase,20000)
 }
 
 main()
