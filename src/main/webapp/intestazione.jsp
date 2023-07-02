@@ -16,7 +16,7 @@
 
 <body id="body">
 
-    <main id="cookiePopUp" pop-up="false">
+    <div id="cookiePopUp" pop-up="false">
         <div id="cookieTitle" >
             <img src="Images/Cookie_icon.png" alt="Cookie Image">
             <h1>Cookie</h1>
@@ -30,10 +30,10 @@
         </div>
 
         <script src="javascript/cookiePopUp.js"></script>
-    </main>
+    </div>
 
 
-    <main id="mainIntestazione">
+    <div id="mainIntestazione">
 
         <div id="divIntestazione">
             <h1>Tum4World</h1>
@@ -61,4 +61,4 @@
         <br>
         <br>
         <br>
-    </main>
+    </div>

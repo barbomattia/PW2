@@ -22,10 +22,15 @@ for (var busRow of busRows) {
 showFormDona = function(){
     popUp = document.getElementById("popUp");
     popUp.setAttribute("pop-up","true")
+    window.scrollTo(window.innerWidth/2,window.innerHeight/2)           //scrolla la pagina in centro alla finestra
+    window.onscroll = function() {
+        window.scrollTo(window.innerWidth/2, window.innerHeight/2);     //sovrascrivo la funzione di scroll per sbloccare lo scroll
+    };
 }
 
 
 closeFormDona = function(){
     popUp = document.getElementById("popUp");
     popUp.setAttribute("pop-up","false")
+    window.onscroll = function() {}
 }

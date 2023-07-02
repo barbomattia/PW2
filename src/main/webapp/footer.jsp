@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/footer.css">
 
-<!--
+
 <div id="divFooter">
     <label>Dati associazione:</label>
     <ul id="ulFooter">
@@ -13,7 +13,9 @@
         <li>Nazione: Italia</li>
     </ul>
 </div>
--->
+
+
+<!--
 <script>
     var nuovoDiv = document.createElement('div');
     nuovoDiv.id = "divFooter";
@@ -49,7 +51,7 @@
 
     document.body.appendChild(nuovoDiv);
 </script>
-
+-->
 
 </body>
 </html>

@@ -61,48 +61,46 @@
               <% } %>
           </p>
           <button class="button-standard" type="button" onclick="showFormDona()"> Dona </button>
-
       </div>
-    <div class="col-50-bus">
-        <div class="container-bus-rows">
-            <div class="bus-row" acquired="true">
-                <div class="elm-scorre">
-                    <div class="bus-description">
-                        <p><span colore-testo="giallo">Destinazione</span>: Muthara</p>
-                        <p><span colore-testo="giallo">Tempo Tragitto</span>: 1h 30m</p>
-                        <p><span colore-testo="giallo">Fermate</span>: Schuola - Ruiri Town - Kianjai - Muthara</p>
-                    </div>
-                    <div class="bus-row-first-el" acquired="true">
-                        <h2 class="nomeBusThunder">Thunder</h2>
-                        <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
-                    </div>
-                </div>
-            </div>
+      <div class="col-50-bus">
+          <div class="container-bus-rows">
+              <div class="bus-row" acquired="true">
+                  <div class="elm-scorre">
+                      <div class="bus-description">
+                          <p><span colore-testo="giallo">Destinazione</span>: Muthara</p>
+                          <p><span colore-testo="giallo">Tempo Tragitto</span>: 1h 30m</p>
+                          <p><span colore-testo="giallo">Fermate</span>: Schuola - Ruiri Town - Kianjai - Muthara</p>
+                      </div>
+                      <div class="bus-row-first-el" acquired="true">
+                          <h2 class="nomeBusThunder">Thunder</h2>
+                          <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
+                      </div>
+                  </div>
+              </div>
 
-            <div class="bus-row" acquired="true">
-                <div class="elm-scorre">
-                    <div class="bus-description">
-                        <p><span colore-testo="giallo">Destinazione</span>: Katheri</p>
-                        <p><span colore-testo="giallo">Tempo Tragitto</span>: 1h</p>
-                        <p><span colore-testo="giallo">Fermate</span>: Schuola - Kithaku - Katheri</p>
-                    </div>
-                    <div class="bus-row-first-el" acquired="true">
-                        <h2 class="nomeBusMcQueen">McQueen</h2>
-                        <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
-                    </div>
-                </div>
-            </div>
+              <div class="bus-row" acquired="true">
+                  <div class="elm-scorre">
+                      <div class="bus-description">
+                          <p><span colore-testo="giallo">Destinazione</span>: Katheri</p>
+                          <p><span colore-testo="giallo">Tempo Tragitto</span>: 1h</p>
+                          <p><span colore-testo="giallo">Fermate</span>: Schuola - Kithaku - Katheri</p>
+                      </div>
+                      <div class="bus-row-first-el" acquired="true">
+                          <h2 class="nomeBusMcQueen">McQueen</h2>
+                          <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
+                      </div>
+                  </div>
+              </div>
 
-            <div class="bus-row-static" acquired="false">
-                <div class="barra-completamento" style="width: <%=percDon%>% "></div>
-                <div class="barra-completamento-info">
-                    <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
-                    <div class="percentuale"><%=percDon%>%</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+              <div class="bus-row-static" acquired="false">
+                  <div class="barra-completamento" style="width: <%=percDon%>% "></div>
+                  <div class="barra-completamento-info">
+                      <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
+                      <div class="percentuale"><%=percDon%>%</div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 
   <script type="text/javascript" src="javascript/navetta.js"></script>
