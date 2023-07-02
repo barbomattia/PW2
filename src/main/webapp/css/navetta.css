@@ -238,3 +238,12 @@
     font-weight: 600;
     border-radius: 6px;
 }
+
+[setMargin="true"]{         /* Tutti gli elementi con attributo setMargin true avranno un margine di default*/
+    margin: 0 5%;
+}
+
+.spaziatura{
+    height: 20px;
+    margin:20px;
+}

@@ -48,7 +48,12 @@
         </div>
 
         <nav id="navIntestazione">
-            <ul>
+
+            <div id="icona-menu">
+                <img src="Images/Logo.png">
+            </div>
+
+            <ul id="menu" menu_open="false">
                 <li> <a href="home.jsp"> Home page</a> </li>
                 <li> <a href="chiSiamo.jsp"> Chi siamo</a> </li>
                 <li> <a href="attivita.jsp"> Attività</a> </li>
@@ -56,9 +61,13 @@
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
             </ul>
+
+            <div class="icon_hamburger">
+                <div class="el1"></div>
+                <div class="el2"></div>
+            </div>
+            <script type="text/javascript" src="javascript/intestazione.js"></script>
+
         </nav>
-        <br>
-        <br>
-        <br>
-        <br>
+
     </div>
