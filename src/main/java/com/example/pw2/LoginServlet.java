@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
 
         try {
             String query;
-
+/*
             if (!connect.isTableExists(conn, "LOGINTABLE")) {
                 query = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), username VARCHAR(30), password VARCHAR(30), role VARCHAR(30), name VARCHAR(30), surname VARCHAR(30), date_of_birth DATE, mail VARCHAR(70), phone_number VARCHAR(15))";
                 ps = conn.prepareStatement(query);
@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 System.out.println("Tabella 'loginTable' già esistente");
             }
-
+ */
             String username = request.getParameter("username");
             query = "SELECT * FROM loginTable WHERE username=? AND password=?";
 
@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
             rs = ps.executeQuery();
             if(rs.next()){
                 //Recupero la sessione
-                HttpSession oldSession = request.getSession(false); //Verifico se esiste già una sessione (false mi permette di evtiare che se ne crei una nuova nel caso non ce ne sia una già esistente)
+                HttpSession oldSession = request.getSession(false); //Verifico se esiste già una sessione (false mi permette di evitare che se ne crei una nuova nel caso non ce ne sia una già esistente)
                 if(oldSession != null){
                     oldSession.invalidate();    //Elimino la vecchia sessione se esistente
                 }
@@ -49,25 +49,25 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("role", rs.getString("ROLE"));
                 currentSession.setAttribute("name", rs.getString("NAME"));
                 currentSession.setAttribute("surname", rs.getString("SURNAME"));
-                currentSession.setAttribute("date_of_birth", rs.getDate("DATE_OF_BIRTH"));
+                currentSession.setAttribute("date_of_birth", rs.getDate("BIRTH"));
                 currentSession.setAttribute("mail", rs.getString("MAIL"));
                 currentSession.setAttribute("phone_number", rs.getString("PHONE_NUMBER"));
 
 
-                currentSession.setMaxInactiveInterval(5*60);    //5 minuti e poi elimina la sessione automaticamente
+                currentSession.setMaxInactiveInterval(5*60);    //cinque minuti e poi elimina la sessione automaticamente
                 //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
 
                 if(rs.getString("ROLE").equals("amministratore")){
                     response.sendRedirect("amministratore.jsp");
                 }
                 else {
-                    response.sendRedirect("amministratore.jsp");
+                    response.sendRedirect("simpOrAd.jsp");
                 }
 
             }
             else {
                 //Torno alla pagina di login
-                System.out.println("Errore nel login");
+                System.out.println("Errore nel login, nessuna corrispondenza per: username=" + username + ", password=" + request.getParameter("password"));
                 response.sendRedirect("login.jsp");
             }
         } catch (SQLException e) {

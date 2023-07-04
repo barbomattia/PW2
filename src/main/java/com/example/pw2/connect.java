@@ -92,7 +92,31 @@ public class connect {
             System.out.println("Tabella 'DONAZIONINAVETTATABLE' già esistente");
         }
 
+        //TABELLA LOGIN
+
+        if(!isTableExists(connection, "LOGINTABLE")){     // controllo che non sia gia stata creata la tabella
+            String queryCreazione = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), USERNAME VARCHAR(30), PASSWORD VARCHAR(30), ROLE VARCHAR(30), NAME VARCHAR(30), SURNAME VARCHAR(30), BIRTH DATE, MAIL VARCHAR(50), PHONE_NUMBER VARCHAR(20))"; //query per creare la tabella
+            ps = connection.createStatement();              // creo la query
+            ps.executeUpdate(queryCreazione);               // eseguo la query
+            System.out.println("Table 'LoginTable' creata");
+
+            try {                                           // Inizializzo la tabella
+                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'admin', '21Adm1n!', 'amministratore', 'Lorenzo', 'D_Ambrosio', '2002-09-23', 'tum4world@nessunonoluogonoesiste.com', '+39 338 855 5812')");
+                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'barbo02', 'rinoGattuso', 'aderente', 'Mattia', 'Barborini', '2002-02-08', 'mattia@barborini.it', '+39 331 136 7911')");
+                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'griso02', 'bruttoGesto', 'aderente', 'Matteo', 'Grisenti', '2002-07-04', 'matteo@grisenti.com', '+39 347 797 5317')");
+                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'murru02', 'ilSardo', 'simpatizzante', 'Marco', 'Murru', '2002-09-24', 'marco@murru.eja', '+39 346 573 5655')");
+
+            } catch (SQLException e) {
+                System.out.println("Errore inizializzazione loginTable" + e);
+                throw new RuntimeException(e);
+            }
+            System.out.println("Table 'loginTable' inizializzata");
+
+
+        } else {
+            System.out.println("Tabella 'loginTable' già esistente");
+        }
+
     }
 
 }
-

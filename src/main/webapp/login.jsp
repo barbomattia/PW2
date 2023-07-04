@@ -16,7 +16,7 @@
                 </div>
                 <div class="inputlogin">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" required value="admin" name="password" id="loginPassword">
+                    <input type="password" required value="21Adm1n!" name="password" id="loginPassword">
                     <label>Password</label>
                     <!-- <input type="password" placeholder="Inserire la Password" name="password" id="loginPassword" value="admin"/> -->
                 </div>

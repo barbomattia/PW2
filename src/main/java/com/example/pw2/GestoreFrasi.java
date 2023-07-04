@@ -1,9 +1,7 @@
 package com.example.pw2;
 
-
-
+import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -49,8 +47,8 @@ public class GestoreFrasi extends HttpServlet {
             out.println(contenuto);
             out.flush();
 
-        }catch (IOException ex){
-            System.out.println(ex);
+        }catch (IOException | JSONException ex){
+            System.out.println("(GestoreFrasi) Errore - " + ex);
             response.sendRedirect("error.html");
         }
     }

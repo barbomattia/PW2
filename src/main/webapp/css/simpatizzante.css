@@ -1,5 +1,6 @@
 #mainSimpOrAd{
-    background-color: rgb(88, 129, 87);
+    /*background-color: rgb(88, 129, 87);*/
+    background-color: red;
     padding: 10px;
     height: 65%;
 }
