@@ -73,10 +73,8 @@ p{
     padding: 0 0px;
 
 }
-.col img{
-    width: 100%;
+.col .cover{
     border-radius: 10px;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.5);
 }
 
 .col h1{
@@ -103,9 +101,7 @@ p{
 
 /*BOTTONE*/
 .button-standard{
-    padding: 8px 16px;
-    font-size: 14px;
-    margin: 10px;
+
     color: rgb(88, 129, 87);
     border-radius: 5px;
 

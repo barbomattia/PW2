@@ -38,7 +38,8 @@
         <div id="Pop-Up-Ricontattami">
 
             <div class="closer" onclick="closeFormRicontattami()">
-                <img src="Images/Attivita/iconaX.png" style="width: 30px">
+                <img src="Images/Attivita/iconaX.png" style="
+                width: 30px">
             </div>
             <h2> RICONTATTAMI </h2>
 

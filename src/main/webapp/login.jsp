@@ -23,7 +23,7 @@
                 <div class="dimenticato">
                     <a href="#">Password dimenticata</a>
                 </div>
-                <button class="btn" type="submit">Login</button>
+                <button class="button-standard" type="submit">Login</button>
                 <div class="registrazione">
                     <p>Non hai un account? <a href="signUp.jsp">Registrati</a></p>
                 </div>

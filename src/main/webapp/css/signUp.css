@@ -50,7 +50,7 @@ h2{
     column-gap: 30px;
 }
 
-button{
+.button-standard{
     height: 50px;
     width: 100%;
     font-size: 1em;

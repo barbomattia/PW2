@@ -69,8 +69,8 @@
                 </div>
 
                 <div class="bottoni">
-                    <button type="submit">Registrati</button>
-                    <button type="reset">Reset</button>
+                    <button class="button-standard" type="submit">Registrati</button>
+                    <button class="button-standard" type="reset">Reset</button>
                 </div>
 
                 <div class="login">
