@@ -1,0 +1,112 @@
+sectionSignUp{
+    display: flex;
+    justify-content: center;
+    allign-items: center;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(120deg, whitesmoke, rgb(189, 252, 197));
+}
+.riquadro{
+    margin: 100px;
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+}
+h2{
+    font-size: 2em;
+    text-align: center;
+}
+.form .inputregistrazione{
+    width: 100%;
+    margin-top: 20px;
+}
+.form .inputregistrazione label{
+    color: rgb(88, 129, 87);
+    font-size: 1em;
+}
+.form .inputregistrazione input{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1em;
+    margin-top: 8px;
+    border: 1px solid rgb(88, 129, 87);
+    border-radius: 6px;
+    padding: 0 15px;
+    background: none;
+}
+
+.form .column{
+    display: flex;
+    column-gap: 30px;
+}
+
+.button-standard{
+    height: 50px;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.form .bottoni{
+    display: flex;
+    column-gap: 30px;
+    margin-top: 30px;
+}
+.login{
+    font-size: 1em;
+    color: rgb(88, 129, 87);
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.login p a{
+    text-decoration: none;
+    color: rgb(88, 129, 87);
+    font-weight: 600;
+}
+.login p a:hover{
+    text-decoration: underline;
+}
+
+.form .affiliazione-box{
+    margin-top: 2px;
+ }
+
+.affiliazione-box h3{
+    color: rgb(88, 129, 87);
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.form :where(.affiliazione, .tipo-affiliazione){
+    display: flex;
+    allign-items: center;
+    column-gap: 50px;
+}
+
+.form .tipo-affiliazione{
+    column-gap: 5px;
+}
+
+.tipo-affiliazione label{
+    color: #777;
+}
+.form :where(.tipo-affiliazione label, .tipo-affiliazione input){
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+    .form .column {
+        flex-wrap: wrap;
+    }
+}
+
