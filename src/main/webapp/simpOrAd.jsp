@@ -5,7 +5,14 @@
     <link rel="stylesheet" type="text/css" href="css/struttura.css">
     <link rel="stylesheet" type="text/css" href="css/${role}.css">
 
-    <h1 class="classSimpOrAd">Area ${role}, utente ${username} - id = ${id}</h1>
+    <script>
+        console.log("Setto username e role");
+        localStorage.setItem("id", "${id}");
+        localStorage.setItem("username", "${username}");
+        localStorage.setItem("role", "${role}");
+    </script>
+
+    <h1 class="classSimpOrAd">Area  <span id="idRuoloUtente"> ${role}</span>, utente ${username} - id = ${id}</h1>
 
     <div class="classSimpOrAd">
         <button type="submit" class="btn" onclick="mostraDati()">Visualizza dati personali</button>
@@ -43,16 +50,21 @@
     <div class="classSimpOrAd">
         <button type="submit" class="btn" onclick="mostraEffettuaDonazione('${role}')">Effettua una donazione</button>
         <div class="popup" id="idPopupDonazione">
-            <h2>Immetti l'importo che vuoi donare:</h2>
-            <input type="number" placeholder="Inserisci importo:">&euro;
-            <button type="submit" onclick="effettuaDonazione()">Dona</button>
-            <button onclick="chiudiEffettuaDonazione()">Chiudi</button>
+            <!-- <form action="${pageContext.request.contextPath}/DonazioniUtenti" method="POST"> -->
+                <h2>Immetti l'importo che vuoi donare:</h2>
+                <input type="number" placeholder="Inserisci importo:" id="idImportoDonazione" required>&euro;
+                <br>
+                <br>
+                <textarea placeholder="Inserisci causale donazione" id="idMessaggioDonazione" required></textarea>
+                <br>
+                <br>
+                <button type="submit" onclick="effettuaDonazione()">Dona</button>
+                <!--<button type="submit">Dona</button> -->
+                <button onclick="chiudiEffettuaDonazione()">Chiudi</button>
+                <!-- </form> -->
         </div>
         <script>
-            function effettuaDonazione(){
-                alert("funzione non ancora implementata")
-                //window.location.href = "${pageContext.request.contextPath}/effettuaDonazione?id=" + ${id};
-            }
+
         </script>
     </div>
 

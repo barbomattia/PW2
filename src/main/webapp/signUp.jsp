@@ -5,64 +5,66 @@
     <link rel="stylesheet" type="text/css" href="css/struttura.css">
 
 
-    <sectionSignUp>
+    <section class="signUp">
         <div class="riquadro">
             <h2>Registrazione</h2>
             <form class="form" onsubmit="return controllaCampi()" action="${pageContext.request.contextPath}/signUp" method="POST">
                 <div class="column">
                     <div class="inputregistrazione">
                         <label>Nome</label>
-                        <input type="text" placeholder="nome" required name="name">
+                        <input type="text" placeholder="Nome" required name="name">
                     </div>
                     <div class="inputregistrazione">
                         <label>Cognome</label>
-                        <input type="text" placeholder="cognome" required name="surname">
+                        <input type="text" placeholder="Cognome" required name="surname">
                     </div>
                 </div>
 
                 <div class="column">
                     <div class="inputregistrazione">
                         <label>Email</label>
-                        <input type="email" placeholder="email" required name="mail" id="idMail">
+                        <input type="email" placeholder="Email" required name="mail" id="idMail">
                     </div>
                     <div class="inputregistrazione">
                         <label>Username</label>
-                        <input type="text" placeholder="username" required name="username">
+                        <input type="text" placeholder="Username" required name="username">
                     </div>
                 </div>
 
                 <div class="column">
                     <div class="inputregistrazione">
                         <label>Telefono</label>
-                        <input type="Number" placeholder="numero di telefono" required name="telefono" id="idNumeroDiTelefono">
+                        <input type="Number" name="phone_number" placeholder="Numero di telefono" required name="telefono" id="idNumeroDiTelefono">
                     </div>
                     <div class="inputregistrazione">
                         <label>Data di nascita</label>
-                        <input type="date" placeholder="data di nascita" required id="idDataDiNascita">
+                        <input type="date" name="birth" placeholder="Data di nascita" required id="idDataDiNascita">
                     </div>
                 </div>
 
                 <div class="column">
                     <div class="inputregistrazione">
                         <label>Password</label>
-                        <input type="password" placeholder="password" required name="password" id="idPassword1">
+                        <input type="password" placeholder="Password" required name="password" id="idPassword1">
                     </div>
                     <div class="inputregistrazione">
                         <label>Conferma Password</label>
-                        <input type="password" placeholder="conferma password" required id="idPassword2">
+                        <input type="password" placeholder="Conferma password" required id="idPassword2">
                     </div>
                 </div>
+
+                <p>Requisiti password: ESATTAMENTE 8 caratteri, di cui almeno tre 'M'/'m' e una 'L'/'l', almeno un carattere numerico compreso tra 0 e 9, almeno un carattere minuscolo e almeno un carattere tra '$', '!' e '?'</p>
 
                 <div class="affiliazione-box">
                     <h3>Affiliazione</h3>
                     <div class="affiliazione">
                         <div class="tipo-affiliazione">
-                            <input type="radio" required id="affiliazione1" name="role">
-                            <label for="affiliazione1">simpatizzante</label>
+                            <input type="radio" required id="affiliazione1" name="role" value="simpatizzante">
+                            <label for="affiliazione1">Simpatizzante</label>
                         </div>
                         <div class="tipo-affiliazione">
-                            <input type="radio" required id="affiliazione2" name="role">
-                            <label for="affiliazione2">aderente</label>
+                            <input type="radio" required id="affiliazione2" name="role" value="aderente">
+                            <label for="affiliazione2">Aderente</label>
                         </div>
                     </div>
 
@@ -74,7 +76,7 @@
                 </div>
 
                 <div class="login">
-                    <p>Hai già un account? <a href="login.jsp">Login</a></p>
+                    <p>Hai gi&agrave; un account? <a href="login.jsp">Login</a></p>
                 </div>
 
 

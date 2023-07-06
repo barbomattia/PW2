@@ -12,6 +12,7 @@ function getFrasi(){            // Richiesta al Server delle frasi ( più precis
     var xhttp = new XMLHttpRequest();   //Creo la richiesta
     xhttp.responseType = "json";        //specifico che voglio una risposta in JSON
     xhttp.open("GET","/PW2_war_exploded/GestoreFrasi", true );
+    //xhttp.open("GET","/PW2/GestoreFrasi", true );
 
     //Invio richiesta
     xhttp.send();

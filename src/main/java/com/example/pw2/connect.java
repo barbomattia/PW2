@@ -95,7 +95,7 @@ public class connect {
         //TABELLA LOGIN
 
         if(!isTableExists(connection, "LOGINTABLE")){     // controllo che non sia gia stata creata la tabella
-            String queryCreazione = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), USERNAME VARCHAR(30), PASSWORD VARCHAR(30), ROLE VARCHAR(30), NAME VARCHAR(30), SURNAME VARCHAR(30), BIRTH DATE, MAIL VARCHAR(50), PHONE_NUMBER VARCHAR(20))"; //query per creare la tabella
+            String queryCreazione = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), USERNAME VARCHAR(30), PASSWORD VARCHAR(30), ROLE VARCHAR(30), NAME VARCHAR(30), SURNAME VARCHAR(30), BIRTH DATE, MAIL VARCHAR(50), PHONE_NUMBER VARCHAR(20), PRIMARY KEY (ID), UNIQUE (ID, USERNAME))"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
             System.out.println("Table 'LoginTable' creata");
@@ -117,6 +117,27 @@ public class connect {
             System.out.println("Tabella 'loginTable' già esistente");
         }
 
+        if(!isTableExists(connection, "DONATIONTABLE")){     // controllo che non sia gia stata creata la tabella
+            String queryCreazione = "CREATE TABLE DONATIONTABLE (ID_DONAZIONE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), ID_DONATORE INTEGER, USERNAME_DONATORE VARCHAR(30), DONATION_DATE DATE, IMPORTO INTEGER, MESSAGE VARCHAR(100), FOREIGN KEY (ID_DONATORE, USERNAME_DONATORE) REFERENCES LOGINTABLE(ID, USERNAME))"; //query per creare la tabella
+            ps = connection.createStatement();              // creo la query
+            ps.executeUpdate(queryCreazione);               // eseguo la query
+            System.out.println("Table 'donationTable' creata");
+
+            try {                                           // Inizializzo la tabella
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 1, 'admin', '2023-07-04', 10000, 'Fondo base')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-02-20', 50, 'Quota per iscriversi')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-20', 100, 'Donazione 1')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-21', 100, 'Donazione 2')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2023-02-22', 50, 'Quota per iscriversi')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 4, 'murru02', '2023-02-22', 50, 'Quota per iscriversi')");
+            } catch (SQLException e) {
+                System.out.println("Errore inizializzazione donationTable" + e);
+                throw new RuntimeException(e);
+            }
+            System.out.println("Table 'donationTable' inizializzata");
+        } else {
+            System.out.println("Tabella 'donationTable' già esistente");
+        }
     }
 
 }

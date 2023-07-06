@@ -20,7 +20,7 @@ public class GestoreFrasi extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-
+        System.out.println("Dentro GestoreFrasi");
         // prendo dal DataBase le frasi e citazioni da mostrare
         Connection conn = connect.connectdb();
         fm = new FrasiModel(conn);
@@ -47,7 +47,7 @@ public class GestoreFrasi extends HttpServlet {
             out.println(contenuto);
             out.flush();
 
-        }catch (IOException | JSONException ex){
+        }catch (IOException ex){
             System.out.println("(GestoreFrasi) Errore - " + ex);
             response.sendRedirect("error.html");
         }

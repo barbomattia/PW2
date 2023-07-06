@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="PW2:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/PW2_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="PW2" />
+          <element id="library" level="application" name="highcharts" />
+          <element id="library" level="application" name="ionicons" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../../../../../../../Java/db-derby-10.14.2.0-bin/lib/derbyclient.jar" />
+          <element id="library" level="project" name="apache.derby" />
+          <element id="library" level="project" name="Maven: org.json:json:20230227" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyclient:10.14.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbytools:10.14.2.0" />
+          <element id="library" level="project" name="guicedee.services.jakarta.mail" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="PW2/web/Web" />
+    </root>
+  </artifact>
+</component>

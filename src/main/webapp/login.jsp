@@ -10,13 +10,16 @@
                 <h2>Login</h2>
                 <div class="inputlogin">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" required value="admin" name="username" id="loginUsername">
+                    <input type="text" required value="barbo02" name="username" id="loginUsername">
                     <label>Username</label>
-                    <!-- <input type="text" placeholder="Inserire l'Username" name="username" id="loginUsername" value="admin"/> -->
+                    <!--
+                        <input type="text" required value="admin" name="username" id="loginUsername">
+                        <input type="password" required value="21Adm1n!" name="password" id="loginPassword">
+                     -->
                 </div>
                 <div class="inputlogin">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" required value="21Adm1n!" name="password" id="loginPassword">
+                    <input type="password" required value="rinoGattuso" name="password" id="loginPassword">
                     <label>Password</label>
                     <!-- <input type="password" placeholder="Inserire la Password" name="password" id="loginPassword" value="admin"/> -->
                 </div>

@@ -38,7 +38,6 @@ function controllaCampi(){
     return check;
 }
 
-
 function isMaggiorenne(){
     let dataDiNascita = new Date(document.getElementById("idDataDiNascita").value);
     let eta = new Date() - dataDiNascita;
