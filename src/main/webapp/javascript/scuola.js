@@ -1,4 +1,5 @@
 var myBottonCards = document.getElementsByClassName("bottoneCard");
+var section = document.getElementsByTagName("section")[0];
 
 // Aggiungo il listener del click
 for (let myBottonCard of myBottonCards) {
@@ -7,24 +8,22 @@ for (let myBottonCard of myBottonCards) {
 
 function popUpTesto(e){
 
-    /* salvo il main tag della pagina scuola mediante il suo id */
-    let navDom = document.getElementById("main-scuola")
-
     /* Scelgo quale testo mostrare in base a che bottone premo*/
-    let indicatoreTesto = e.target.getAttribute("testo")        //prendo dall'attributo testo del bottone cliccato l'indicatore di quale testo mostrare
-    let testoDescrizione = setDescrizione(indicatoreTesto)                  //funziona che ritorna effettivamente il testo in base all'indicatore di testo passato
+    indicatoreTesto = e.target.getAttribute("testo")        //prendo dall'attributo testo del bottone cliccato l'indicatore di quale testo mostrare
+    testoDescrizione = setDescrizione(indicatoreTesto)                  //funziona che ritorna effettivamente il testo in base all'indicatore di testo passato
+
+    // definisco la nuova finestra di descrizione del corso
+    finestra = document.createElement("div")            // crea il div contenente la nuova finestra, creo un tag div
+    descrizione = document.createTextNode(testoDescrizione)     // definisco il testo da inserire nel nuovo div
+    finestra.appendChild(descrizione);                              // inserisco il testo nel div
 
 
     /* controlla se ci sono già delle finestre corso a schermo */
-    if(document.getElementsByClassName("descrizioneCorso").length != 0){        //controllo che l'arrey ritornato da getClassName non sia vuoto
+    if(section.getElementsByClassName("descrizioneCorso").length != 0){        //controllo che l'arrey ritornato da getClassName non sia vuoto
         finestraPrec = document.getElementsByClassName("descrizioneCorso")[0];  //prendo il primo elemento ( e teoricamente unico ) elemento di classe descrizioneCorso
-        navDom.removeChild(finestraPrec)                                                  //rimozione elemento precedente
+        section.removeChild(finestraPrec)                                                  //rimozione elemento precedente
     }
 
-    // definisco la nuova finestra di descrizione del corso
-    let finestra = document.createElement("div")            // crea il div contenente la nuova finestra, creo un tag div
-    let descrizione = document.createTextNode(testoDescrizione)     // definisco il testo da inserire nel nuovo div
-    finestra.appendChild(descrizione);                              // inserisco il testo nel div
 
 
     /* definisco la classe del div per definire il CSS della finestra*/
@@ -41,11 +40,9 @@ function popUpTesto(e){
         finestra.setAttribute("class","descrizioneCorso  sfondoVerde")
     }
 
-    finestra.setAttribute("setMargin","true")
-
 
     // aggiungo la finestra cosi definita nel main scuola, essa sara aggiunta in coda
-    navDom.appendChild(finestra);
+    section.appendChild(finestra);
 }
 
 function setDescrizione(testo){

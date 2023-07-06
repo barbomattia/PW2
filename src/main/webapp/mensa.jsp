@@ -14,7 +14,12 @@
         <div class="row">
             <div class="col">
                 <h1>Mensa</h1>
-                <p>Il servizio mensa fornisce agli studenti del nostro istituto ogni giorno il pranzo. Questo servizio è fondamentale infatti oltre a toglie dalle spalle delle famiglie un pasto giornaliero; assicura un pasto ricco ed equilibrato a tutti i scolari. Da qualche hanno la mesa ha attivato una iniziativa con un forno locale che permette di fornire ai ragazzi pane fresco di giornata.
+                <p>
+                    Riconosciamo che una corretta alimentazione svolge un ruolo cruciale nel benessere e nella crescita dei ragazzi.
+                    Pertanto, collaboriamo strettamente con fornitori locali per garantire l'approvvigionamento di ingredienti freschi come pane e verdure.
+                    Ci sforziamo di garantire ad ogni ragazzo un pasto sicuro, di qualità ed equilibranto che non sempre le famiglie riescono a fornirgli.
+                    Il nostro obiettivo è quello di assicurare che ogni bambino riceva una nutrizione adeguata durante il loro tempo a scuola,
+                    contribuendo così al loro benessere complessivo e al loro successo accademico.
                 </p>
             </div>
             <div class="col">

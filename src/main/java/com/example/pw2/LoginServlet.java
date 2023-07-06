@@ -56,6 +56,14 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("mail", rs.getString("MAIL"));
                 currentSession.setAttribute("phone_number", rs.getString("PHONE_NUMBER"));
 
+                //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti
+                Cookie nome_cognome = new Cookie("nome_cognome",currentSession.getAttribute("name").toString() +  currentSession.getAttribute("surname").toString());
+                Cookie mail = new Cookie("mail", currentSession.getAttribute("mail").toString());
+                nome_cognome.setMaxAge(5*60);   // stessa età della sessione
+                mail.setMaxAge(5*60);
+                response.addCookie(nome_cognome);
+                response.addCookie(mail);
+
 
                 currentSession.setMaxInactiveInterval(5*60);    //cinque minuti e poi elimina la sessione automaticamente
                 //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);

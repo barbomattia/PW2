@@ -1,5 +1,5 @@
 .cover{
-    background-image: linear-gradient(rgba(100,100,100,0.7),rgba(100,100,100,0.7)), url("../Images/ragazzi1Home.jpg");
+    background-image: linear-gradient(rgba(100,100,100,0.7),rgba(100,100,100,0.7)), url("../Images/Attivita/Attivita.jpg");
 }
 
 #rigaAttivita{
@@ -34,21 +34,38 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    transition: opacity 0.2s;
+    transition: opacity 0.5s;
     opacity: 0;
 }
 
-.cardInfoSel{
+.cardInfoSel {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,100), rgba(0,0,0,0) 80%);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    transition: opacity 0.2s;
+    transition: opacity 0.5s;
     opacity: 1;
 }
+
+[attivita = "scuola"]{
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 50%);
+}
+
+
+[attivita = "navetta"]{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0c7 100%);
+}
+
+
+[attivita = "mensa"]{
+    background-color: #52b69a;
+    background-image: linear-gradient(160deg, #52b69a 0%, #2AF598 100%);
+}
+
 
 .cardInfoText{
     color: white;

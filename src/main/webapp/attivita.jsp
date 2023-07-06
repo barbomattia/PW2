@@ -15,23 +15,22 @@
         <div class="row-singola">
             <h1>Attivita'</h1>
             <p>
-                descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione
-                descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione
-                descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione
-                descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione
-                descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione
-                descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione descrizione
+                Attraverso le nostre tre principali attività, scuola, servizio navette scolastiche e servizio mensa della navetta, ci dedichiamo con determinazione a fornire un aiuto concreto e tangibile.
+                Sappiamo che una comunità prospera e inclusiva si basa su un'istruzione di qualità accessibile a tutti. Pertanto, la nostra scuola è un pilastro fondamentale del nostro impegno educativo.
+                Crediamo che ogni bambino meriti l'opportunità di sviluppare appieno le proprie capacità e di realizzare i propri sogni, indipendentemente dalla loro situazione economica.
+                Nella nostra scuola, creiamo un ambiente accogliente e stimolante, con insegnanti qualificati che si dedicano con passione all'educazione dei nostri studenti.
             </p>
         </div>
 
         <div id="rigaAttivita">
             <a href="scuola.jsp" class="noSottolineatura">
                 <div class="card" style="background-image: url('Images/Attivita/Scuola.jpg')">
-                    <div class="cardInfo">
+                    <div class="cardInfo" attivita="scuola">
                         <h3 class="cardInfoText"> SCUOLA </h3>
                         <p class="cardInfoText">
-                            DESCRIZIONE SCUOLA/DESCIZIONE SCUOLA/DESCRIZIONE SCUOLA/DESCIZIONE SCUOLA/DESCRIZIONE SCUOLA/
-                            DESCRIZIONE SCUOLA/DESCIZIONE SCUOLA/DESCRIZIONE SCUOLA/DESCIZIONE SCUOLA/DESCRIZIONE SCUOLA/
+                            Sappiamo che l'istruzione è fondamentale per il futuro di ogni individuo, ma purtroppo molte
+                            famiglie non possono permettersi di garantire ai propri figli un'educazione adeguata.
+                            Da qui nasce il nostro programma scolatico gratuito.
                         </p>
                     </div>
                 </div>
@@ -39,11 +38,11 @@
 
             <a href="${pageContext.request.contextPath}/GestoreDonazioniNavetta" methods="GET" class="noSottolineatura">
                 <div class="card" style="background-image: url('Images/Attivita/School-Bus.jpg')">
-                    <div class="cardInfo">
+                    <div class="cardInfo" attivita="navetta">
                         <h3 class="cardInfoText"> BUS </h3>
                         <p class="cardInfoText">
-                            DESCRIZIONE BUS/DESCIZIONE BUS/DESCRIZIONE BUS/DESCIZIONE BUS/DESCRIZIONE BUS/DESCIZIONE BUS/
-                            DESCRIZIONE BUS/DESCIZIONE BUS/DESCRIZIONE BUS/DESCIZIONE BUS/DESCRIZIONE BUS/DESCIZIONE BUS/
+                            Sappiamo che molti ragazzi abitano a lunghe distanze dalla scuola, loro non hanno accesso a
+                            mezzi di trasporto affidabili. Per questo motivo, mettiamo a disposizione per i ragazzi un servizio di navette
                         </p>
                     </div>
                 </div>
@@ -51,11 +50,11 @@
 
             <a href="mensa.jsp" class="noSottolineatura">
                 <div class="card" style="background-image: url('Images/Attivita/Mensa.jpg')">
-                    <div class="cardInfo">
+                    <div class="cardInfo" attivita="mensa">
                         <h3 class="cardInfoText"> MENSA </h3>
                         <p class="cardInfoText">
-                            DESCRIZIONE MENSA/DESCIZIONE MENSA/DESCRIZIONE MENSA/DESCIZIONE MENSA/DESCRIZIONE MENSA/DESCIZIONE MENSA/
-                            DESCRIZIONE MENSA/DESCIZIONE MENSA/DESCRIZIONE MENSA/DESCIZIONE MENSA/DESCRIZIONE MENSA/DESCIZIONE MENSA/
+                            Riconosciamo l'importanza di una corretta alimentazione per il benessere e la crescita dei bambini. Pertanto, forniamo
+                            pasti equilibrati e nutrienti ai bambini che frequentano la nostra squola.
                         </p>
                     </div>
                 </div>
