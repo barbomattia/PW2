@@ -46,7 +46,7 @@
             <div id="centra-form">
                 <div class="spazio"></div>
 
-                <form id="formRicontattami" onsubmit="inviaMail()" onreset="over_reset()">
+                <form id="formRicontattami"  onreset="over_reset()">
                     <div class="inputricontattami">
                         <label id="lable_nome_cognome" for="nome_cognome" class="lable">Nome e cognome</label>
                         <input type="text" name="nome_cognome" id="nome_cognome" placeholder="nome cognome" class="input">
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="inputricontattami bottoniform">
-                        <button onclick="inviaMail()"> INVIA </button>
+                        <button type="button" onclick="inviaMail()"> INVIA </button>
                         <button type="reset"> RESET </button>
                     </div>
                 </form>
