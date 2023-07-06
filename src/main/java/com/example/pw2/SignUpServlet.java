@@ -38,6 +38,7 @@ public class SignUpServlet extends HttpServlet {
             ps.setString(8, request.getParameter("phone_number"));
 
             if(ps.executeUpdate() > 0){
+
                 //response.sendRedirect("login.jsp");
                 // Genera il codice JavaScript per il popup
                 String popupScript = "<script>"

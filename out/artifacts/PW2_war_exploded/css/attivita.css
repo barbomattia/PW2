@@ -1,0 +1,77 @@
+.cover{
+    background-image: linear-gradient(rgba(100,100,100,0.7),rgba(100,100,100,0.7)), url("../Images/ragazzi1Home.jpg");
+}
+
+#rigaAttivita{
+    width: 100%;
+    display: grid; /* per mettere le carte in orizontale uso una griglia */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* per accentrare le cards*/
+    grid-gap: 20px;
+    margin: 40px 0px;
+}
+
+.card{
+    width: 300px;
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    margin: 0 auto;
+
+    background-size: cover;
+    background-position: center center;
+
+    overflow: hidden;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.5);
+}
+
+.noSottolineatura{
+    text-decoration: none;
+}
+
+.cardInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: opacity 0.2s;
+    opacity: 0;
+}
+
+.cardInfoSel{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,100), rgba(0,0,0,0) 80%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: opacity 0.2s;
+    opacity: 1;
+}
+
+.cardInfoText{
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 400px){ /* CSS che si attiva solo quando lo schermo è più stretto di 400 px */
+    #rigaAttivita{
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* per accentrare le cards*/
+    }
+
+    .card{
+        width: 90%;
+    }
+}
+
+@media (hover: none){ /* quando noi usiamo mobile non abbiamo il cursore e quindi la funzione di hover */
+    .cardInfo{
+        opacity: 1;
+    }
+}
+
+
+
