@@ -2,6 +2,7 @@
 
 <main id="mainSimpOrAd">
 
+    <link rel="stylesheet" type="text/css" href="css/struttura.css">
     <link rel="stylesheet" type="text/css" href="css/${role}.css">
 
     <h1 class="classSimpOrAd">Area ${role}, utente ${username} - id = ${id}</h1>

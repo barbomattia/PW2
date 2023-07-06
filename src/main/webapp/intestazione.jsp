@@ -60,7 +60,43 @@
                 <li> <a href="contatti.jsp"> Contatti</a> </li>
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
+                <li> <a class="profilo" href="#" onclick="toggleMenu()"> profilo</a>
             </ul>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="Images/user.png">
+                        <h3>nome utente</h3>
+                    </div>
+                    <hr>
+                    <a href="profilo.jsp" class="sub-menu-link">
+                        <img src="Images/settings.png">
+                        <p>Profilo</p>
+                        <img src="Images/angle-small-right.png" class="freccia">
+                    </a>
+                    <a href="donazioni.jsp" class="sub-menu-link">
+                        <img src="Images/heart.png">
+                        <p>Donazioni</p>
+                        <img src="Images/angle-small-right.png" class="freccia">
+                    </a>
+                    <a href="iscrizioni.jsp" class="sub-menu-link">
+                        <img src="Images/star.png">
+                        <p>Iscriviti</p>
+                        <img src="Images/angle-small-right.png" class="freccia">
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="Images/sign-out-alt.png">
+                        <p>Logout</p>
+                        <img src="Images/angle-small-right.png" class="freccia">
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="Images/trash.png">
+                        <p>Elimina account</p>
+                        <img src="Images/angle-small-right.png" class="freccia">
+                    </a>
+                </div>
+            </div>
 
             <div class="icon_hamburger">
                 <div class="el1"></div>
@@ -69,5 +105,5 @@
             <script type="text/javascript" src="javascript/intestazione.js"></script>
 
         </nav>
-
     </div>
+
