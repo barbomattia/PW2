@@ -1,3 +1,76 @@
+
+.lista{
+    position: absolute;
+    left: 25%;
+    padding: 20px 0;
+    background: white;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.lista .elemento{
+    list-style: none;
+    text-align: center;
+    display: block;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+.lista .elemento:last-child{
+    border-right: none;
+}
+.lista .elemento a{
+    text-decoration: none;
+    padding: 0 50px;
+    display: block;
+}
+.lista .elemento a .icon{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto 10px;
+}
+.lista .elemento a .icon ion-icon{
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 34px;
+    transition: 0.5s;
+    color: black;
+}
+.lista .elemento a .icon ion-icon:last-child{
+    color: rgb(88, 129, 87);
+}
+.lista .elemento a:hover .icon ion-icon{
+    transform: translateY(-100%);
+}
+.lista .elemento a .testo{
+    position: relative;
+    height: 20px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+.lista .elemento a .testo span{
+    display: block;
+    position: relative;
+    color: black;
+    font-size: 18px;
+    line-height: 20px;
+    transition: 0.5s;
+}
+.lista .elemento a .testo span:before{
+    content: attr(data-text);
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgb(88, 129, 87);
+}
+.lista .elemento a:hover .testo span{
+    transform: translateY(20px);
+}
+/*
 #mainSimpOrAd{
     background-color: rgb(88, 129, 87);
     background-color: cyan;
@@ -7,7 +80,7 @@
 
 .classSimpOrAd{
     width: 100%;
-    /*height: 100vh;*/
+
     background-color: rgb(88, 129, 87);
     display: flex;
     align-items: center;
@@ -51,8 +124,7 @@ a{
     color: white;
 }
 
-
-
+/*
 
 
 
