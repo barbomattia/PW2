@@ -55,14 +55,17 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("date_of_birth", rs.getDate("BIRTH"));
                 currentSession.setAttribute("mail", rs.getString("MAIL"));
                 currentSession.setAttribute("phone_number", rs.getString("PHONE_NUMBER"));
+                currentSession.setAttribute("logged",true);
 
-                //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti
-                Cookie nome_cognome = new Cookie("nome_cognome",currentSession.getAttribute("name").toString() +  currentSession.getAttribute("surname").toString());
-                Cookie mail = new Cookie("mail", currentSession.getAttribute("mail").toString());
-                nome_cognome.setMaxAge(5*60);   // stessa età della sessione
-                mail.setMaxAge(5*60);
-                response.addCookie(nome_cognome);
-                response.addCookie(mail);
+                //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti solo se l'utente ha consentito l'uso di cookie
+                if(checkCookiesAllowed(request)){
+                    Cookie nome_cognome = new Cookie("nome_cognome",currentSession.getAttribute("name").toString() +  currentSession.getAttribute("surname").toString());
+                    Cookie mail = new Cookie("mail", currentSession.getAttribute("mail").toString());
+                    nome_cognome.setMaxAge(5*60);   // stessa età della sessione
+                    mail.setMaxAge(5*60);
+                    response.addCookie(nome_cognome);
+                    response.addCookie(mail);
+                }
 
 
                 currentSession.setMaxInactiveInterval(5*60);    //cinque minuti e poi elimina la sessione automaticamente
@@ -86,4 +89,25 @@ public class LoginServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
+
+    // SE NON viene trovato il cookieAllow o se è settato false ritorno false
+    boolean checkCookiesAllowed(HttpServletRequest request){
+
+        boolean consenso = false;
+
+        Cookie[] cookies = request.getCookies();
+        for ( int i=0; i<cookies.length; i++) {
+            Cookie cookie = cookies[i];
+            if (cookie.getName().equals("cookieAllow")) {
+                if( cookie.getValue().equals("true") ){
+                    consenso=true;
+                }
+            }
+        }
+
+        return consenso;
+    }
+
 }
+

@@ -8,4 +8,15 @@
         <welcome-file>home.jsp</welcome-file>
     </welcome-file-list>
 
+    <filter>
+        <filter-name>FilterCheckLogin</filter-name>
+        <filter-class>com.example.pw2.FilterCheckLogin</filter-class>
+        <description>Controlla se l'utente è loggato e lo ridezione alla pagina corretta</description>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>FilterCheckLogin</filter-name>
+        <url-pattern>/login.jsp</url-pattern>
+    </filter-mapping>
+
 </web-app>

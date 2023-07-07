@@ -13,6 +13,8 @@ hamburger.addEventListener("click", function (){
     }
 } )
 
+
 function toggleMenu(){
-    subMenu.classList.toggle("open-menu");
+
+    //subMenu.classList.toggle("open-menu");
 }
