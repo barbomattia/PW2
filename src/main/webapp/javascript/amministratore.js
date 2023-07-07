@@ -11,10 +11,7 @@ function elencaUtenti(richiesta){
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/PW2_war_exploded/GetUtentiServlet?categoriaCercata="+richiesta, true);
     xhr.onreadystatechange = function() {
-        console.log("Dentro function");
         if (xhr.readyState === 4 && xhr.status === 200) {
-
-            console.log("Dentro if");
 
             var risposta = xhr.responseText;
             var elenco = JSON.parse(risposta);
@@ -127,50 +124,101 @@ function creaGraficoPagineVisitate(pageVisits) {
     });
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Ottengo i dati dal server e li visualizzo
 function getDonazioni() {
-    $.ajax({
-        url: 'GrafoDonazioniServlet',
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            var donations = data.donations;
+
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = "json";
+    xhr.open("GET", "/PW2_war_exploded/GetDonazioniServlet", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            var donazioniDenaroTot = this.response.donazioniDenaroTot;
+            var donazioniEffettuateTot = this.response.donazioniEffettuateTot;
+            var donatoriTot = this.response.donatoriTot;
+
+            var donazioniDenaroCurrentYear = this.response.donazioniDenaroCurrentYear;
+            var donazioniEffettuateCurrentYear = this.response.donazioniEffettuateCurrentYear;
+            var donatoriCurrentYear = this.response.donatoriCurrentYear;
+
+            console.log("Donazioni denaro tot = " + donazioniDenaroTot);
+            console.log("Donazioni denaro cy = " + donazioniDenaroCurrentYear);
 
             //Crea grafico donazioni mese per mese
-            graficoDonazioni(donations);
-        },
-        error: function() {
-            console.log('Errore durante la richiesta dei dati delle donazioni.');
+            graficoDonazioni(donazioniDenaroTot, donazioniEffettuateTot, donatoriTot, donazioniDenaroCurrentYear, donazioniEffettuateCurrentYear, donatoriCurrentYear);
         }
-    });
+    };
+    xhr.send();
 }
 
 //Crea grafico donazioni mese per mese
-function graficoDonazioni(donations) {
-    var chartData = [];
+function graficoDonazioni(donazioniDenaroTot, donazioniEffettuateTot, donatoriTot, donazioniDenaroCurrentYear, donazioniEffettuateCurrentYear, donatoriCurrentYear) {
 
-    for (var i = 0; i < donations.length; i++) {
-        chartData.push(donations[i]);
-    }
-
-    Highcharts.chart('idGraficoDonazioni', {
+    Highcharts.chart('idGraficoDonazioniDenaro', {
         chart: {
             type: 'line'
         },
         title: {
-            text: 'Grafico donazioni'
+            text: 'Denaro donato'
         },
         xAxis: {
             categories: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
         },
         yAxis: {
             title: {
-                text: 'Donazioni'
+                text: 'Denaro'
             }
         },
         series: [{
-            name: 'Donazioni',
-            data: chartData
+            name: "Denaro donato a partire dall'apertura del sito",
+            data: donazioniDenaroTot
+        },{
+            name: "Denaro donato nell'anno corrente",
+            data: donazioniDenaroCurrentYear
+        }
+        ]
+    });
+
+    Highcharts.chart('idGraficoDonazioniEffettuate', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Donazioni effettuate'
+        },
+        xAxis: {
+            categories: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+        },
+        yAxis: {
+            title: {
+                text: 'Quantità'
+            }
+        },
+        series: [{
+            name: "Donazioni effettuate dall'apertura del sito",
+            data: donazioniEffettuateTot
+        },{
+            name: "Donazioni effettuate quest'anno",
+            data: donazioniEffettuateCurrentYear
+        },{
+            name: "Donatori dall'apertura del sito",
+            data: donatoriTot
+        },{
+            name: "Donatori di quest'anno",
+            data: donatoriCurrentYear
         }]
     });
 }
