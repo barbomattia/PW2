@@ -61,52 +61,19 @@
     </div>
   </div>
 
+  <br>
+  <br>
+
   <h2>Numero di Visite</h2>
   <div id="nVisite"></div>
   <h2>Istogramma visite</h2>
   <div id="idIstogrammaVisite"></div>
-  <h2>Grafico donazioni</h2>
-  <div id="idGraficoDonazioni"></div>
+  <h2>Grafico denaro donato</h2>
+  <div id="idGraficoDonazioniDenaro"></div>
 
+  <h2>Grafico numero donazioni effettuate</h2>
+  <div id="idGraficoDonazioniEffettuate"></div>
 
-
-  <br>
-  <br>
-  <!--
-  <div id="graficoNumeroVisite" style="width: 100%; height: 350px;">
-
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      console.log("ci siamo")
-      const chart = Highcharts.chart('graficoNumeroVisite', {
-        chart: {
-          type: 'spline'
-        },
-        title: {
-          text: 'Elenco visitatori'
-        },
-        xAxis: {
-          //categories: ['Utenti', 'Simpatizzanti', 'Aderenti']
-          text: 'Tempo'
-        },
-        yAxis: {
-          title: {
-            text: 'Utenti'
-          }
-        },
-        series: [{
-          name: 'Simpatizzanti',
-          data: [1, 0, 4]
-        }, {
-          name: 'Aderenti',
-          data: [5, 7, 3]
-        }]
-      });
-    });
-  </script>
--->
   <br>
 
   <div class="classSimpOrAd">
@@ -118,6 +85,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="./javascript/amministratore.js" onload="caricaGrafi()"></script>
+
+  <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('amministratore.jsp')"></script>
 
   <br>
   <br>

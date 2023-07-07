@@ -105,8 +105,9 @@ public class connect {
                 ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'barbo02', 'rinoGattuso', 'aderente', 'Mattia', 'Barborini', '2002-02-08', 'mattia@barborini.it', '+39 331 136 7911')");
                 ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'griso02', 'bruttoGesto', 'aderente', 'Matteo', 'Grisenti', '2002-07-04', 'matteo@grisenti.com', '+39 347 797 5317')");
                 ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'murru02', 'ilSardo', 'simpatizzante', 'Marco', 'Murru', '2002-09-24', 'marco@murru.eja', '+39 346 573 5655')");
-                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'ema', 'ema02', 'simpatizzante', 'Emanuele', 'Munzone', '2002-04-25', 'ema@munzone.mc', '+39 351 380 9167')");
-                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'jade', 'laSarda', 'aderente', 'Giada', 'Marongiu', '2002-04-01', 'giada@marongiu.mc', '+39 366 990 4869')");
+                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'ema', 'ema02', 'simpatizzante', 'Emanuele', 'Munzone', '2002-04-25', 'ema@munzone.mc', '+39 317 980 2121')");
+                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'jade', 'laSarda', 'aderente', 'Giada', 'Marongiu', '2002-04-01', 'giada@marongiu.mc', '+39 316 971 2069')");
+                ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'saraLeo', 'sat', 'simpatizzante', 'Sara', 'Leonardelli', '2003-11-27', 'sara@leonardelli.mc', '+39 329 496 1990')");
                 ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'tipoTimido1', 'tt1', 'simpatizzante', 'Tipo', 'Timido', '2000-01-01', 'tipo@timido.com', '+39 333 333 3333')");
                 ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'tipoTimido2', 'tt2', 'simpatizzante', 'Tipo', 'Timido', '2000-01-01', 'tipo@timido.com', '+39 333 333 3333')");
                 ps.executeUpdate("INSERT INTO LOGINTABLE VALUES (DEFAULT, 'tipoTimido3', 'tt3', 'simpatizzante', 'Tipo', 'Timido', '2000-01-01', 'tipo@timido.com', '+39 333 333 3333')");
@@ -143,13 +144,18 @@ public class connect {
 
             try {                                           // Inizializzo la tabella
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 1, 'admin', '2023-07-04', 10000, 'Fondo base')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-02-20', 50, 'Quota per iscriversi')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-20', 100, 'Donazione 1')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-21', 100, 'Donazione 2')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2023-02-22', 50, 'Quota per iscriversi')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 4, 'murru02', '2023-02-22', 50, 'Quota per iscriversi')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-02-20', 350, 'Quota per iscriversi')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-20', 500, 'Donazione 1')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-21', 500, 'Donazione 2')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2003-02-22', 350, 'Quota per iscriversi')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 4, 'murru02', '2023-02-22', 350, 'Quota per iscriversi')");
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 5, 'ema', '2002-04-25', 9167, 'Iscrizione')");
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 6, 'jade', '2002-04-01', 4869, 'Iscrizione')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 7, 'saraLeo', '2003-01-01', 1000, 'Iscrizione')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 7, 'saraLeo', '2013-01-01', 1000, 'Nuova iscrizione')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2012-11-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2022-11-01', 350, 'Rinnovo')");
+
 
             } catch (SQLException e) {
                 System.out.println("Errore inizializzazione donationTable" + e);
@@ -158,6 +164,12 @@ public class connect {
             System.out.println("Table 'donationTable' inizializzata");
         } else {
             System.out.println("Tabella 'donationTable' già esistente");
+        }
+
+        if(!isTableExists(connection, "COUNTERPAGETABLE")){
+            String queryCreazione = "CREATE TABLE COUNTERPAGETABLE (NOME_PAGINA VARCHAR(100), COUNTER INTEGER)"; //query per creare la tabella
+            ps = connection.createStatement();              // creo la query
+            ps.executeUpdate(queryCreazione);               // eseguo la query
         }
     }
 
