@@ -32,11 +32,28 @@ public class FilterCheckLogin implements Filter {
 
         if(isLoggedIn){
             //System.out.println(session.getAttribute("role").toString());
+
+            String encodedURL ="";
+
+            httpRequest.setAttribute("id",session.getAttribute("id"));
+            httpRequest.setAttribute("username",session.getAttribute("username"));
+            httpRequest.setAttribute("role",session.getAttribute("role"));
+            httpRequest.setAttribute("name",session.getAttribute("name"));
+            httpRequest.setAttribute("surname",session.getAttribute("surname"));
+            httpRequest.setAttribute("date_of_birth",session.getAttribute("date_of_birth"));
+            httpRequest.setAttribute("mail",session.getAttribute("mail"));
+            httpRequest.setAttribute("phone_number",session.getAttribute("phone_number"));
+
             if(session.getAttribute("role").toString().equals("amministratore")){
-                httpResponse.sendRedirect("amministratore.jsp");
+                encodedURL = "amministratore.jsp";
             } else {
-                httpResponse.sendRedirect("simpOrAd.jsp");
+                encodedURL ="simpOrAd.jsp";
             }
+
+            RequestDispatcher requestDispatcher;
+            requestDispatcher=httpRequest.getRequestDispatcher(encodedURL);
+            requestDispatcher.forward(httpRequest, httpResponse);
+            
         }else{
             chain.doFilter(request,response);
         }

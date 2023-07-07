@@ -66,7 +66,7 @@
                 <li> <a href="attivita.jsp"> Attività</a> </li>
                 <li> <a href="contatti.jsp"> Contatti</a> </li>
                 <%if(loggedIn){ %>
-                <li> <a href=<%=hrefRole%>>Profilo</a> </li>
+                <li> <a href="login.jsp">Profilo</a> </li>
                 <li> Log-out </li>
                 <%}else { %>
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
