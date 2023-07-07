@@ -57,11 +57,24 @@
         <div class="row">
             <form action="#" method="get">
                 <label>Scarica qui il nostro volantino</label>
-                <button class="button-standard" type="submit">Download</button>
+                <button class="button-standard" type="submit" onclick="download()">Download</button>
             </form>
         </div>
     </section>
 
+    <script>
+        function download(){
+            const a = document.createElement("a");
+
+            a.href = "Images/Volantino.pdf";
+            a.download = "";
+            a.style.display = "none";
+
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
     <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('home.jsp')"></script>
 
 </main>
