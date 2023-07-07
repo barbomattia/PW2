@@ -1,12 +1,12 @@
 
 function elencaUtenti(richiesta){
 
-    console.log("Richiesta = " + richiesta);
+    //console.log("Richiesta = " + richiesta);
 
     let popup = document.getElementById("idPopup_"+richiesta);
     popup.classList.add("open-popup");
 
-    console.log("Invoco la get");
+    //console.log("Invoco la get");
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/PW2_war_exploded/GetUtentiServlet?categoriaCercata="+richiesta, true);
@@ -16,7 +16,7 @@ function elencaUtenti(richiesta){
             var risposta = xhr.responseText;
             var elenco = JSON.parse(risposta);
 
-            // elemento <tbody> di <table>
+            //elemento <tbody> di <table>
             var tbody = document.getElementById("idElenco_"+richiesta);
             tbody.textContent = "";
             elenco.forEach(function(elemento) {
@@ -72,45 +72,45 @@ function chiudiElencaUtenti(richiesta){
     popup.classList.remove("open-popup");
 }
 
-
-
 //Questa funzione permette di ottenere i dati delle visite dal server e poi visualizzarli a schermo
 function getVisite() {
-    $.ajax({
-        url: 'VisualizzaVisiteServlet',       //Invoco la servlet
-        type: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            var nVisite = data.nVisite;
-            var pagineVisitate = data.pagineVisitate;
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = "json";
+    xhr.open("POST", "/PW2_war_exploded/PagineVisitateServlet", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var nomi = this.response.nomi;
+            var numeroDiVisite = this.response.numeroDiVisite;
 
-            $('#nVisite').text('Numero di visite totali: ' + nVisite);
+            console.log("Nomi: " + nomi);
+            console.log("Numero di visite: " + numeroDiVisite)
 
-            creaGraficoPagineVisitate(pagineVisitate);
-        },
-        error: function() {
-            console.log('Errore durante la richiesta dei dati delle visite.');
+            creaGraficoPagineVisitate(nomi, numeroDiVisite);
+
         }
-    });
+    };
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("action=visualizza");
 }
 
 //Creazione dell'istogramma
-function creaGraficoPagineVisitate(pageVisits) {
-    var chartData = [];
+function creaGraficoPagineVisitate(nomi, numeroDiVisite) {
 
-    for (var page in pageVisits) {
-        chartData.push({ name: page, y: pageVisits[page] });
-    }
+    let totVisite = 0;
+
+    numeroDiVisite.forEach(function (x){
+        totVisite+=x;
+    });
 
     Highcharts.chart('idIstogrammaVisite', {
         chart: {
             type: 'column'
         },
         title: {
-            text: 'Istogramma visite'
+            text: 'Istogramma visite - totale: ' + totVisite
         },
         xAxis: {
-            type: 'Pagina visitata'
+            categories: nomi
         },
         yAxis: {
             title: {
@@ -118,18 +118,19 @@ function creaGraficoPagineVisitate(pageVisits) {
             }
         },
         series: [{
-            name: 'Pagina',
-            data: chartData
+            name: 'Visite',
+            data: numeroDiVisite
         }]
     });
 }
 
-
-
-
-
-
-
+function resetVisite(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/PW2_war_exploded/PagineVisitateServlet", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("action=reset");
+    location.reload();
+}
 
 
 
@@ -154,8 +155,8 @@ function getDonazioni() {
             var donazioniEffettuateCurrentYear = this.response.donazioniEffettuateCurrentYear;
             var donatoriCurrentYear = this.response.donatoriCurrentYear;
 
-            console.log("Donazioni denaro tot = " + donazioniDenaroTot);
-            console.log("Donazioni denaro cy = " + donazioniDenaroCurrentYear);
+            //console.log("Donazioni denaro tot = " + donazioniDenaroTot);
+            //console.log("Donazioni denaro cy = " + donazioniDenaroCurrentYear);
 
             //Crea grafico donazioni mese per mese
             graficoDonazioni(donazioniDenaroTot, donazioniEffettuateTot, donatoriTot, donazioniDenaroCurrentYear, donazioniEffettuateCurrentYear, donatoriCurrentYear);

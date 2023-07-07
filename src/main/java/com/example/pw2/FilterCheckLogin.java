@@ -25,12 +25,19 @@ public class FilterCheckLogin implements Filter {
         boolean isLoggedIn = false;
 
         if(session != null ){
-            isLoggedIn= ( session.getAttribute("logged") != null);
+            isLoggedIn  = (session.getAttribute("logged") != null);
         }else{
             isLoggedIn = false;
         }
 
         if(isLoggedIn){
+            System.out.println("-----------------------------------------");
+            System.out.println("-----------------------------------------");
+            System.out.println("-----------------------------------------");
+            System.out.println("username = " + session.getAttribute("username"));
+            System.out.println("-----------------------------------------");
+            System.out.println("-----------------------------------------");
+            System.out.println("-----------------------------------------");
             //System.out.println(session.getAttribute("role").toString());
 
             String encodedURL ="";

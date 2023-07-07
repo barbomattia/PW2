@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 
 @WebServlet(name = "LoginServlet", value = "/login")
@@ -99,9 +100,14 @@ public class LoginServlet extends HttpServlet {
 
             else {
                 //Torno alla pagina di login
-                System.out.println("Errore nel login, nessuna corrispondenza per: username=" + username + ", password=" + request.getParameter("password"));
-                response.sendRedirect("login.jsp");
+                String popupScript = "<script> alert('21: Account inesistente'); window.location.href = 'login.jsp'; </script>";
+                response.setContentType("text/html");
+                PrintWriter out = response.getWriter();
+                out.println(popupScript);
             }
+
+
+
         } catch (SQLException e) {
             System.out.println("Errore: " + e);
             throw new RuntimeException(e);

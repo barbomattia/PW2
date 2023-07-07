@@ -25,9 +25,7 @@
                     <ion-icon name="lock-closed-outline"></ion-icon>
                     <input type="password" required value="21Adm1n!" name="password" id="loginPassword">
                     <label>Password</label>
-                </div>
-                <div class="dimenticato">
-                    <a href="#">Password dimenticata</a>
+                    <button type="button" onclick="mostraOrNascondiPassword('loginPassword')">Mostra/Nascondi</button>
                 </div>
                 <button class="button-standard" type="submit">Login</button>
                 <div class="registrazione">
@@ -38,6 +36,7 @@
     </sectionLogin>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./javascript/signUp.js"></script>
 
     <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('login.jsp')"></script>
 

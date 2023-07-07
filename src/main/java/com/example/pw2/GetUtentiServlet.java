@@ -58,7 +58,7 @@ public class GetUtentiServlet extends HttpServlet {
             rs = ps.executeQuery();
 
             StringBuilder jsonBuilder = new StringBuilder("[");
-            System.out.println("Eseguo la query");
+
             boolean anotherOne = rs.next();
 
             while (anotherOne){
@@ -82,11 +82,8 @@ public class GetUtentiServlet extends HttpServlet {
             }
             jsonBuilder.append("]");
             String json = jsonBuilder.toString();
-            System.out.println("--------------------------Finito----------------------");
             response.setContentType("application/json");
             response.getWriter().write(json);
-
-            //------------DA FARE IN JS----------
 
 
         } catch (SQLException e) {
@@ -97,7 +94,6 @@ public class GetUtentiServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 
     }
 }

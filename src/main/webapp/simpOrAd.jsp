@@ -9,6 +9,7 @@
 
 
     <script>
+        console.log("Setto in localstorage i dati: ${id}, ${username} e ${role}")
         localStorage.setItem("id", "${id}");
         localStorage.setItem("username", "${username}");
         localStorage.setItem("role", "${role}");

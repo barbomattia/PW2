@@ -47,10 +47,12 @@
                     <div class="inputregistrazione">
                         <label>Password</label>
                         <input type="password" placeholder="Password" required name="password" id="idPassword1">
+                        <button onclick="mostraOrNascondiPassword('idPassword1')">Mostra/Nascondi</button>
                     </div>
                     <div class="inputregistrazione">
                         <label>Conferma Password</label>
                         <input type="password" placeholder="Conferma password" required id="idPassword2">
+                        <button type="button" onclick="mostraOrNascondiPassword('idPassword2')">Mostra/Nascondi</button>
                     </div>
                 </div>
 

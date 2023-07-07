@@ -64,10 +64,10 @@
   <br>
   <br>
 
-  <h2>Numero di Visite</h2>
-  <div id="nVisite"></div>
   <h2>Istogramma visite</h2>
   <div id="idIstogrammaVisite"></div>
+  <button type="button" onclick="resetVisite()">Reset dati</button>
+  <br>
   <h2>Grafico denaro donato</h2>
   <div id="idGraficoDonazioniDenaro"></div>
 

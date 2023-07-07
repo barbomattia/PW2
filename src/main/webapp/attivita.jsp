@@ -66,7 +66,7 @@
         </div>
     </section>
 
-    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('attività.jsp')"></script>
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('attivita.jsp')"></script>
 
 </main>
 

@@ -1,3 +1,12 @@
+function mostraOrNascondiPassword(id){
+    password = document.getElementById(id);
+    if(password.type === "password"){
+        password.type = "text";
+    }
+    else {
+        password.type = "password";
+    }
+}
 function controllaCampi(){
     let check = true;
     if(!isMaggiorenne()){
