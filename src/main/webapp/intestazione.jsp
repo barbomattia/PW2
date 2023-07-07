@@ -67,12 +67,12 @@
                 <li> <a href="contatti.jsp"> Contatti</a> </li>
                 <%if(loggedIn){ %>
                 <li> <a href="login.jsp">Profilo</a> </li>
-                <li> Log-out </li>
+                <li> <a href="${pageContext.request.contextPath}/logout"> Log-out</a> </li>
                 <%}else { %>
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
                 <%} %>
-                <!-- <li> <a class="profilo" href="simpOrAd.jsp" onclick="toggleMenu()"> profilo</a> -->
+
             </ul>
 
             <div class="sub-menu-wrap" id="subMenu">
