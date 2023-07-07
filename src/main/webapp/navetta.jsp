@@ -123,6 +123,8 @@
       </div>
   </div>
 
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('navetta.jsp')"></script>
+
 </main>
 
 <jsp:include page="footer.jsp"/>

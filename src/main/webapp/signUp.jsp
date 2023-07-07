@@ -113,6 +113,8 @@
     <script src="./javascript/signUp.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('signUp.jsp')"></script>
 </main>
 
 

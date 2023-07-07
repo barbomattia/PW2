@@ -8,6 +8,8 @@
 
 <main>
 
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('donazioni.jsp')"></script>
+
 </main>
 
 <jsp:include page="footer.jsp"/>

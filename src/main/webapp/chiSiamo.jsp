@@ -72,6 +72,7 @@
             <div class="spaziatura"></div>
        -->
 
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('chiSiamo.jsp')"></script>
 
 </main>
 

@@ -85,6 +85,8 @@
 
     </section>
 
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('scuola.jsp')"></script>
+
 </main>
 
 <jsp:include page="footer.jsp"/>

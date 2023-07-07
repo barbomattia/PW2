@@ -97,6 +97,7 @@
     <br>
     <script src="./javascript/simpOrAd.js"></script>
 
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('simpOrAd.jsp')"></script>
 
 </main>
 

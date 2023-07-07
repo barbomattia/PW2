@@ -31,8 +31,7 @@
 
     </section>
 
-
-
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('mensa.jsp')"></script>
 
 </main>
 

@@ -85,6 +85,7 @@
     </div>
 
     <script type="text/javascript" src="javascript/contatti.js"></script>
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('contatti.jsp')"></script>
 
 </main>
 

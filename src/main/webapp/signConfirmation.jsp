@@ -7,6 +7,8 @@
 </head>
 <body>
   <h1>La registrazione è avvenuta correttamente</h1>
+  <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('signConfirmation.jsp')"></script>
+
 </body>
 </html>
 
