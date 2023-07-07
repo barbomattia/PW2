@@ -16,7 +16,7 @@
 
     <filter-mapping>
         <filter-name>FilterCheckLogin</filter-name>
-        <url-pattern>/profilo.jsp</url-pattern>
+        <url-pattern>/login.jsp</url-pattern>
     </filter-mapping>
 
 </web-app>

@@ -60,7 +60,7 @@
                 <li> <a href="contatti.jsp"> Contatti</a> </li>
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
-                <li> <a class="profilo" href="profilo.jsp" onclick="toggleMenu()"> profilo</a>
+                <!-- <li> <a class="profilo" href="simpOrAd.jsp" onclick="toggleMenu()"> profilo</a> -->
             </ul>
 
             <div class="sub-menu-wrap" id="subMenu">

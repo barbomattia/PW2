@@ -38,7 +38,7 @@ public class FilterCheckLogin implements Filter {
                 httpResponse.sendRedirect("simpOrAd.jsp");
             }
         }else{
-            httpResponse.sendRedirect("login.jsp");
+            chain.doFilter(request,response);
         }
 
 
