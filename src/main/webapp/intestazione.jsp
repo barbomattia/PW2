@@ -1,5 +1,12 @@
+<%@ page import="javax.websocket.Session" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page session="false" %>
+
+<%-- Controllo se è loggato --%>
+<%  HttpSession session = request.getSession(false); %>
+<%  boolean loggedIn = false; String role=""; if(session!=null){ loggedIn = ( session.getAttribute("logged") != null); role=session.getAttribute("role").toString(); } %>
+<%  String hrefRole="#"; if(loggedIn){ hrefRole="simpOrAd.jsp"; }%>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,8 +65,13 @@
                 <li> <a href="chiSiamo.jsp"> Chi siamo</a> </li>
                 <li> <a href="attivita.jsp"> Attività</a> </li>
                 <li> <a href="contatti.jsp"> Contatti</a> </li>
+                <%if(loggedIn){ %>
+                <li> <a href=<%=hrefRole%>>Profilo</a> </li>
+                <li> Log-out </li>
+                <%}else { %>
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
+                <%} %>
                 <!-- <li> <a class="profilo" href="simpOrAd.jsp" onclick="toggleMenu()"> profilo</a> -->
             </ul>
 

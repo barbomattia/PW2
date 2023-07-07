@@ -1,17 +1,19 @@
 <jsp:include page="intestazione.jsp" />
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 
+
 <main id="mainSimpOrAd">
 
     <link rel="stylesheet" type="text/css" href="css/struttura.css">
     <link rel="stylesheet" type="text/css" href="css/${role}.css">
 
+
     <script>
-        console.log("Setto username e role");
         localStorage.setItem("id", "${id}");
         localStorage.setItem("username", "${username}");
         localStorage.setItem("role", "${role}");
     </script>
+
 
     <h1 class="classSimpOrAd">Area  <span id="idRuoloUtente"> ${role}</span>, utente ${username} - id = ${id}</h1>
 

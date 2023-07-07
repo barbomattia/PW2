@@ -1,6 +1,8 @@
 package com.example.pw2;
 
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -72,18 +74,29 @@ public class LoginServlet extends HttpServlet {
                 //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
 
 
-
-
+                String encodedURL="";
                 if(rs.getString("ROLE").equals("amministratore")){
-                    String encodedURL = response.encodeRedirectURL("amministratore.jsp");
-                    response.sendRedirect(encodedURL);
+                    encodedURL = response.encodeRedirectURL("amministratore.jsp");
                 }
                 else {
-                    String encodedURL = response.encodeRedirectURL("simpOrAd.jsp");
-                    response.sendRedirect(encodedURL);
+                    encodedURL = response.encodeRedirectURL("simpOrAd.jsp");
                 }
 
+
+                request.setAttribute("id",currentSession.getAttribute("id"));
+                request.setAttribute("username",currentSession.getAttribute("username"));
+                request.setAttribute("role",currentSession.getAttribute("role"));
+                request.setAttribute("name",currentSession.getAttribute("name"));
+                request.setAttribute("surname",currentSession.getAttribute("surname"));
+                request.setAttribute("date_of_birth",currentSession.getAttribute("date_of_birth"));
+                request.setAttribute("mail",currentSession.getAttribute("mail"));
+                request.setAttribute("phone_number",currentSession.getAttribute("phone_number"));
+
+                RequestDispatcher requestDispatcher;
+                requestDispatcher=request.getRequestDispatcher(encodedURL);
+                requestDispatcher.forward(request, response);
             }
+
             else {
                 //Torno alla pagina di login
                 System.out.println("Errore nel login, nessuna corrispondenza per: username=" + username + ", password=" + request.getParameter("password"));
@@ -91,6 +104,8 @@ public class LoginServlet extends HttpServlet {
             }
         } catch (SQLException e) {
             System.out.println("Errore: " + e);
+            throw new RuntimeException(e);
+        } catch (ServletException e) {
             throw new RuntimeException(e);
         }
     }
