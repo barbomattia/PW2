@@ -1,4 +1,5 @@
 <jsp:include page="intestazione.jsp" />
+<%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 
 <main id="mainSimpOrAd">
 

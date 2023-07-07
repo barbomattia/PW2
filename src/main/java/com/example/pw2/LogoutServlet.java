@@ -7,15 +7,31 @@ import java.io.IOException;
 
 @WebServlet(name = "LogoutServlet", value = "/logout")
 public class LogoutServlet extends HttpServlet {
+
+    ModelCookies mc;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        //Rimuovo i Session Cookie
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for(Cookie cookie : cookies) {
+                if (cookie.getName().equals("JSESSIONID")) {
+                    System.out.println("JSESSIONID=" + cookie.getValue());
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+            }
+        }
+
         HttpSession session = request.getSession(false);
         if(session != null){
             session.invalidate();
         }
 
         // Rimuovo i cookie per il form ricontattami
-        if(checkCookiesAllowed(request)){
+        if(mc.checkCookiesAllowed(request)){
             Cookie nome_cognome = new Cookie("nome_cognome","");
             Cookie mail = new Cookie("mail", "");
             nome_cognome.setMaxAge(0);   // stessa età della sessione
@@ -32,20 +48,4 @@ public class LogoutServlet extends HttpServlet {
 
     }
 
-    boolean checkCookiesAllowed(HttpServletRequest request){
-
-        boolean consenso = false;
-
-        Cookie[] cookies = request.getCookies();
-        for ( int i=0; i<cookies.length; i++) {
-            Cookie cookie = cookies[i];
-            if (cookie.getName().equals("cookieAllow")) {
-                if( cookie.getValue().equals("true") ){
-                    consenso=true;
-                }
-            }
-        }
-
-        return consenso;
-    }
 }

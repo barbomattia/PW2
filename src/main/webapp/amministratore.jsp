@@ -1,5 +1,5 @@
 <jsp:include page="intestazione.jsp" />
-
+<%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <main id="mainAmministratore">
 
   <link rel="stylesheet" type="text/css" href="css/amministratore.css">

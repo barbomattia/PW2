@@ -1,11 +1,9 @@
 package com.example.pw2;
 
-import org.json.JSONObject;
 
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 @WebServlet(name = "LoginServlet", value = "/login")
@@ -15,6 +13,8 @@ public class LoginServlet extends HttpServlet {
     Connection conn = connect.connectdb();
     PreparedStatement ps = null;
     ResultSet rs = null;
+
+    ModelCookies mc;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("logged",true);
 
                 //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti solo se l'utente ha consentito l'uso di cookie
-                if(checkCookiesAllowed(request)){
+                if(mc.checkCookiesAllowed(request)){
                     Cookie nome_cognome = new Cookie("nome_cognome",currentSession.getAttribute("name").toString() +  currentSession.getAttribute("surname").toString());
                     Cookie mail = new Cookie("mail", currentSession.getAttribute("mail").toString());
                     nome_cognome.setMaxAge(5*60);   // stessa età della sessione
@@ -71,11 +71,16 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setMaxInactiveInterval(5*60);    //cinque minuti e poi elimina la sessione automaticamente
                 //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
 
+
+
+
                 if(rs.getString("ROLE").equals("amministratore")){
-                    response.sendRedirect("amministratore.jsp");
+                    String encodedURL = response.encodeRedirectURL("amministratore.jsp");
+                    response.sendRedirect(encodedURL);
                 }
                 else {
-                    response.sendRedirect("simpOrAd.jsp");
+                    String encodedURL = response.encodeRedirectURL("simpOrAd.jsp");
+                    response.sendRedirect(encodedURL);
                 }
 
             }
@@ -91,23 +96,8 @@ public class LoginServlet extends HttpServlet {
     }
 
 
-    // SE NON viene trovato il cookieAllow o se è settato false ritorno false
-    boolean checkCookiesAllowed(HttpServletRequest request){
 
-        boolean consenso = false;
 
-        Cookie[] cookies = request.getCookies();
-        for ( int i=0; i<cookies.length; i++) {
-            Cookie cookie = cookies[i];
-            if (cookie.getName().equals("cookieAllow")) {
-                if( cookie.getValue().equals("true") ){
-                    consenso=true;
-                }
-            }
-        }
-
-        return consenso;
-    }
 
 }
 
