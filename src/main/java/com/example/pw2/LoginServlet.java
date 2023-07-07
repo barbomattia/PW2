@@ -55,6 +55,7 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("date_of_birth", rs.getDate("BIRTH"));
                 currentSession.setAttribute("mail", rs.getString("MAIL"));
                 currentSession.setAttribute("phone_number", rs.getString("PHONE_NUMBER"));
+                currentSession.setAttribute("logged",true);
 
                 //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti
                 Cookie nome_cognome = new Cookie("nome_cognome",currentSession.getAttribute("name").toString() +  currentSession.getAttribute("surname").toString());
