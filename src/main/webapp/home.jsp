@@ -56,7 +56,7 @@
 
         <div class="row">
             <form action="#" method="get">
-                <label>Scarica qui il nostro volantino</label>
+                <label id="labelVolantino">Scarica qui il nostro volantino</label>
                 <button class="button-standard" type="submit" onclick="download()">Download</button>
             </form>
         </div>

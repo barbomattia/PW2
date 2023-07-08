@@ -141,7 +141,7 @@
     top: 100%;
     right: 10px;
     width: 320px;
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
 }

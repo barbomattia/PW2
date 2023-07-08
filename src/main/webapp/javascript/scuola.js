@@ -1,27 +1,27 @@
-var myBottonCards = document.getElementsByClassName("bottoneCard");
-var section = document.getElementsByTagName("section")[0];
+let myButtonCards = document.getElementsByClassName("bottoneCard");
+let section = document.getElementsByTagName("section")[0];
 
 // Aggiungo il listener del click
-for (let myBottonCard of myBottonCards) {
-    myBottonCard.addEventListener("click", popUpTesto,true)
+for (let myButtonCard of myButtonCards) {
+    myButtonCard.addEventListener("click", popUpTesto,true)
 }
 
 function popUpTesto(e){
 
     /* Scelgo quale testo mostrare in base a che bottone premo*/
-    indicatoreTesto = e.target.getAttribute("testo")        //prendo dall'attributo testo del bottone cliccato l'indicatore di quale testo mostrare
-    testoDescrizione = setDescrizione(indicatoreTesto)                  //funziona che ritorna effettivamente il testo in base all'indicatore di testo passato
+    let indicatoreTesto = e.target.getAttribute("value")        //prendo dall'attributo value del bottone cliccato l'indicatore di quale testo mostrare
+    let testoDescrizione = setDescrizione(indicatoreTesto)                  //funziona che ritorna effettivamente il testo in base all'indicatore di testo passato
 
     // definisco la nuova finestra di descrizione del corso
-    finestra = document.createElement("div")            // crea il div contenente la nuova finestra, creo un tag div
-    descrizione = document.createTextNode(testoDescrizione)     // definisco il testo da inserire nel nuovo div
+    let finestra = document.createElement("div")            // crea il div contenente la nuova finestra, creo un tag div
+    let descrizione = document.createTextNode(testoDescrizione)     // definisco il testo da inserire nel nuovo div
     finestra.appendChild(descrizione);                              // inserisco il testo nel div
 
 
     /* controlla se ci sono già delle finestre corso a schermo */
-    if(section.getElementsByClassName("descrizioneCorso").length != 0){        //controllo che l'arrey ritornato da getClassName non sia vuoto
-        finestraPrec = document.getElementsByClassName("descrizioneCorso")[0];  //prendo il primo elemento ( e teoricamente unico ) elemento di classe descrizioneCorso
-        section.removeChild(finestraPrec)                                                  //rimozione elemento precedente
+    if(section.getElementsByClassName("descrizioneCorso").length !== 0){        //controllo che l'array ritornato da getClassName non sia vuoto
+        let finestraPrecedente = document.getElementsByClassName("descrizioneCorso")[0];  //prendo il primo elemento (e teoricamente unico) elemento di classe descrizioneCorso
+        section.removeChild(finestraPrecedente)                                                  //rimozione elemento precedente
     }
 
 
@@ -55,13 +55,13 @@ function setDescrizione(testo){
     }
 
     else if(testo === 'alberghiero'){
-        text = "Il corso albergiero prevede un ciclo di 3 anni, estendibile a 4 con una specializzazione come cuoco. " +
-            "Il corso è specializzato nel servizio in sala. L'albergiero permette molti sbocchi lavorativi anche all'estero"
+        text = "Il corso alberghiero prevede un ciclo di 3 anni, estendibile a 4 con una specializzazione come cuoco. " +
+            "Il corso è specializzato nel servizio in sala. L'alberghiero permette molti sbocchi lavorativi anche all'estero"
     }
 
     else if(testo === 'chimica'){
         text = "Il corso di chimica prevede un ciclo di 5 anni, che verrà concluso dall'esame di stato. Questo corso, piu" +
-            "terico rispetto agli altri, fornisce delle ottime basi per un eventuale proseguzione universitaria nell'ambito chimico"
+            "teorico rispetto agli altri, fornisce delle ottime basi per un eventuale prosecuzione universitaria nell'ambito chimico"
     }
 
     else if(testo === 'meccanica'){

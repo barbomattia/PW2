@@ -1,6 +1,5 @@
 package com.example.pw2;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.*;
 import javax.servlet.*;
@@ -22,10 +21,15 @@ public class GestoreFrasi extends HttpServlet {
         super.init();
         System.out.println("Dentro GestoreFrasi");
         // prendo dal DataBase le frasi e citazioni da mostrare
-        Connection conn = connect.connectdb();
-        fm = new FrasiModel(conn);
-        frasi= fm.getFrasi();
-        cit=fm.getCit();
+        Connection conn = connect.connectDb();
+        if(conn != null){
+            fm = new FrasiModel(conn);
+            frasi= fm.getFrasi();
+            cit=fm.getCit();
+        }
+        else {
+            System.out.println("(GestoreFrasi) Errore: conn == null");
+        }
     }
 
     @Override

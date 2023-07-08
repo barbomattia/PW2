@@ -11,21 +11,18 @@ public class DonazioniNavettaModel {
 
     public DonazioniNavettaModel() {}
 
-    // Metodo per scaricare il dato delle donazione per la navetta dal database
+    // Metodo per scaricare il dato delle donazioni per la navetta dal database
     private void takeDonazioniNavettaFromDB(Connection conn){
         // prendo dal DataBase le donazioni navette
 
         try{
-            Statement stant = conn.createStatement();                  // creo il Statment
+            Statement st = conn.createStatement();                  // creo lo statement
             String sql ="SELECT * FROM DONAZIONINAVETTATABLE";         // definisco la query
-            ResultSet resultSet = stant.executeQuery(sql);             // eseguo la query e salvo la risposta
+            ResultSet resultSet = st.executeQuery(sql);             // eseguo la query e salvo la risposta
 
             while(resultSet.next()){
                 donazioni = resultSet.getInt(1);      //Leggo e salvo le donazioni presenti
             }
-
-            //System.out.println(donazioni);
-            //System.out.println(conn);
 
         }catch (SQLException e){
             throw new RuntimeException(e);
@@ -40,9 +37,9 @@ public class DonazioniNavettaModel {
 
             //System.out.println(donazioni);
 
-            Statement stant = conn.createStatement();                                        // creo il Statment
-            String sql ="UPDATE DONAZIONINAVETTATABLE SET DONAZIONI = " + donazioni;         // definisco la query
-            stant.executeUpdate(sql);                                                        // eseguo la query
+            Statement st = conn.createStatement();                                        // creo lo statement
+            String sql ="UPDATE DONAZIONINAVETTATABLE SET DONAZIONI = " + donazioni + " WHERE DONAZIONI >= 0";         // definisco la query
+            st.executeUpdate(sql);                                                        // eseguo la query
 
         }catch (SQLException e){
             throw new RuntimeException(e);

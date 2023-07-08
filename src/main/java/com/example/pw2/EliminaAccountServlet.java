@@ -7,13 +7,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @WebServlet(name = "EliminaAccountServlet", value = "/eliminaAccount")
 public class EliminaAccountServlet extends HttpServlet {
 
-    Connection conn = connect.connectdb();
+    Connection conn = connect.connectDb();
     PreparedStatement ps = null;
 
     String query;
@@ -27,18 +26,18 @@ public class EliminaAccountServlet extends HttpServlet {
 
             query = "DELETE FROM DONATIONTABLE WHERE ID_DONATORE=?";
             ps = conn.prepareStatement(query);
-            ps.setInt(1, Integer.valueOf(request.getParameter("id")));
+            ps.setInt(1, Integer.parseInt(request.getParameter("id")));
             if(ps.executeUpdate() > 0){     //Eliminato tutti i dati dalla tabella donazioni
                 query = "DELETE FROM loginTable WHERE id=?";
 
                 ps = conn.prepareStatement(query);
-                ps.setInt(1, Integer.valueOf(request.getParameter("id")));
+                ps.setInt(1, Integer.parseInt(request.getParameter("id")));
                 if(ps.execute()){
                     //Account eliminato
                     popupScript = "<script> alert('21: Account eliminato con successo'); window.location.href = 'login.jsp'; </script>";
                 }
                 else {
-                    //Errore nell'eleiminazione dell'account
+                    //Errore nell'eliminazione dell'account
                     popupScript = "<script> alert('21: Errore nell'eliminazione dell'account'); window.location.href = 'login.jsp'; </script>";
                 }
             }

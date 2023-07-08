@@ -9,9 +9,9 @@
         <div class="riquadro">
             <form action="${pageContext.request.contextPath}/login" method="POST">
                 <h2>Login</h2>
-                <div class="inputlogin">
+                <div class="inputLogin">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" required value="admin" name="username" id="loginUsername">
+                    <label for="loginUsername"></label><input type="text" required value="admin" name="username" id="loginUsername">
                     <label>Username</label>
                     <!--
                         <input type="text" required value="admin" name="username" id="loginUsername">
@@ -21,12 +21,12 @@
                         <input type="password" required value="rinoGattuso" name="password" id="loginPassword">
                      -->
                 </div>
-                <div class="inputlogin">
+                <div class="inputLogin">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" required value="21Adm1n!" name="password" id="loginPassword">
+                    <label for="loginPassword"></label><input type="password" required value="21Adm1n!" name="password" id="loginPassword">
                     <label>Password</label>
-                    <button type="button" onclick="mostraOrNascondiPassword('loginPassword')">Mostra/Nascondi</button>
                 </div>
+                <button class="button-standard" type="button" onclick="mostraOrNascondiPassword('loginPassword')">Mostra/Nascondi password</button>
                 <button class="button-standard" type="submit">Login</button>
                 <div class="registrazione">
                     <p>Non hai un account? <a href="signUp.jsp">Registrati</a></p>

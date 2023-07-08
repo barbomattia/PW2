@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class GetDonazioniServlet extends HttpServlet {
 
 
-    Connection conn = connect.connectdb();
+    Connection conn = connect.connectDb();
     PreparedStatement ps = null, ps2 = null;
     ResultSet rs = null, rs2 = null;
 

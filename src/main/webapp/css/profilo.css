@@ -1,7 +1,5 @@
 .box{
-    margin: 0 auto;
-    margin-top: 200px;
-    margin-bottom: 50px;
+    margin: 200px auto 50px;
     width: 100%;
     max-width: 600px;
     padding: 5%;

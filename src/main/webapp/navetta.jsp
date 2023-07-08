@@ -1,8 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <jsp:include page="intestazione.jsp" />
 
-<% float percDon = (float)request.getAttribute("percDonazioni"); %>
+<% float percentualeDonazioni = (float)request.getAttribute("percentualeDonazioni"); %>
 
 <main>
     <link rel="stylesheet" type="text/css" href="css/struttura.css">
@@ -25,7 +25,7 @@
 
   <div class="cover" style="background-image: url('Images/Attivita/School-Bus.jpg')">
     <h1> NAVETTA </h1>
-    <h3> Istituto Tecnino Tum4World</h3>
+    <h3> Istituto Tecnico Tum4World</h3>
   </div>
 
   <div class="spaziatura"></div>
@@ -35,25 +35,25 @@
       <div class="col-50-bus">
           <h1>NAVETTA</h1>
           <p>
-              Il servizion di navetta è nato dall'esigenza di permettere a tutti i ragazzi,
-              anche colore che vivono nei paesini limitrofi a Meru, di frequentare la nostra squola
+              Il servizio di navetta è nato dall'esigenza di permettere a tutti i ragazzi,
+              anche colore che vivono nei paesini limitrofi, di frequentare la nostra scuola
           </p>
           <p>
-              Quando è nata l' idea del servizio navetta come associazione abbiamo stimato che con 3 vetture saremmo
-              riusciti a coprire a 360° l' intera area circostante. Ad oggi Tum4World è arrivata a finaziare solo 2 navette,
-              <% if(percDon < 100.0) { %>
-              attualmente come associazioe stiamo cercando i fondi per completare questo progetto.
+              Quando è nata l' idea del servizio navetta come associazione abbiamo stimato che con tre vetture saremmo
+              riusciti a coprire a 360° l' intera area circostante. Fin'ora Tum4World è arrivata a finanziare solo due navette,
+              <% if(percentualeDonazioni < 100.0) { %>
+              attualmente come associazione stiamo cercando i fondi per completare questo progetto.
               <% } else{ %>
               ma grazie alle vostre donazioni siamo riusciti a raggiungere i soldi necessari per comprare la terza navetta.
               Attualmente il nostro team sta lavorando per effettuare l'acquisto.
               <% } %>
           </p>
           <p>
-              Con i ragazzi che usufruiscono di questo servizio abbiamo deciso di dare dei nomi alle 2 navette: "Thunder" e "McQueen"
+              Con i ragazzi che usufruiscono di questo servizio abbiamo deciso di dare dei nomi alle due navette: "Thunder" e "McQueen"
           </p>
           <p>
-              <% if(percDon < 100.0) { %>
-              Se volete contribuire al completamto del parco vetture cliccate sul bottone DONA, Il costo totale della nuova navetta è
+              <% if(percentualeDonazioni < 100.0) { %>
+              Se volete contribuire al completamento del parco vetture cliccate sul bottone DONA, Il costo totale della nuova navetta è
               di 100.000$.
               Dalla barra a destra potete vedere la percentuale del fondo raggiunto, rappresentata dalla barra gialla.
               <% } else{ %>
@@ -70,7 +70,7 @@
                       <div class="bus-description">
                           <p><span colore-testo="giallo">Destinazione</span>: Muthara</p>
                           <p><span colore-testo="giallo">Tempo Tragitto</span>: 1h 30m</p>
-                          <p><span colore-testo="giallo">Fermate</span>: Schuola - Ruiri Town - Kianjai - Muthara</p>
+                          <p><span colore-testo="giallo">Fermate</span>: Scuola - Ruiri Town - Kianjai - Muthara</p>
                       </div>
                       <div class="bus-row-first-el" acquired="true">
                           <h2 class="nomeBusThunder">Thunder</h2>
@@ -84,7 +84,7 @@
                       <div class="bus-description">
                           <p><span colore-testo="giallo">Destinazione</span>: Katheri</p>
                           <p><span colore-testo="giallo">Tempo Tragitto</span>: 1h</p>
-                          <p><span colore-testo="giallo">Fermate</span>: Schuola - Kithaku - Katheri</p>
+                          <p><span colore-testo="giallo">Fermate</span>: Scuola - Kithaku - Katheri</p>
                       </div>
                       <div class="bus-row-first-el" acquired="true">
                           <h2 class="nomeBusMcQueen">McQueen</h2>
@@ -94,10 +94,10 @@
               </div>
 
               <div class="bus-row-static" acquired="false">
-                  <div class="barra-completamento" style="width: <%=percDon%>% "></div>
+                  <div class="barra-completamento" style="width: <%=percentualeDonazioni%>% "></div>
                   <div class="barra-completamento-info">
                       <img src="Images/Attivita/iconaBus.png" class="iconaBus" alt="Icona Bus"/>
-                      <div class="percentuale"><%=percDon%>%</div>
+                      <div class="percentuale"><%=percentualeDonazioni%>%</div>
                   </div>
               </div>
           </div>
@@ -111,11 +111,11 @@
   <div id="popUp" pop-up="false" >
       <div id="formDonazione">
           <div id="closer" onclick="closeFormDona()">
-              <img src="Images/Attivita/iconaX.png" style="width: 30px">
+              <img src="Images/Attivita/iconaX.png" style="width: 30px" alt="Errore nella visualizzazione dell'immagine">
           </div>
           <h2> DONA </h2>
           <form id="formReale" action="/PW2_war_exploded/GestoreDonazioniNavetta" method="post">
-              <p setMargin="true">La tua donazione sarà destinata all'acuisto della terza navetta</p>
+              <p setMargin="true">La tua donazione sarà destinata all'acquisto della terza navetta</p>
               <label for="importo">Importo Donazione</label>
               <input type="number" placeholder="0" name="importo" id="importo" required>
               <button type="submit"> DONA </button>

@@ -6,7 +6,7 @@ public class connect {
 
     static boolean init = false;            //variabile per vedere se il database è gia stato inizializzato
 
-    public static Connection connectdb() {
+    public static Connection connectDb() {
         Connection conn;
         try {
             System.out.println("Tentativo di connessione");
@@ -38,19 +38,20 @@ public class connect {
         }
     }
 
-    //Va invocata passando il parametro conn, non si può rendere quello sopra globale poichè è statico all'interno del costruttore
+    //Va invocata passando il parametro conn, non si può rendere quello sopra globale poiché è statico all'interno del costruttore
     //L'ho inserito in questa classe in quanto metodo generico utilizzato da più servlet
-    public static boolean isTableExists(Connection connection, String tableName) throws SQLException {
+    //(Dambro) l'ho invertita per evitare un warning
+    public static boolean needToCreate(Connection connection, String tableName) throws SQLException {
         ResultSet resultSet = connection.getMetaData().getTables(null, null, tableName, null);
-        return resultSet.next();
+        return !resultSet.next();
     }
 
     private static void initDataBase(Connection connection) throws SQLException {
 
-        Statement ps = null;
+        Statement ps;
 
         //TABELLA FRASI
-        if (!isTableExists(connection, "FRASITABLE")) {     // controllo che non sia gia stata creata la tabella
+        if (needToCreate(connection, "FRASITABLE")) {     // controllo che non sia gia stata creata la tabella
             String queryCreazione = "CREATE TABLE FRASITABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), frase VARCHAR(100), cit VARCHAR(50))"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
@@ -75,7 +76,7 @@ public class connect {
 
         //TABELLA DONAZIONI NAVETTA
 
-        if (!isTableExists(connection, "DONAZIONINAVETTATABLE")){
+        if (needToCreate(connection, "DONAZIONINAVETTATABLE")){
             String queryCreazione = "CREATE TABLE DONAZIONINAVETTATABLE ( donazioni int)"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
@@ -94,7 +95,7 @@ public class connect {
 
         //TABELLA LOGIN
 
-        if(!isTableExists(connection, "LOGINTABLE")){     // controllo che non sia gia stata creata la tabella
+        if(needToCreate(connection, "LOGINTABLE")){     // controllo che non sia gia stata creata la tabella
             String queryCreazione = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), USERNAME VARCHAR(30), PASSWORD VARCHAR(30), ROLE VARCHAR(30), NAME VARCHAR(30), SURNAME VARCHAR(30), BIRTH DATE, MAIL VARCHAR(50), PHONE_NUMBER VARCHAR(20), PRIMARY KEY (ID), UNIQUE (ID, USERNAME))"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
@@ -136,7 +137,7 @@ public class connect {
             System.out.println("Tabella 'loginTable' già esistente");
         }
 
-        if(!isTableExists(connection, "DONATIONTABLE")){     // controllo che non sia gia stata creata la tabella
+        if(needToCreate(connection, "DONATIONTABLE")){     // controllo che non sia gia stata creata la tabella
             String queryCreazione = "CREATE TABLE DONATIONTABLE (ID_DONAZIONE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), ID_DONATORE INTEGER, USERNAME_DONATORE VARCHAR(30), DONATION_DATE DATE, IMPORTO INTEGER, MESSAGE VARCHAR(100), FOREIGN KEY (ID_DONATORE, USERNAME_DONATORE) REFERENCES LOGINTABLE(ID, USERNAME))"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
@@ -166,7 +167,7 @@ public class connect {
             System.out.println("Tabella 'donationTable' già esistente");
         }
 
-        if(!isTableExists(connection, "COUNTERPAGETABLE")){
+        if(needToCreate(connection, "COUNTERPAGETABLE")){
             String queryCreazione = "CREATE TABLE COUNTERPAGETABLE (NOME_PAGINA VARCHAR(100), COUNTER INTEGER)"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query

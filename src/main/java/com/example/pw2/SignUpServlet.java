@@ -1,6 +1,5 @@
 package com.example.pw2;
 
-import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -13,18 +12,18 @@ import java.sql.SQLException;
 @WebServlet(name = "SignUpServlet", value = "/signUp")
 public class SignUpServlet extends HttpServlet {
 
-    Connection conn = connect.connectdb();
+    Connection conn = connect.connectDb();
     PreparedStatement ps = null;
     ResultSet rs = null;
     String query;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String popupScript;
 

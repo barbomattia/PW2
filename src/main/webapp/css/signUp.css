@@ -1,10 +1,9 @@
 sectionSignUp{
     display: flex;
     justify-content: center;
-    allign-items: center;
+    align-items: center;
     min-height: 100vh;
     width: 100%;
-    justify-content: center;
     background: linear-gradient(120deg, whitesmoke, rgb(189, 252, 197));
 }
 .riquadro{
@@ -24,15 +23,15 @@ h2{
     font-size: 2em;
     text-align: center;
 }
-.form .inputregistrazione{
+.form .inputRegistrazione{
     width: 100%;
     margin-top: 20px;
 }
-.form .inputregistrazione label{
+.form .inputRegistrazione label{
     color: rgb(88, 129, 87);
     font-size: 1em;
 }
-.form .inputregistrazione input{
+.form .inputRegistrazione input{
     position: relative;
     height: 50px;
     width: 100%;
@@ -89,7 +88,7 @@ h2{
 }
 .form :where(.affiliazione, .tipo-affiliazione){
     display: flex;
-    allign-items: center;
+    align-items: center;
     column-gap: 50px;
 }
 

@@ -13,9 +13,9 @@ public class FrasiModel {
 
     public FrasiModel(Connection conn) {
         try {
-            Statement stant = conn.createStatement();       // creo il Statment
+            Statement st = conn.createStatement();       // creo lo statement
             String sql ="SELECT * FROM FRASITABLE";         // definisco la query
-            ResultSet resultSet = stant.executeQuery(sql);  // eseguo la query e salvo la risposta
+            ResultSet resultSet = st.executeQuery(sql);  // eseguo la query e salvo la risposta
 
             ArrayList<String> listFrasi = new ArrayList<>();        // uso degli ArrayList per facilitare la lettura della risposta
             ArrayList<String> listCit = new ArrayList<>();

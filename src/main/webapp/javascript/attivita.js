@@ -1,8 +1,8 @@
-var myCards = document.getElementsByClassName("card");
+let myCards = document.getElementsByClassName("card");
 
 
 for (let i = 0; i < myCards.length; i++) {
-    el = myCards[i]
+    let el = myCards[i]
     el.onmouseenter = function(e){
         //console.log("dentro")
         //console.log(e.target.childNodes[1].childNodes[1])

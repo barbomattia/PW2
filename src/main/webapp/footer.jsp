@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 
 <link rel="stylesheet" type="text/css" href="css/footer.css">

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <jsp:include page="intestazione.jsp" />
 
@@ -31,7 +31,7 @@
                         <p class="cardInfoText">
                             Sappiamo che l'istruzione è fondamentale per il futuro di ogni individuo, ma purtroppo molte
                             famiglie non possono permettersi di garantire ai propri figli un'educazione adeguata.
-                            Da qui nasce il nostro programma scolatico gratuito.
+                            Da qui nasce il nostro programma scolastico gratuito.
                         </p>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                         <h3 class="cardInfoText"> MENSA </h3>
                         <p class="cardInfoText">
                             Riconosciamo l'importanza di una corretta alimentazione per il benessere e la crescita dei bambini. Pertanto, forniamo
-                            pasti equilibrati e nutrienti ai bambini che frequentano la nostra squola.
+                            pasti equilibrati e nutrienti ai bambini che frequentano la nostra scuola.
                         </p>
                     </div>
                 </div>

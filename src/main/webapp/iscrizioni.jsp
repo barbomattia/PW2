@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <jsp:include page="intestazione.jsp" />
 
@@ -8,7 +8,7 @@
     <section>
         <jsp:include page="simpOrAd.jsp" />
 
-        <div class="conteiner">
+        <div class="container">
             <div class="box">
                 <h3>Scuola</h3>
                 <p>

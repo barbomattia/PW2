@@ -9,7 +9,7 @@ section{
     padding-top: 80px;
     padding-bottom: 80px;
 }
-.conteiner{
+.container{
     margin-top: 200px;
     width: 100%;
     display: flex;
@@ -22,8 +22,7 @@ section{
     height: 400px;
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
-    padding-top: 80px;
+    padding: 80px 20px 20px;
     margin: 20px;
     text-align: center;
     box-shadow: 0 3px 5px rgba(0,0,0,0.3);

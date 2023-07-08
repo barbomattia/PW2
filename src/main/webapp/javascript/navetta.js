@@ -1,18 +1,18 @@
-// CODICE per l'effetto di SCROLL dei 3 elementi navetta
-var busRows = document.getElementsByClassName("bus-row");
+// CODICE per l'effetto di SCROLL dei tre elementi navetta
+let busRows = document.getElementsByClassName("bus-row");
 function scroll(e){
-    elScroll = e.target.getElementsByClassName("elm-scorre")[0];
+    let elScroll = e.target.getElementsByClassName("elm-scorre")[0];
     elScroll.setAttribute("scroll", "true")
     console.log(elScroll.attributes);
 }
 
 function normal(e){
-    elScroll = e.target.getElementsByClassName("elm-scorre")[0];
+    let elScroll = e.target.getElementsByClassName("elm-scorre")[0];
     elScroll.removeAttribute("scroll")
     console.log(elScroll.attributes);
 }
 
-for (var busRow of busRows) {
+for (let busRow of busRows) {
     busRow.addEventListener("mouseenter",scroll)
     busRow.addEventListener("mouseleave",normal)
 }
@@ -20,7 +20,7 @@ for (var busRow of busRows) {
 // CODICE per il FORM di DONAZIONE
 
 showFormDona = function(){
-    popUp = document.getElementById("popUp");
+    let popUp = document.getElementById("popUp");
     popUp.setAttribute("pop-up","true")
     window.scrollTo(window.innerWidth/2,window.innerHeight/2)           //scrolla la pagina in centro alla finestra
     window.onscroll = function() {
@@ -30,7 +30,7 @@ showFormDona = function(){
 
 
 closeFormDona = function(){
-    popUp = document.getElementById("popUp");
+    let popUp = document.getElementById("popUp");
     popUp.setAttribute("pop-up","false")
     window.onscroll = function() {}
 }

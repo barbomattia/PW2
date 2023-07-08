@@ -1,38 +1,37 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <jsp:include page="intestazione.jsp" />
 
 
-<link rel="stylesheet" type="text/css" href="css/cardScrolUp.css">
+<link rel="stylesheet" type="text/css" href="css/cardScrollUp.css">
 <link rel="stylesheet" type="text/css" href="css/struttura.css">
 <link rel="stylesheet" type="text/css" href="css/scuola.css">
 
 <main>
     <div class="cover">
         <h1> SCUOLA </h1>
-        <h3> Istituto Tecnino Tum4World</h3>
+        <h3> Istituto Tecnico Tum4World</h3>
     </div>
 
     <section>
         <div class="row">
             <div class="col">
                 <h1>Struttura</h1>
-                <p>L'istituto Tum4World è il cuore e punto nevralgico della nostra associazione. L'istituto Tum4World è il cuore e punto nevralgico della nostra associazione. Sucessivamenti la scuola ha subito molti ampliamenti per soddisfare la necessità sempre maggiore di aule
-                    per accogliere il numero crescente di studenti. Inoltre questi aggiornamenti hanno permesso l'attivazione delle altre attivita di tum4World: una cucina e sala pranzo per il servizio di mensa, e uno spiazzale per il servizio.
-                    navetta. Attualmente l'associazione sta recuperando i fondi necessari per finanziare un nuovo ampliamento che prevede la creazione di una aula compiuter necessaria per avviare il nuovo corso di studi di informatica.
+                <p>L'istituto Tum4World è il cuore e punto nevralgico della nostra associazione. La scuola ha subito molti ampliamenti per soddisfare la necessità sempre maggiore di aule
+                    per accogliere il numero crescente di studenti. Inoltre questi aggiornamenti hanno permesso l'attivazione delle altre attivit&agrave; di tum4World: una cucina e sala pranzo per il servizio di mensa, e uno spiazzale per il servizio navetta.
+                    Attualmente l'associazione sta recuperando i fondi necessari per finanziare un nuovo ampliamento che prevede la creazione di una aula computer necessaria per avviare il nuovo corso di studi d'informatica.
                 </p>
             </div>
             <div class="col">
                 <div class="cover" style="background-image: url('Images/Attivita/Scuola1.jpg')"></div>
-                <!-- <img src="Images/Attivita/Scuola1.jpg"> -->
             </div>
         </div>
 
         <div class="row-singola">
                 <h1>Corsi</h1>
                 <p>
-                    Il nostro istituto storicamente mette a disposizione 2 corsi di studio: meccanico e alberghiero, da quest'anno, grazie a voi, abbiamo una novità al riguardo. Infatti grazie alle vostre cospique donazioni
-                    da quest'anno partitrà il nuovo corso di chimica. Ma non è tutto, infatti sono gia iniziati i lavori per la costruzione di una nuova aula computer che permetterà l'avvio di un quarto corso aggiungivo quello informatico.
+                    Il nostro istituto storicamente mette a disposizione due corsi di studio: meccanico e alberghiero, da quest'anno, grazie a voi, abbiamo una novità al riguardo. Infatti grazie alle vostre cospicue donazioni
+                    da quest'anno partirà il nuovo corso di chimica. Ma non è tutto, infatti sono gia iniziati i lavori per la costruzione di una nuova aula computer che permetterà l'avvio di un quarto corso aggiuntivo quello informatico.
                 </p>
         </div>
 
@@ -44,7 +43,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Chimica</h3>
-                    <button class="bottoneCard" testo="chimica">READ</button>
+                    <button class="bottoneCard" value="chimica">READ</button>
                 </div>
             </div>
 
@@ -54,7 +53,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Meccanica</h3>
-                    <button class="bottoneCard" testo="meccanica">READ</button>
+                    <button class="bottoneCard" value="meccanica">READ</button>
                 </div>
             </div>
 
@@ -64,7 +63,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Alberghiero</h3>
-                    <button class="bottoneCard" testo="alberghiero">READ</button>
+                    <button class="bottoneCard" value="alberghiero">READ</button>
                 </div>
             </div>
 
@@ -76,7 +75,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Informatica</h3>
-                    <button class="bottoneCard" testo="informatica">READ</button>
+                    <button class="bottoneCard" value="informatica">READ</button>
                 </div>
             </div>
         </div>

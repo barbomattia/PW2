@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <jsp:include page="intestazione.jsp" />
 
@@ -17,8 +17,8 @@
                 <h1>Mensa</h1>
                 <p>
                     Riconosciamo che una corretta alimentazione svolge un ruolo cruciale nel benessere e nella crescita dei ragazzi.
-                    Pertanto, collaboriamo strettamente con fornitori locali per garantire l'approvvigionamento di ingredienti freschi come pane e verdure.
-                    Ci sforziamo di garantire ad ogni ragazzo un pasto sicuro, di qualità ed equilibranto che non sempre le famiglie riescono a fornirgli.
+                    Pertanto, collaboriamo strettamente con fornitori locali per garantire l'approvvigionamento d'ingredienti freschi come pane e verdure.
+                    Ci sforziamo di garantire un pasto sicuro per ogni ragazzo, di qualità ed equilibrato che non sempre le famiglie riescono a fornirgli.
                     Il nostro obiettivo è quello di assicurare che ogni bambino riceva una nutrizione adeguata durante il loro tempo a scuola,
                     contribuendo così al loro benessere complessivo e al loro successo accademico.
                 </p>

@@ -13,11 +13,9 @@ import java.sql.*;
 public class LoginServlet extends HttpServlet {
 
 
-    Connection conn = connect.connectdb();
+    Connection conn = connect.connectDb();
     PreparedStatement ps = null;
     ResultSet rs = null;
-
-    ModelCookies mc;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -61,7 +59,7 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("logged",true);
 
                 //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti solo se l'utente ha consentito l'uso di cookie
-                if(mc.checkCookiesAllowed(request)){
+                if(ModelCookies.checkCookiesAllowed(request)){
                     Cookie nome_cognome = new Cookie("nome_cognome",currentSession.getAttribute("name").toString() +  currentSession.getAttribute("surname").toString());
                     Cookie mail = new Cookie("mail", currentSession.getAttribute("mail").toString());
                     nome_cognome.setMaxAge(5*60);   // stessa età della sessione
@@ -75,7 +73,7 @@ public class LoginServlet extends HttpServlet {
                 //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
 
 
-                String encodedURL="";
+                String encodedURL;
                 if(rs.getString("ROLE").equals("amministratore")){
                     encodedURL = response.encodeRedirectURL("amministratore.jsp");
                 }
@@ -84,14 +82,7 @@ public class LoginServlet extends HttpServlet {
                 }
 
 
-                request.setAttribute("id",currentSession.getAttribute("id"));
-                request.setAttribute("username",currentSession.getAttribute("username"));
-                request.setAttribute("role",currentSession.getAttribute("role"));
-                request.setAttribute("name",currentSession.getAttribute("name"));
-                request.setAttribute("surname",currentSession.getAttribute("surname"));
-                request.setAttribute("date_of_birth",currentSession.getAttribute("date_of_birth"));
-                request.setAttribute("mail",currentSession.getAttribute("mail"));
-                request.setAttribute("phone_number",currentSession.getAttribute("phone_number"));
+                FilterCheckLogin.setAttribute(request, currentSession);
 
                 RequestDispatcher requestDispatcher;
                 requestDispatcher=request.getRequestDispatcher(encodedURL);

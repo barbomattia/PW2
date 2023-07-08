@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <jsp:include page="intestazione.jsp" />
 
@@ -35,12 +35,11 @@
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-    <div id="finesta-Ricontattami" pop-up="false">
+    <div id="finestra-Ricontattami" pop-up="false">
         <div id="Pop-Up-Ricontattami">
 
             <div class="closer" onclick="closeFormRicontattami()">
-                <img src="Images/Attivita/iconaX.png" style="
-                width: 30px">
+                <img src="Images/Attivita/iconaX.png" style="width: 30px" alt="Errore di visualizzazione del form">
             </div>
             <h2> RICONTATTAMI </h2>
 
@@ -48,17 +47,17 @@
                 <div class="spazio"></div>
 
                 <form id="formRicontattami"  onreset="over_reset()">
-                    <div class="inputricontattami">
-                        <label id="lable_nome_cognome" for="nome_cognome" class="lable">Nome e cognome</label>
+                    <div class="inputRicontattami">
+                        <label id="label_nome_cognome" for="nome_cognome" class="label">Nome e cognome</label>
                         <input type="text" name="nome_cognome" id="nome_cognome" placeholder="nome cognome" class="input">
                     </div>
 
-                    <div class="inputricontattami">
-                        <label id="lable_contatti-mail" for="contatti-mail" class="lable">Email</label>
+                    <div class="inputRicontattami">
+                        <label id="label_contatti-mail" for="contatti-mail" class="label">Email</label>
                         <input type="text" name="mail" id="contatti-mail" placeholder="email" required class="input">
                     </div>
 
-                    <div class="inputricontattami">
+                    <div class="inputRicontattami">
                         <label for="motivo" >Motivo</label>
                         <select name="motivo" id="motivo">
                             <option>collaborazione</option>
@@ -67,12 +66,12 @@
                         </select>
                     </div>
 
-                    <div class="inputricontattami">
+                    <div class="inputRicontattami">
                         <label for="argomentazione">Argomentazione</label>
                         <textarea name="argomentazione" id="argomentazione" placeholder="argomentazione"></textarea>
                     </div>
 
-                    <div class="inputricontattami bottoniform">
+                    <div class="inputRicontattami bottoniForm">
                         <button type="button" onclick="inviaMail()"> INVIA </button>
                         <button type="reset"> RESET </button>
                     </div>

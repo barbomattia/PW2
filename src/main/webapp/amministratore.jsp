@@ -1,10 +1,14 @@
 <jsp:include page="intestazione.jsp" />
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
+
+<%  HttpSession session = request.getSession(false); %>
+<%  String role="", username=""; if(session!=null){ role=session.getAttribute("role").toString(); username=session.getAttribute("username").toString(); } %>
+
 <main id="mainAmministratore">
 
   <link rel="stylesheet" type="text/css" href="css/amministratore.css">
 
-  <h1 class="classAmministratore">Area ${role}, utente ${username} - id = ${id}</h1>
+  <h1 class="classAmministratore">Area <%=role%>, utente <%=username%></h1>
 
   <div class="classAmministratore">
     <button type="submit" class="btn" onclick="elencaUtenti('registrati')">Elenca tutti gli utenti registrati</button>
@@ -73,13 +77,6 @@
 
   <h2>Grafico numero donazioni effettuate</h2>
   <div id="idGraficoDonazioniEffettuate"></div>
-
-  <br>
-
-  <div class="classSimpOrAd">
-    <a href="${pageContext.request.contextPath}/logout">Effettua il logout</a>
-  </div>
-  <br>
   <br>
   <br>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -87,19 +84,6 @@
   <script src="./javascript/amministratore.js" onload="caricaGrafi()"></script>
 
   <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('amministratore.jsp')"></script>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 </main>
 
 

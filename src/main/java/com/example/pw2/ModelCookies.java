@@ -12,11 +12,10 @@ public class ModelCookies {
 
         Cookie[] cookies = request.getCookies();
         if(cookies != null){
-            for ( int i=0; i<cookies.length; i++) {
-                Cookie cookie = cookies[i];
+            for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("cookieAllow")) {
-                    if( cookie.getValue().equals("true") ){
-                        consenso=true;
+                    if (cookie.getValue().equals("true")) {
+                        consenso = true;
                     }
                 }
             }

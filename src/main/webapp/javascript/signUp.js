@@ -1,5 +1,5 @@
 function mostraOrNascondiPassword(id){
-    password = document.getElementById(id);
+    let password = document.getElementById(id);
     if(password.type === "password"){
         password.type = "text";
     }

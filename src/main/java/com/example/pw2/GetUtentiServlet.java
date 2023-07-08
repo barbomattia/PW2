@@ -1,12 +1,10 @@
 package com.example.pw2;
 
-import org.json.JSONObject;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +16,7 @@ public class GetUtentiServlet extends HttpServlet {
     String query;
     PreparedStatement ps;
     ResultSet rs;
-    Connection conn = connect.connectdb();
+    Connection conn = connect.connectDb();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -64,15 +62,15 @@ public class GetUtentiServlet extends HttpServlet {
             while (anotherOne){
                 System.out.println("Elemento trovato, username = " + rs.getString("USERNAME"));
                 jsonBuilder.append("{");
-                jsonBuilder.append("\"ID\": \"" + rs.getInt("ID") + "\",");
-                jsonBuilder.append("\"USERNAME\": \"" + rs.getString("USERNAME") + "\",");
-                jsonBuilder.append("\"ROLE\": \"" + rs.getString("ROLE") + "\",");
-                jsonBuilder.append("\"NAME\": \"" + rs.getString("NAME") + "\",");
-                jsonBuilder.append("\"SURNAME\": \"" + rs.getString("SURNAME") + "\",");
-                jsonBuilder.append("\"BIRTH\": \"" + rs.getDate("BIRTH") + "\",");
-                jsonBuilder.append("\"MAIL\": \"" + rs.getString("MAIL") + "\",");
-                jsonBuilder.append("\"PHONE_NUMBER\": \"" + rs.getString("PHONE_NUMBER") + "\",");
-                jsonBuilder.append("\"SUM_DONATION\": " + rs.getInt("SUMDONATION"));
+                jsonBuilder.append("\"ID\": \"").append(rs.getInt("ID")).append("\",");
+                jsonBuilder.append("\"USERNAME\": \"").append(rs.getString("USERNAME")).append("\",");
+                jsonBuilder.append("\"ROLE\": \"").append(rs.getString("ROLE")).append("\",");
+                jsonBuilder.append("\"NAME\": \"").append(rs.getString("NAME")).append("\",");
+                jsonBuilder.append("\"SURNAME\": \"").append(rs.getString("SURNAME")).append("\",");
+                jsonBuilder.append("\"BIRTH\": \"").append(rs.getDate("BIRTH")).append("\",");
+                jsonBuilder.append("\"MAIL\": \"").append(rs.getString("MAIL")).append("\",");
+                jsonBuilder.append("\"PHONE_NUMBER\": \"").append(rs.getString("PHONE_NUMBER")).append("\",");
+                jsonBuilder.append("\"SUM_DONATION\": ").append(rs.getInt("SUMDONATION"));
                 jsonBuilder.append("}");
 
                 anotherOne = rs.next();

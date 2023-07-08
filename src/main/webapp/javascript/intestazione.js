@@ -6,7 +6,7 @@ subMenu = document.getElementById("subMenu");
 
 hamburger.addEventListener("click", function (){
     let open = menu.getAttribute("menu_open")
-    if(open=="true"){
+    if(open === "true"){
         menu.setAttribute("menu_open","false")
     }else{
         menu.setAttribute("menu_open","true")

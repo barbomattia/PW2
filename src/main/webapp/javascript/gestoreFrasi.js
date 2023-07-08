@@ -1,15 +1,15 @@
 
-var frasi = [];             // array delle frasi
-var cits = [];              // array delle citazioni
+let frasi = [];             // array delle frasi
+let cits = [];              // array delle citazioni
 
-var nodoFrase = document.getElementById("frase")
-var nodeCit = document.getElementById("cit")
+let nodoFrase = document.getElementById("frase")
+let nodeCit = document.getElementById("cit")
 
 
-function getFrasi(){            // Richiesta al Server delle frasi ( più precismanete alla servlet GestoreFrasi
+function getFrasi(){            // Richiesta al Server delle frasi (più precisamente alla servlet GestoreFrasi
 
     // Preparo la richiesta
-    var xhttp = new XMLHttpRequest();   //Creo la richiesta
+    let xhttp = new XMLHttpRequest();   //Creo la richiesta
     xhttp.responseType = "json";        //specifico che voglio una risposta in JSON
     xhttp.open("GET","/PW2_war_exploded/GestoreFrasi", true );
     //xhttp.open("GET","/PW2/GestoreFrasi", true );
@@ -19,7 +19,7 @@ function getFrasi(){            // Richiesta al Server delle frasi ( più precis
 
     //Callback
     xhttp.onreadystatechange = function (){
-        //Contlollo lo stato della risposta
+        //Controllo lo stato della risposta
         let done=4, ok=200;
         if(xhttp.readyState === done && xhttp.status===ok){
 
@@ -38,14 +38,14 @@ function getFrasi(){            // Richiesta al Server delle frasi ( più precis
 
 }
 
-function initFrase(){                                           //funzione per iniziallizzare la fascia
+function initFrase(){                                           //funzione per inizializzare la fascia
 
-    console.log(frasi)
-    console.log(cits)
+    //console.log(frasi)
+    //console.log(cits)
 
-    var index = Math.floor(Math.random()*frasi.length);
-    var nextFrase = frasi[index];
-    var nextCit = cits[index]
+    let index = Math.floor(Math.random()*frasi.length);
+    let nextFrase = frasi[index];
+    let nextCit = cits[index]
 
     nodoFrase.innerText = nextFrase;
     nodeCit.innerText = nextCit;
@@ -54,14 +54,15 @@ function initFrase(){                                           //funzione per i
 
 function aggiornaFrase(){
 
-    var frasePresente = nodoFrase.innerText; // prendo la frase presente
+    let nextFrase, nextCit;
+    let frasePresente = nodoFrase.innerText; // prendo la frase presente
     //console.log(frasePresente)
     do{
-        var index = Math.floor(Math.random()*frasi.length);         // ritorna un intero casuale
-        var nextFrase = frasi[index];                                  // estraggo la prossima frase dall'array delle frasi
-        var nextCit = cits[index];                                     // estraggo la prossima citazione dall'array delle citazioni
+        let index = Math.floor(Math.random()*frasi.length);         // ritorna un intero casuale
+        nextFrase = frasi[index];                                  // estraggo la prossima frase dall'array delle frasi
+        nextCit = cits[index];                                     // estraggo la prossima citazione dall'array delle citazioni
         //console.log(nextFrase)
-    }while(nextFrase==frasePresente)                                   // se la frase sucessiva è uguale a quella presente rifaccio l'estrazione finchè non sono diverse
+    }while(nextFrase === frasePresente)                                   // se la frase successiva è uguale a quella presente rifaccio l'estrazione finché non sono diverse
 
     nodoFrase.innerText = nextFrase;                                   // aggiorno il testo del nodo Frase
     nodeCit.innerText = nextCit;                                       // aggiorno il testo del nodo Cit

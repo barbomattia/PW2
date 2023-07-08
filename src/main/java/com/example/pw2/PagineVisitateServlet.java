@@ -2,7 +2,6 @@ package com.example.pw2;
 
 import org.json.JSONObject;
 
-import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -16,12 +15,12 @@ import java.util.ArrayList;
 public class PagineVisitateServlet extends HttpServlet {
 
     PreparedStatement ps, ps2;
-    ResultSet rs, rs2;
-    Connection conn = connect.connectdb();
+    ResultSet rs;
+    Connection conn = connect.connectDb();
     String query;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String nomePagina = request.getParameter("nomePagina");
 
         System.out.println("-----------------------------------------------");
@@ -58,14 +57,14 @@ public class PagineVisitateServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String action = request.getParameter("action");
 
         try {
 
             if(action.equals("reset")){
-                query = "UPDATE COUNTERPAGETABLE SET COUNTER = 0";
+                query = "UPDATE COUNTERPAGETABLE SET COUNTER = 0 WHERE COUNTER >= 0";
                 ps = conn.prepareStatement(query);
                 ps.executeUpdate();
 

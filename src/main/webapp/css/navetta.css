@@ -12,7 +12,7 @@
     width: 50%;
     height: auto;
     position: relative;
-    padding: 0 0px;
+    padding: 0 0;
 }
 
 .container-bus-rows{
@@ -162,12 +162,11 @@
         width: 100%;
         min-height: 300px;
         position: relative;
-        padding: 0 0px;
-        padding-bottom: 20px;
+        padding: 0 0 20px;
     }
     .container-bus-rows{
         min-height: 300px;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
 }

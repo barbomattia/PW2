@@ -8,9 +8,9 @@
     text-align: center;
 }
 
-label{
+#labelVolantino{
     color: #777;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 22px;
     padding: 10px;
@@ -18,7 +18,7 @@ label{
 
 .button-standard{
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 24px;
     text-align: center;
 }
 

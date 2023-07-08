@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 @WebServlet(name = "DonazioniUtenti", value = "/DonazioniUtenti")
 public class DonazioniUtentiServlet extends HttpServlet {
 
-    Connection conn = connect.connectdb();
+    Connection conn = connect.connectDb();
     PreparedStatement ps = null;
 
     ResultSet rs = null;
@@ -33,9 +33,9 @@ public class DonazioniUtentiServlet extends HttpServlet {
 
 
         HttpSession session = request.getSession();
-        int id = Integer.valueOf(session.getAttribute("id").toString());
+        int id = Integer.parseInt(session.getAttribute("id").toString());
         String username = request.getParameter("username");
-        int importo = Integer.valueOf(request.getParameter("importoDonazione"));
+        int importo = Integer.parseInt(request.getParameter("importoDonazione"));
         String message = request.getParameter("messaggioDonazione");
 
         try {

@@ -11,48 +11,54 @@
             <h2>Registrazione</h2>
             <form class="form" onsubmit="return controllaCampi()" action="${pageContext.request.contextPath}/signUp" method="POST">
                 <div class="column">
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Nome</label>
-                        <input type="text" placeholder="Nome" required name="name">
+                        <label>
+                            <input type="text" placeholder="Nome" required name="name">
+                        </label>
                     </div>
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Cognome</label>
-                        <input type="text" placeholder="Cognome" required name="surname">
+                        <label>
+                            <input type="text" placeholder="Cognome" required name="surname">
+                        </label>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Email</label>
-                        <input type="email" placeholder="Email" required name="mail" id="idMail">
+                        <label for="idMail"></label><input type="email" placeholder="Email" required name="mail" id="idMail">
                     </div>
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Username</label>
-                        <input type="text" placeholder="Username" required name="username">
+                        <label>
+                            <input type="text" placeholder="Username" required name="username">
+                        </label>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Telefono</label>
-                        <input type="Number" name="phone_number" placeholder="Numero di telefono" required name="telefono" id="idNumeroDiTelefono">
+                        <label for="idNumeroDiTelefono"></label><input type="Number" name="phone_number" placeholder="Numero di telefono" required id="idNumeroDiTelefono">
                     </div>
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Data di nascita</label>
-                        <input type="date" name="birth" placeholder="Data di nascita" required id="idDataDiNascita">
+                        <label for="idDataDiNascita"></label><input type="date" name="birth" placeholder="Data di nascita" required id="idDataDiNascita">
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Password</label>
-                        <input type="password" placeholder="Password" required name="password" id="idPassword1">
-                        <button onclick="mostraOrNascondiPassword('idPassword1')">Mostra/Nascondi</button>
+                        <label for="idPassword1"></label><input type="password" placeholder="Password" required name="password" id="idPassword1">
+                        <button type="button" class="button-standard" onclick="mostraOrNascondiPassword('idPassword1')">Mostra/Nascondi</button>
                     </div>
-                    <div class="inputregistrazione">
+                    <div class="inputRegistrazione">
                         <label>Conferma Password</label>
-                        <input type="password" placeholder="Conferma password" required id="idPassword2">
-                        <button type="button" onclick="mostraOrNascondiPassword('idPassword2')">Mostra/Nascondi</button>
+                        <label for="idPassword2"></label><input type="password" placeholder="Conferma password" required id="idPassword2">
+                        <button type="button" class="button-standard" onclick="mostraOrNascondiPassword('idPassword2')">Mostra/Nascondi</button>
                     </div>
                 </div>
 

@@ -1,5 +1,5 @@
 colContForm = document.getElementById("colContForm");
-pop_up = document.getElementById("finesta-Ricontattami");
+pop_up = document.getElementById("finestra-Ricontattami");
 form = document.getElementById("formRicontattami");
 finestra_conferma = document.getElementById("finestra-invioConfermato");
 
@@ -25,21 +25,25 @@ function closeFormRicontattami(){
 }
 
 
-//AUTO FILL: compila automaticamente i campi nome ed email se trova i corrsipettivi cookies
+//AUTO FILL: compila automaticamente i campi nome ed email se trova i corrispettivi cookies
+
+
 function auto_fill(){
 
-    if (document.cookie != ""){                                 //controllo che ci siano dei cookies
+    if (document.cookie !== ""){                                 //controllo che ci siano dei cookies
 
-        //Dato che i cookie sono salvati come una sringa definisco un array di cookie separando la stringa al ;
-        cookies = document.cookie.split(";");
+        //Dato che i cookie sono salvati come una stringa definisco un array di cookie separando la stringa;
+        let cookies = document.cookie.split(";");
 
         // Passo tutti i cookie alla ricerca di "nome_cognome" e "mail"
-        for (var i = 0; i < cookies.length; i++) {
-            cookie = cookies[i].trim().split("=");      // divido nome e valore del cookie togliedo eventuali spazi
-            if (cookie[0] == 'nome_cognome') {
+        for (let i = 0; i < cookies.length; i++) {
+            form.nome_cognome = undefined;
+            form.mail = undefined;
+            let cookie = cookies[i].trim().split("=");      // divido nome e valore del cookie togliendo eventuali spazi
+            if (cookie[0] === 'nome_cognome') {
                 form.nome_cognome.value = cookie[1];
             }
-            if (cookie[0] == 'mail') {
+            if (cookie[0] === 'mail') {
                 form.mail.value = cookie[1];
             }
         }
@@ -49,7 +53,8 @@ function auto_fill(){
 
 
 
-//INVIO MAIL: abbiamo deciso che tutta l'operazione di invio email sara implementata nel front-end.
+//INVIO MAIL: abbiamo deciso che tutta l'operazione d'invio email sarà implementata nel front-end.
+
 
 function inviaMail(){
 
@@ -93,8 +98,8 @@ function controllaCampi(nome_cognome,mail){
 
     if(!controlloNomeCognome(nome_cognome)){
         //console.log("Il campo nome e cognome inserito ha un formato non valido");
-        document.getElementById("nome_cognome").setAttribute("class","inputerror")
-        document.getElementById("lable_nome_cognome").setAttribute("class","lableerror")
+        document.getElementById("nome_cognome").setAttribute("class","inputError")
+        document.getElementById("label_nome_cognome").setAttribute("class","labelError")
         //window.alert("Errore: nome e cognome inserito con un formato invalido");
         testo_errore.innerText = "Errore nome cognome"
         form.appendChild(testo_errore)
@@ -104,8 +109,8 @@ function controllaCampi(nome_cognome,mail){
     }
     if(!controlloMail(mail)){
         //console.log("La mail inserita ha un formato non valido");
-        document.getElementById("lable_contatti-mail").setAttribute("class","lableerror")
-        document.getElementById("contatti-mail").setAttribute("class","inputerror")
+        document.getElementById("label_contatti-mail").setAttribute("class","labelError")
+        document.getElementById("contatti-mail").setAttribute("class","inputError")
         //window.alert("Errore: mail inserita con un formato invalido");
         testo_errore.innerText = "Errore mail"
         form.appendChild(testo_errore)
@@ -135,11 +140,11 @@ function over_reset(){
 
 //RESET COLORE INPUT ERRATI e RIMOZIONE SCRITTA ERRORE
 function reset_style(){
-    document.getElementById("lable_contatti-mail").setAttribute("class","lable")
+    document.getElementById("label_contatti-mail").setAttribute("class","label")
     document.getElementById("contatti-mail").setAttribute("class","input")
 
     document.getElementById("nome_cognome").setAttribute("class","input")
-    document.getElementById("lable_nome_cognome").setAttribute("class","lable")
+    document.getElementById("label_nome_cognome").setAttribute("class","label")
 
     console.log(form.children)
 

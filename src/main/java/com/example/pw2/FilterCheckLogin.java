@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @WebFilter(filterName = "FilterCheckLogin")
 public class FilterCheckLogin implements Filter {
-    public void init(FilterConfig config) throws ServletException {
+    public void init(FilterConfig config) {
     }
 
     public void destroy() {
@@ -26,8 +26,6 @@ public class FilterCheckLogin implements Filter {
 
         if(session != null ){
             isLoggedIn  = (session.getAttribute("logged") != null);
-        }else{
-            isLoggedIn = false;
         }
 
         if(isLoggedIn){
@@ -40,16 +38,9 @@ public class FilterCheckLogin implements Filter {
             System.out.println("-----------------------------------------");
             //System.out.println(session.getAttribute("role").toString());
 
-            String encodedURL ="";
+            String encodedURL;
 
-            httpRequest.setAttribute("id",session.getAttribute("id"));
-            httpRequest.setAttribute("username",session.getAttribute("username"));
-            httpRequest.setAttribute("role",session.getAttribute("role"));
-            httpRequest.setAttribute("name",session.getAttribute("name"));
-            httpRequest.setAttribute("surname",session.getAttribute("surname"));
-            httpRequest.setAttribute("date_of_birth",session.getAttribute("date_of_birth"));
-            httpRequest.setAttribute("mail",session.getAttribute("mail"));
-            httpRequest.setAttribute("phone_number",session.getAttribute("phone_number"));
+            setAttribute(httpRequest, session);
 
             if(session.getAttribute("role").toString().equals("amministratore")){
                 encodedURL = "amministratore.jsp";
@@ -66,5 +57,16 @@ public class FilterCheckLogin implements Filter {
         }
 
 
+    }
+
+    static void setAttribute(HttpServletRequest httpRequest, HttpSession session) {
+        httpRequest.setAttribute("id",session.getAttribute("id"));
+        httpRequest.setAttribute("username",session.getAttribute("username"));
+        httpRequest.setAttribute("role",session.getAttribute("role"));
+        httpRequest.setAttribute("name",session.getAttribute("name"));
+        httpRequest.setAttribute("surname",session.getAttribute("surname"));
+        httpRequest.setAttribute("date_of_birth",session.getAttribute("date_of_birth"));
+        httpRequest.setAttribute("mail",session.getAttribute("mail"));
+        httpRequest.setAttribute("phone_number",session.getAttribute("phone_number"));
     }
 }

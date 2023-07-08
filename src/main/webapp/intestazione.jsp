@@ -1,11 +1,9 @@
-<%@ page import="javax.websocket.Session" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page session="false" %>
 
 <%-- Controllo se è loggato --%>
 <%  HttpSession session = request.getSession(false); %>
-<%  boolean loggedIn = false; String role=""; if(session!=null){ loggedIn = ( session.getAttribute("logged") != null); role=session.getAttribute("role").toString(); } %>
-<%  String hrefRole="#"; if(loggedIn){ hrefRole="simpOrAd.jsp"; }%>
+<%  boolean loggedIn = false; if(session!=null){ loggedIn = ( session.getAttribute("logged") != null); } %>
 
 <html>
 <head>
@@ -57,7 +55,7 @@
         <nav id="navIntestazione">
 
             <div id="icona-menu">
-                <img src="Images/Logo.png">
+                <img src="Images/Logo.png" alt="Errore nella visualizzazione dell'immagine">
             </div>
 
             <ul id="menu" menu_open="false">
@@ -65,47 +63,46 @@
                 <li> <a href="chiSiamo.jsp"> Chi siamo</a> </li>
                 <li> <a href="attivita.jsp"> Attività</a> </li>
                 <li> <a href="contatti.jsp"> Contatti</a> </li>
-                <%if(loggedIn){ %>
+                <% if(loggedIn){ %>
                 <li> <a href="login.jsp">Profilo</a> </li>
                 <li> <a href="${pageContext.request.contextPath}/logout"> Log-out</a> </li>
-                <%}else { %>
+                <%} else { %>
                 <li> <a href="signUp.jsp"> Sign-in</a> </li>
                 <li> <a href="login.jsp"> Log-in</a> </li>
                 <%} %>
-
             </ul>
 
             <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
-                        <img src="Images/user.png">
+                        <img src="Images/user.png" alt="Errore nella visualizzazione dell'immagine">
                         <h3>nome utente</h3>
                     </div>
                     <hr>
                     <a href="profilo.jsp" class="sub-menu-link">
-                        <img src="Images/settings.png">
+                        <img src="Images/settings.png" alt="Errore nella visualizzazione dell'immagine">
                         <p>Profilo</p>
-                        <img src="Images/angle-small-right.png" class="freccia">
+                        <img src="Images/angle-small-right.png" class="freccia" alt="Errore nella visualizzazione dell'immagine">
                     </a>
                     <a href="donazioni.jsp" class="sub-menu-link">
-                        <img src="Images/heart.png">
+                        <img src="Images/heart.png" alt="Errore nella visualizzazione dell'immagine">
                         <p>Donazioni</p>
-                        <img src="Images/angle-small-right.png" class="freccia">
+                        <img src="Images/angle-small-right.png" class="freccia" alt="Errore nella visualizzazione dell'immagine">
                     </a>
                     <a href="iscrizioni.jsp" class="sub-menu-link">
-                        <img src="Images/star.png">
+                        <img src="Images/star.png" alt="Errore nella visualizzazione dell'immagine">
                         <p>Iscriviti</p>
-                        <img src="Images/angle-small-right.png" class="freccia">
+                        <img src="Images/angle-small-right.png" class="freccia" alt="Errore nella visualizzazione dell'immagine">
                     </a>
                     <a href="#" class="sub-menu-link">
-                        <img src="Images/sign-out-alt.png">
+                        <img src="Images/sign-out-alt.png"  alt="Errore nella visualizzazione dell'immagine">
                         <p>Logout</p>
-                        <img src="Images/angle-small-right.png" class="freccia">
+                        <img src="Images/angle-small-right.png" class="freccia" alt="Errore nella visualizzazione dell'immagine">
                     </a>
                     <a href="#" class="sub-menu-link">
-                        <img src="Images/trash.png">
+                        <img src="Images/trash.png" alt="Errore nella visualizzazione dell'immagine">
                         <p>Elimina account</p>
-                        <img src="Images/angle-small-right.png" class="freccia">
+                        <img src="Images/angle-small-right.png" class="freccia" alt="Errore nella visualizzazione dell'immagine">
                     </a>
                 </div>
             </div>
