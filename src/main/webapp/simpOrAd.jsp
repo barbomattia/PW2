@@ -1,13 +1,75 @@
-<jsp:include page="intestazione.jsp" />
+
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 
 
-<main id="mainSimpOrAd">
 
-    <link rel="stylesheet" type="text/css" href="css/struttura.css">
-    <link rel="stylesheet" type="text/css" href="css/${role}.css">
+<!--<link rel="stylesheet" type="text/css" href="css/${role}.css">-->
 
 
+<main>
+    <link rel="stylesheet" type="text/css" href="css/aderente.css">
+
+
+        <div class="barra">
+            <ul class="lista">
+                <li class="elemento">
+                    <a href="profilo.jsp">
+                        <div class="icon">
+                            <ion-icon name="accessibility-outline" ></ion-icon>
+                            <ion-icon name="accessibility-outline" ></ion-icon>
+                        </div>
+                        <div class="testo"><span data-text="Profilo">Profilo</span></div>
+                    </a>
+                </li>
+                <li class="elemento">
+                    <a href="iscrizioni.jsp">
+                        <div class="icon">
+                            <ion-icon name="bus-outline"></ion-icon>
+                            <ion-icon name="bus-outline"></ion-icon>
+                        </div>
+                        <div class="testo"><span data-text="Iscriviti">Iscriviti</span></div>
+                    </a>
+                </li>
+                <li class="elemento">
+                    <a href="donazioni.jsp">
+                        <div class="icon">
+                            <ion-icon name="gift-outline"></ion-icon>
+                            <ion-icon name="gift-outline"></ion-icon>
+                        </div>
+                        <div class="testo"><span data-text="Dona">Dona</span></div>
+                    </a>
+                </li>
+                <li class="elemento">
+                    <a href="#">
+                        <div class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+                        <div class="testo"><span data-text="Logout">Logout</span></div>
+                    </a>
+                </li>
+                <li class="elemento">
+                    <a href="#">
+                        <div class="icon">
+                            <ion-icon name="trash-outline"></ion-icon>
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="testo"><span data-text="Elimina">Elimina</span></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+
+
+    <!--
     <script>
         console.log("Setto in localstorage i dati: ${id}, ${username} e ${role}")
         localStorage.setItem("id", "${id}");
@@ -46,6 +108,7 @@
             <br>
             <br>
             <button onclick="chiudiSelezionaAttivita()">Chiudi</button>
+
         </div>
     </div>
 
@@ -54,7 +117,7 @@
     <div class="classSimpOrAd">
         <button type="submit" class="btn" onclick="mostraEffettuaDonazione('${role}')">Effettua una donazione</button>
         <div class="popup" id="idPopupDonazione">
-            <!-- <form action="${pageContext.request.contextPath}/DonazioniUtenti" method="POST"> -->
+            //<form action="${pageContext.request.contextPath}/DonazioniUtenti" method="POST">
                 <h2>Immetti l'importo che vuoi donare:</h2>
                 <input type="number" placeholder="Inserisci importo:" id="idImportoDonazione" required>&euro;
                 <br>
@@ -63,9 +126,9 @@
                 <br>
                 <br>
                 <button type="submit" onclick="effettuaDonazione()">Dona</button>
-                <!--<button type="submit">Dona</button> -->
+                //<button type="submit">Dona</button>
                 <button onclick="chiudiEffettuaDonazione()">Chiudi</button>
-                <!-- </form> -->
+                //</form>
         </div>
         <script>
 
@@ -98,12 +161,14 @@
     <br>
     <br>
     <br>
-    <script src="./javascript/simpOrAd.js"></script>
+    <script src="./javascript/simpOrAd.js"></script>-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('simpOrAd.jsp')"></script>
 
 </main>
 
 
-<jsp:include page="footer.jsp" />
+
 
