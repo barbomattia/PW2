@@ -80,7 +80,7 @@ public class LoginServlet extends HttpServlet {
                     encodedURL = response.encodeRedirectURL("amministratore.jsp");
                 }
                 else {
-                    encodedURL = response.encodeRedirectURL("simpOrAd.jsp");
+                    encodedURL = response.encodeRedirectURL("profilo.jsp");
                 }
 
 
