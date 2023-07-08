@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
                 }
                 //Creo una nuova sessione, con i nuovi parametri username e password
                 HttpSession currentSession = request.getSession();  //Di default è true, crea una nuova sessione
-                currentSession.setAttribute("id", rs.getString("ID"));
+                currentSession.setAttribute("id", rs.getInt("ID"));
                 currentSession.setAttribute("username", username);
                 //currentSession.setAttribute("password", rs.getString("PASSWORD"));
                 currentSession.setAttribute("role", rs.getString("ROLE"));

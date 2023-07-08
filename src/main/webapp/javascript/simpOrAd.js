@@ -1,40 +1,65 @@
-function effettuaDonazione(){
+function effettuaDonazione(id, username){
+    let tmp = document.getElementById("idImportoDonazione").value;
+    let message = document.getElementById("idMessaggioDonazione").value;
+    let importo = Number(tmp);
 
-    id = localStorage.getItem("id");
-    username = localStorage.getItem("username");
-    importo = document.getElementById("idImportoDonazione").value;
-    message = document.getElementById("idMessaggioDonazione").value;
 
-    var xhr = new XMLHttpRequest();
-    var url = "/PW2_war_exploded/DonazioniUtenti";
+    if(Number.isInteger(importo)){
+        let xhr = new XMLHttpRequest();
+        let url = "/PW2_war_exploded/DonazioniUtenti";
 
-    // Imposta il callback per gestire la risposta
+        // Imposta il callback per gestire la risposta
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // La richiesta è stata completata con successo
+                console.log(xhr.responseText);
+                alert(xhr.getResponseHeader("message"));
+            }
+            else {
+                // Si è verificato un errore nella richiesta
+                console.error(xhr.status);
+                alert(xhr.getResponseHeader("message"));
+            }
+        }
+
+        // Imposta il metodo e l'URL di destinazione
+        xhr.open("POST", url, true);
+
+        // Imposta l'header Content-Type per indicare che si invia un form
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        // Crea i dati da inviare come stringa nel formato chiave=valore
+        let data = "id=" + id + "&username=" + username + "&importoDonazione=" + importo + "&messaggioDonazione=" + message;
+
+        // Invia la richiesta
+        xhr.send(data);
+    }
+    else {
+        alert("21: Errore, inserito un importo non numerico");
+    }
+}
+
+function eliminaAccount(id){
+    let xhr = new XMLHttpRequest();
+    console.log("Dentro eliminaAccount, id=" + id);
+    xhr.open("GET", "/PW2_war_exploded/eliminaAccount?id=" + id, true);
     xhr.onload = function () {
         if (xhr.status === 200) {
             // La richiesta è stata completata con successo
+
             console.log(xhr.responseText);
             alert(xhr.getResponseHeader("message"));
+            // Effettua il reindirizzamento alla pagina x.jsp
+            window.location.href = "login.jsp";
         }
         else {
             // Si è verificato un errore nella richiesta
             console.error(xhr.status);
             alert(xhr.getResponseHeader("message"));
         }
-        chiudiEffettuaDonazione();
     }
-
-    // Imposta il metodo e l'URL di destinazione
-    xhr.open("POST", url, true);
-
-    // Imposta l'header Content-Type per indicare che si invia un form
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    // Crea i dati da inviare come stringa nel formato chiave=valore
-    var data = "id=" + id + "&username=" + username + "&importoDonazione=" + importo + "&messaggioDonazione=" + message;
-
     // Invia la richiesta
-    xhr.send(data);
+    xhr.send();
 }
-
 function iscriviti(){}
 

@@ -2,16 +2,27 @@
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 <jsp:include page="intestazione.jsp" />
 
-
+<%  HttpSession session = request.getSession(false); %>
+<%  int id = 0;
+    String username = "notLogged";
+    if(session!=null){
+        id = Integer.parseInt(session.getAttribute("id").toString());
+        username = session.getAttribute("username").toString();
+    } %>
 
 <link rel="stylesheet" type="text/css" href="css/struttura.css">
 <link rel="stylesheet" type="text/css" href="css/donazioni.css">
+<script src="javascript/simpOrAd.js"></script>
 
 <main>
 
     <section>
         <jsp:include page="simpOrAd.jsp" />
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="pagina">
             <div class="box">
                 <div class="titolo">
@@ -22,11 +33,16 @@
                 </div>
                 <div class="input-donazioni">
                     <label>
-                        <input type="number" class="input-testo" placeholder="Inserisci l'importo" autocomplete="off" required>
+                        <input type="number" class="input-testo" placeholder="Inserisci l'importo" id="idImportoDonazione" autocomplete="off" required>
+                    </label>
+                </div>
+                <div class="input-donazioni">
+                    <label>
+                        <input type="text" class="input-testo" placeholder="Messaggio donazione" id="idMessaggioDonazione" autocomplete="off">
                     </label>
                 </div>
                 <div class="bottone">
-                    <button class="button-standard" id="bottone" onclick="effettuaDonazione()">Dona</button>
+                    <button class="button-standard" id="bottone" onclick="effettuaDonazione(<%=id%>, '<%=username%>')">Dona</button>
                 </div>
             </div>
         </div>

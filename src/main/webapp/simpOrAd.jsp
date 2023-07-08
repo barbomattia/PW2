@@ -14,6 +14,9 @@
 <main>
     <link rel="stylesheet" type="text/css" href="css/<%=role%>.css">
 
+    <h2>Area <%=role%>, utente: <%=username%></h2>
+
+
     <div class="barra">
             <ul class="lista">
                 <li class="elemento">
@@ -46,7 +49,7 @@
                 </li>
                 <%}%>
                 <li class="elemento">
-                    <a href="#">
+                    <a href="eliminaAccount.jsp">
                         <div class="icon">
                             <ion-icon name="trash-outline"></ion-icon>
                             <ion-icon name="trash-outline"></ion-icon>
@@ -57,18 +60,6 @@
             </ul>
         </div>
 
-
-
-
-
-
-
-
-
-
-    <!--
-
-    <script src="./javascript/simpOrAd.js"></script>-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

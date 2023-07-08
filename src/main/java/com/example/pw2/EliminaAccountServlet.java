@@ -23,15 +23,19 @@ public class EliminaAccountServlet extends HttpServlet {
         try {
 
             String popupScript;
+            int id = Integer.parseInt(request.getParameter("id"));
 
             query = "DELETE FROM DONATIONTABLE WHERE ID_DONATORE=?";
             ps = conn.prepareStatement(query);
-            ps.setInt(1, Integer.parseInt(request.getParameter("id")));
-            if(ps.executeUpdate() > 0){     //Eliminato tutti i dati dalla tabella donazioni
+            ps.setInt(1, id);
+
+            System.out.println("id = " + id);
+
+            if(ps.executeUpdate() >= 0){     //Eliminato tutti i dati dalla tabella donazioni
                 query = "DELETE FROM loginTable WHERE id=?";
 
                 ps = conn.prepareStatement(query);
-                ps.setInt(1, Integer.parseInt(request.getParameter("id")));
+                ps.setInt(1, id);
                 if(ps.execute()){
                     //Account eliminato
                     popupScript = "<script> alert('21: Account eliminato con successo'); window.location.href = 'login.jsp'; </script>";

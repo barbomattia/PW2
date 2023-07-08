@@ -39,8 +39,6 @@ public class DonazioniUtentiServlet extends HttpServlet {
         String message = request.getParameter("messaggioDonazione");
 
         try {
-            System.out.println("----------------Effettuo donazione-----------------");
-
             String query = "INSERT INTO DONATIONTABLE (ID_DONATORE, USERNAME_DONATORE, DONATION_DATE, IMPORTO, MESSAGE)  VALUES (?, ?, ?, ?, ?)";
 
             ps = conn.prepareStatement(query);
@@ -51,7 +49,6 @@ public class DonazioniUtentiServlet extends HttpServlet {
             ps.setString(5, message);
 
             if(ps.executeUpdate() > 0){
-                System.out.println("Donazione eseguita correttamente");
 
                 query = "SELECT SUM(IMPORTO) AS total_sum FROM DONATIONTABLE WHERE ID_DONATORE = ? AND USERNAME_DONATORE = ?";
 
@@ -63,7 +60,6 @@ public class DonazioniUtentiServlet extends HttpServlet {
 
                 if (rs.next()) {
                     int totalSum = rs.getInt("total_sum");
-                    System.out.println("In totale hai donato: " + totalSum);
 
                     if(totalSum == importo){
                         // Imposta il parametro nella risposta
@@ -71,7 +67,7 @@ public class DonazioniUtentiServlet extends HttpServlet {
                     }
                     else {
                         // Imposta il parametro nella risposta
-                        response.setHeader("message", "Donazione effettuata, somma donazioni effettuate: " + totalSum);
+                        response.setHeader("message", "Donazione effettuata, totale denaro donato da " + username + " = " + totalSum);
                     }
                     response.setIntHeader("sumDonazioni", totalSum);
                     response.setStatus(HttpServletResponse.SC_OK);
