@@ -11,28 +11,32 @@
       <jsp:include page="simpOrAd.jsp" />
       <div class="box">
           <div class="user">
+              <span class="attributo">username:</span>
+              <span class="valore">${username}</span>
+          </div>
+          <div class="user">
               <span class="attributo">nome:</span>
-              <span class="valore">Giovanni</span>
+              <span class="valore">${role}</span>
           </div>
           <div class="user">
               <span class="attributo">cognome:</span>
-              <span class="valore">30</span>
+              <span class="valore">${surname}</span>
           </div>
           <div class="user">
               <span class="attributo">email:</span>
-              <span class="valore">giovanni@example.com</span>
+              <span class="valore">${mail}</span>
           </div>
           <div class="user">
               <span class="attributo">telefono:</span>
-              <span class="valore">333333333333</span>
+              <span class="valore">${phone_number}</span>
           </div>
           <div class="user">
               <span class="attributo">data di nascita:</span>
-              <span class="valore">03/07/02</span>
+              <span class="valore">${date_of_birth}</span>
           </div>
           <div class="user">
               <span class="attributo">ruolo:</span>
-              <span class="valore">aderente</span>
+              <span class="valore">${role}</span>
           </div>
       </div>
   </section>
