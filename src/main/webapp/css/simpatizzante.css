@@ -1,10 +1,11 @@
 h2{
-    align-items: center;
+    text-align: center;
+    color: green;
 }
 
 .lista{
     position: absolute;
-    left: 25%;
+    left: 31%;
     padding: 20px 0;
     background: white;
     display: flex;

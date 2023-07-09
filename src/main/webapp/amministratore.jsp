@@ -70,7 +70,10 @@
 
   <h2>Istogramma visite</h2>
   <div id="idIstogrammaVisite"></div>
-  <button type="button" onclick="resetVisite()">Reset dati</button>
+  <br>
+  <div class="classAmministratore">
+    <button type="button" class="btn" onclick="resetVisite()">Reset dati</button>
+  </div>
   <br>
   <h2>Grafico denaro donato</h2>
   <div id="idGraficoDonazioniDenaro"></div>
