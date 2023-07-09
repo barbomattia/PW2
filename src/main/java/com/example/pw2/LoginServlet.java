@@ -14,14 +14,14 @@ public class LoginServlet extends HttpServlet {
 
 
     Connection conn = connect.connectDb();
-    PreparedStatement ps = null;
-    ResultSet rs = null;
+    PreparedStatement ps = null, ps2 = null;
+    ResultSet rs = null, rs2 = null;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try {
-            String query;
+            String query, query2;
 /*
             if (!connect.isTableExists(conn, "LOGINTABLE")) {
                 query = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), username VARCHAR(30), password VARCHAR(30), role VARCHAR(30), name VARCHAR(30), surname VARCHAR(30), date_of_birth DATE, mail VARCHAR(70), phone_number VARCHAR(15))";
@@ -40,6 +40,28 @@ public class LoginServlet extends HttpServlet {
             ps.setString(2, request.getParameter("password"));
             rs = ps.executeQuery();
             if(rs.next()){
+
+                System.out.println("Cerco attivita associate all'utente " + username);
+
+                query2 = "SELECT ATTIVITA FROM ISCRIZIONIATTIVITATABLE WHERE USERNAME_UTENTE = ?";
+                ps2 = conn.prepareStatement(query2);
+                ps2.setString(1, username);
+                rs2 = ps2.executeQuery();
+
+                StringBuilder listaAttivita = new StringBuilder("[");
+                boolean anotherOne = rs2.next();
+                while (anotherOne){
+                    System.out.println("Attivita trovata: " + rs2.getString("ATTIVITA"));
+                    listaAttivita.append(rs2.getString("ATTIVITA"));
+                    System.out.println("Ora la stringa è: " + listaAttivita);
+                    anotherOne = rs2.next();
+                    if(anotherOne){
+                        listaAttivita.append(" - ");
+                    }
+                }
+                listaAttivita.append("]");
+
+
                 //Recupero la sessione
                 HttpSession oldSession = request.getSession(false); //Verifico se esiste già una sessione (false mi permette di evitare che se ne crei una nuova nel caso non ce ne sia una già esistente)
                 if(oldSession != null){
@@ -56,6 +78,7 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("date_of_birth", rs.getDate("BIRTH"));
                 currentSession.setAttribute("mail", rs.getString("MAIL"));
                 currentSession.setAttribute("phone_number", rs.getString("PHONE_NUMBER"));
+                currentSession.setAttribute("listaAttivita", listaAttivita.toString());
                 currentSession.setAttribute("logged",true);
 
                 //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti solo se l'utente ha consentito l'uso di cookie

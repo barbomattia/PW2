@@ -29,14 +29,6 @@ public class FilterCheckLogin implements Filter {
         }
 
         if(isLoggedIn){
-            System.out.println("-----------------------------------------");
-            System.out.println("-----------------------------------------");
-            System.out.println("-----------------------------------------");
-            System.out.println("username = " + session.getAttribute("username"));
-            System.out.println("-----------------------------------------");
-            System.out.println("-----------------------------------------");
-            System.out.println("-----------------------------------------");
-            //System.out.println(session.getAttribute("role").toString());
 
             String encodedURL;
 
@@ -68,5 +60,6 @@ public class FilterCheckLogin implements Filter {
         httpRequest.setAttribute("date_of_birth",session.getAttribute("date_of_birth"));
         httpRequest.setAttribute("mail",session.getAttribute("mail"));
         httpRequest.setAttribute("phone_number",session.getAttribute("phone_number"));
+        httpRequest.setAttribute("listaAttivita", session.getAttribute("listaAttivita"));
     }
 }

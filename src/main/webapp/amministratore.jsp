@@ -17,7 +17,7 @@
       <table>
         <thead>
         <tr>
-          <th>ID</th><th>USERNAME</th><th>ROLE</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th>
+          <th>ID</th><th>USERNAME</th><th>ROLE</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th><th>LISTA ATTIVITA</th>
         </tr>
         </thead>
         <tbody id="idElenco_registrati">

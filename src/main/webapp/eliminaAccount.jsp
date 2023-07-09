@@ -4,7 +4,6 @@
 
 <%  HttpSession session = request.getSession(false); %>
 <%  int id = 0;
-  String username = "notLogged";
   if(session!=null){
     id = Integer.parseInt(session.getAttribute("id").toString());
   } %>

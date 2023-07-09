@@ -13,9 +13,9 @@ import java.sql.SQLException;
 @WebServlet(name = "GetUtentiServlet", value = "/GetUtentiServlet")
 public class GetUtentiServlet extends HttpServlet {
 
-    String query;
-    PreparedStatement ps;
-    ResultSet rs;
+    String query, query2;
+    PreparedStatement ps, ps2;
+    ResultSet rs, rs2;
     Connection conn = connect.connectDb();
 
     @Override
@@ -60,6 +60,25 @@ public class GetUtentiServlet extends HttpServlet {
             boolean anotherOne = rs.next();
 
             while (anotherOne){
+
+                query2 = "SELECT ATTIVITA FROM ISCRIZIONIATTIVITATABLE WHERE USERNAME_UTENTE = ?";
+                ps2 = conn.prepareStatement(query2);
+                ps2.setString(1, rs.getString("USERNAME"));
+                rs2 = ps2.executeQuery();
+
+                StringBuilder listaAttivita = new StringBuilder("[");
+                boolean anotherOne2 = rs2.next();
+                while (anotherOne2){
+                    System.out.println("Attivita trovata: " + rs2.getString("ATTIVITA"));
+                    listaAttivita.append(rs2.getString("ATTIVITA"));
+                    System.out.println("Ora la stringa è: " + listaAttivita);
+                    anotherOne2 = rs2.next();
+                    if(anotherOne2){
+                        listaAttivita.append(" - ");
+                    }
+                }
+                listaAttivita.append("]");
+
                 System.out.println("Elemento trovato, username = " + rs.getString("USERNAME"));
                 jsonBuilder.append("{");
                 jsonBuilder.append("\"ID\": \"").append(rs.getInt("ID")).append("\",");
@@ -70,8 +89,11 @@ public class GetUtentiServlet extends HttpServlet {
                 jsonBuilder.append("\"BIRTH\": \"").append(rs.getDate("BIRTH")).append("\",");
                 jsonBuilder.append("\"MAIL\": \"").append(rs.getString("MAIL")).append("\",");
                 jsonBuilder.append("\"PHONE_NUMBER\": \"").append(rs.getString("PHONE_NUMBER")).append("\",");
+                jsonBuilder.append("\"LISTA_ATTIVITA\": \"").append(listaAttivita).append("\",");
                 jsonBuilder.append("\"SUM_DONATION\": ").append(rs.getInt("SUMDONATION"));
                 jsonBuilder.append("}");
+
+                System.out.println("LISTA_ATTIVITA=" + listaAttivita);
 
                 anotherOne = rs.next();
                 if (anotherOne) {   //ce ne è ancora (almeno) uno

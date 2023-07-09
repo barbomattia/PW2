@@ -36,25 +36,26 @@ public class EliminaAccountServlet extends HttpServlet {
 
                 ps = conn.prepareStatement(query);
                 ps.setInt(1, id);
-                if(ps.execute()){
+                if(ps.executeUpdate()>=0){
                     //Account eliminato
-                    popupScript = "<script> alert('21: Account eliminato con successo'); window.location.href = 'login.jsp'; </script>";
+                    response.setHeader("message", "Account eliminato correttamente");
+                    response.setStatus(HttpServletResponse.SC_OK);
                 }
                 else {
                     //Errore nell'eliminazione dell'account
-                    popupScript = "<script> alert('21: Errore nell'eliminazione dell'account'); window.location.href = 'login.jsp'; </script>";
+                    response.setHeader("message", "Errore, impossibile eliminare l'account");
+                    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 }
             }
             else {
-                //Altro tipo di errore
-                popupScript = "<script> alert('21: Errore nell'eliminazione dell'account'); window.location.href = 'login.jsp'; </script>";
+                response.setHeader("message", "Errore, impossibile eliminare l'account");
+                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
 
-            response.setContentType("text/html");
+            HttpSession session = request.getSession(false);            //controllo se ci sono gia sessioni esistenti, senza crearne di nuove
+            session.invalidate();
 
-            PrintWriter out = response.getWriter();
-
-            out.println(popupScript);
+            response.setContentType("text/plain");
 
         } catch (SQLException e) {
             System.out.println("(EliminaAccountServlet) Errore: " + e);

@@ -172,6 +172,12 @@ public class connect {
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
         }
+
+        if (needToCreate(connection, "ISCRIZIONIATTIVITATABLE")){
+            String queryCreazione = "CREATE TABLE ISCRIZIONIATTIVITATABLE (ID_ISCRIZIONE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), ID_UTENTE INTEGER, USERNAME_UTENTE VARCHAR(30), ATTIVITA VARCHAR(100), FOREIGN KEY (ID_UTENTE, USERNAME_UTENTE) REFERENCES LOGINTABLE(ID, USERNAME))"; //query per creare la tabella
+            ps = connection.createStatement();              // creo la query
+            ps.executeUpdate(queryCreazione);               // eseguo la query
+        }
     }
 
 }

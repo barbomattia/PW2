@@ -61,6 +61,12 @@ function elencaUtenti(richiesta){
                 td8.textContent = elemento.SUM_DONATION;
                 tr.appendChild(td8);
 
+                let td9 = document.createElement("td");
+                td9.textContent = elemento.LISTA_ATTIVITA;
+                tr.appendChild(td9);
+
+                console.log("LISTA_ATTIVITA=" + elemento.LISTA_ATTIVITA);
+
                 tbody.appendChild(tr);
             });
         }

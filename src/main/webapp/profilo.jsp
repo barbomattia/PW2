@@ -2,7 +2,7 @@
 <%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
 
 <%  HttpSession session = request.getSession(false); %>
-<%  String username = "notLogged", name = "notLogged", surname = "notLogged", mail = "notLogged", birth = "notLogged", phone_number = "notLogged", role = "notLogged";
+<%  String username = "notLogged", name = "notLogged", surname = "notLogged", mail = "notLogged", birth = "notLogged", phone_number = "notLogged", role = "notLogged", listaAttivita = "notLogged";
     if(session!=null){
         username = session.getAttribute("username").toString();
         name = session.getAttribute("name").toString();
@@ -11,6 +11,7 @@
         birth = session.getAttribute("date_of_birth").toString();
         phone_number = session.getAttribute("phone_number").toString();
         role = session.getAttribute("role").toString();
+        listaAttivita = session.getAttribute("listaAttivita").toString();
     } %>
 
 
@@ -48,6 +49,10 @@
           <div class="user">
               <span class="attributo">Ruolo:</span>
               <span class="valore"><%=role%></span>
+          </div>
+          <div class="user">
+              <span class="attributo">Attivit&agrave; alla quale sei iscritto:</span>
+              <span class="valore"><%=listaAttivita%></span>
           </div>
       </div>
   </section>
