@@ -1,4 +1,4 @@
-sectionSignUp{
+section .signUp{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@ sectionSignUp{
     background: linear-gradient(120deg, whitesmoke, rgb(189, 252, 197));
 }
 .riquadro{
-    margin: 100px;
+    margin: auto;
     position: relative;
     max-width: 700px;
     width: 100%;
