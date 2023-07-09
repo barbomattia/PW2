@@ -37,7 +37,7 @@ public class FilterCheckLogin implements Filter {
             if(session.getAttribute("role").toString().equals("amministratore")){
                 encodedURL = "amministratore.jsp";
             } else {
-                encodedURL ="simpOrAd.jsp";
+                encodedURL ="profilo.jsp";
             }
 
             RequestDispatcher requestDispatcher;

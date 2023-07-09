@@ -1,11 +1,19 @@
 h2{
     text-align: center;
-    color: green;
+}
+
+h2 span{
+    color: rgb(88, 129, 87);;
+}
+
+.barra{
+    display: flex;
+    justify-content: center;
+    width:100%
 }
 
 .lista{
-    position: absolute;
-    left: 31%;
+    position: relative;
     padding: 20px 0;
     background: white;
     display: flex;
