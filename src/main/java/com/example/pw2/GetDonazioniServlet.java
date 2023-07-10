@@ -31,8 +31,8 @@ public class GetDonazioniServlet extends HttpServlet {
         int[] donazioniEffettuateCurrentYear = new int[12];
         int[] donatoriCurrentYear = new int[12];
 
-        String query = "SELECT COUNT(ID_DONAZIONE) AS NumeroDonazioni, COUNT(DISTINCT ID_DONATORE) AS NumeroDonatori, MONTH(DONATION_DATE) AS Mese, SUM(importo) AS SommaDonazioni FROM DONATIONTABLE GROUP BY MONTH(DONATION_DATE)";
-        String query2 = "SELECT COUNT(ID_DONAZIONE) AS NumeroDonazioni, COUNT(DISTINCT ID_DONATORE) AS NumeroDonatori, MONTH(DONATION_DATE) AS Mese, SUM(importo) AS SommaDonazioni FROM DONATIONTABLE WHERE YEAR(DONATION_DATE) = YEAR(CURRENT_DATE) GROUP BY MONTH(DONATION_DATE)";
+        String query = "SELECT COUNT(ID_DONAZIONE) AS NumeroDonazioni, COUNT(DISTINCT USERNAME_DONATORE) AS NumeroDonatori, MONTH(DONATION_DATE) AS Mese, SUM(importo) AS SommaDonazioni FROM DONATIONTABLE GROUP BY MONTH(DONATION_DATE)";
+        String query2 = "SELECT COUNT(ID_DONAZIONE) AS NumeroDonazioni, COUNT(DISTINCT USERNAME_DONATORE) AS NumeroDonatori, MONTH(DONATION_DATE) AS Mese, SUM(importo) AS SommaDonazioni FROM DONATIONTABLE WHERE YEAR(DONATION_DATE) = YEAR(CURRENT_DATE) GROUP BY MONTH(DONATION_DATE)";
 
         try(PrintWriter out = response.getWriter()) {
 
@@ -85,11 +85,6 @@ public class GetDonazioniServlet extends HttpServlet {
         }
 
 
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
