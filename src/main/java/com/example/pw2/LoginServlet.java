@@ -16,13 +16,15 @@ public class LoginServlet extends HttpServlet {
     Connection conn = connect.connectDb();
     PreparedStatement ps = null, ps2 = null;
     ResultSet rs = null, rs2 = null;
+    ModelSessione ms;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try {
-            String query, query2;
-/*
+            String query;
+
+            /*
             if (!connect.isTableExists(conn, "LOGINTABLE")) {
                 query = "CREATE TABLE LOGINTABLE (ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), username VARCHAR(30), password VARCHAR(30), role VARCHAR(30), name VARCHAR(30), surname VARCHAR(30), date_of_birth DATE, mail VARCHAR(70), phone_number VARCHAR(15))";
                 ps = conn.prepareStatement(query);
@@ -31,7 +33,8 @@ public class LoginServlet extends HttpServlet {
             } else {
                 System.out.println("Tabella 'loginTable' già esistente");
             }
- */
+            */
+
             String username = request.getParameter("username");
             query = "SELECT * FROM loginTable WHERE username=? AND password=?";
 
@@ -42,6 +45,7 @@ public class LoginServlet extends HttpServlet {
 
             if(rs.next()){
 
+                /* HO TRASFERITO TUTTO NEL MODELLLO SESSIONE
                 System.out.println("Cerco attivita associate all'utente " + username);
 
                 query2 = "SELECT ATTIVITA FROM ISCRIZIONIATTIVITATABLE WHERE USERNAME_UTENTE = ?";
@@ -91,11 +95,11 @@ public class LoginServlet extends HttpServlet {
                     response.addCookie(nome_cognome);
                     response.addCookie(mail);
                 }
+                */
 
+                HttpSession currentSession = ms.initSessione(request,rs,conn);
 
-                currentSession.setMaxInactiveInterval(5*60);    //cinque minuti e poi elimina la sessione automaticamente
-                //request.getRequestDispatcher(ruolo + ".jsp").forward(request, response);
-
+                currentSession.setMaxInactiveInterval(5*60);    //5 minuti e poi elimina la sessione automaticamente
 
                 String encodedURL;
                 if(rs.getString("ROLE").equals("amministratore")){

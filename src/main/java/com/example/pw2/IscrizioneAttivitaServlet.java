@@ -16,6 +16,8 @@ public class IscrizioneAttivitaServlet extends HttpServlet {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
+    ModelSessione ms;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -57,6 +59,8 @@ public class IscrizioneAttivitaServlet extends HttpServlet {
                 if (ps.executeUpdate() > 0){  //Inserimento completato
                     response.setHeader("message", "Ti sei iscritto correttamente all'attività " + attivita);
                     response.setStatus(HttpServletResponse.SC_OK);
+
+                    ms.updateSessionAttivita(request.getSession(false));
 
                 } else {
                     response.setHeader("message", "Errore, impossibile iscriversi all'attività");

@@ -14,9 +14,22 @@
         <description>Controlla se l'utente è loggato e lo ridezione alla pagina corretta</description>
     </filter>
 
+    <filter>
+        <filter-name>FilterAreaPersonale</filter-name>
+        <filter-class>com.example.pw2.FilterAreaPersonale</filter-class>
+        <description>Serve verificare che la sessione sia ancora attiva</description>
+    </filter>
+
     <filter-mapping>
         <filter-name>FilterCheckLogin</filter-name>
         <url-pattern>/login.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>FilterAreaPersonale</filter-name>
+        <url-pattern>/profilo.jsp</url-pattern>
+        <url-pattern>/iscrizioni.jsp</url-pattern>
+        <url-pattern>/eliminaAccount.jsp</url-pattern>
     </filter-mapping>
 
 </web-app>
