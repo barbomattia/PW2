@@ -25,32 +25,13 @@ public class EliminaAccountServlet extends HttpServlet {
             String popupScript;
             int id = Integer.parseInt(request.getParameter("id"));
 
-            query = "DELETE FROM DONATIONTABLE WHERE ID_DONATORE=?";
+            query = "DELETE FROM LOGINTABLE WHERE ID=?";
             ps = conn.prepareStatement(query);
             ps.setInt(1, id);
 
             System.out.println("id = " + id);
 
-            if(ps.executeUpdate() >= 0){     //Eliminato tutti i dati dalla tabella donazioni
-                query = "DELETE FROM loginTable WHERE id=?";
-
-                ps = conn.prepareStatement(query);
-                ps.setInt(1, id);
-                if(ps.executeUpdate()>=0){
-                    //Account eliminato
-                    response.setHeader("message", "Account eliminato correttamente");
-                    response.setStatus(HttpServletResponse.SC_OK);
-                }
-                else {
-                    //Errore nell'eliminazione dell'account
-                    response.setHeader("message", "Errore, impossibile eliminare l'account");
-                    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                }
-            }
-            else {
-                response.setHeader("message", "Errore, impossibile eliminare l'account");
-                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            }
+            ps.executeUpdate();
 
             HttpSession session = request.getSession(false);            //controllo se ci sono gia sessioni esistenti, senza crearne di nuove
             session.invalidate();
@@ -62,4 +43,5 @@ public class EliminaAccountServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
 }

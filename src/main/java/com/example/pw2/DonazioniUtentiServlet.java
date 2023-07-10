@@ -31,30 +31,25 @@ public class DonazioniUtentiServlet extends HttpServlet {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Date dataOdierna = Date.valueOf(currentDate.format(formatter));
 
-
-        HttpSession session = request.getSession();
-        int id = Integer.parseInt(session.getAttribute("id").toString());
         String username = request.getParameter("username");
         int importo = Integer.parseInt(request.getParameter("importoDonazione"));
         String message = request.getParameter("messaggioDonazione");
 
         try {
-            String query = "INSERT INTO DONATIONTABLE (ID_DONATORE, USERNAME_DONATORE, DONATION_DATE, IMPORTO, MESSAGE)  VALUES (?, ?, ?, ?, ?)";
+            String query = "INSERT INTO DONATIONTABLE (USERNAME_DONATORE, DONATION_DATE, IMPORTO, MESSAGE)  VALUES (?, ?, ?, ?)";
 
             ps = conn.prepareStatement(query);
-            ps.setInt(1, id);
-            ps.setString(2, username);
-            ps.setDate(3, dataOdierna);
-            ps.setInt(4, importo);
-            ps.setString(5, message);
+            ps.setString(1, username);
+            ps.setDate(2, dataOdierna);
+            ps.setInt(3, importo);
+            ps.setString(4, message);
 
             if(ps.executeUpdate() > 0){
 
-                query = "SELECT SUM(IMPORTO) AS total_sum FROM DONATIONTABLE WHERE ID_DONATORE = ? AND USERNAME_DONATORE = ?";
+                query = "SELECT SUM(IMPORTO) AS total_sum FROM DONATIONTABLE WHERE USERNAME_DONATORE = ?";
 
                 ps = conn.prepareStatement(query);
-                ps.setInt(1, id);
-                ps.setString(2, username);
+                ps.setString(1, username);
 
                 rs = ps.executeQuery();
 

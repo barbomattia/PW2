@@ -138,24 +138,20 @@ public class connect {
         }
 
         if(needToCreate(connection, "DONATIONTABLE")){     // controllo che non sia gia stata creata la tabella
-            String queryCreazione = "CREATE TABLE DONATIONTABLE (ID_DONAZIONE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), ID_DONATORE INTEGER, USERNAME_DONATORE VARCHAR(30), DONATION_DATE DATE, IMPORTO INTEGER, MESSAGE VARCHAR(100), FOREIGN KEY (ID_DONATORE, USERNAME_DONATORE) REFERENCES LOGINTABLE(ID, USERNAME))"; //query per creare la tabella
+            String queryCreazione = "CREATE TABLE DONATIONTABLE (ID_DONAZIONE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), USERNAME_DONATORE VARCHAR(30), DONATION_DATE DATE, IMPORTO INTEGER, MESSAGE VARCHAR(100), PRIMARY KEY (ID_DONAZIONE))"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
             System.out.println("Table 'donationTable' creata");
 
             try {                                           // Inizializzo la tabella
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 1, 'admin', '2023-07-04', 10000, 'Fondo base')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-02-20', 350, 'Quota per iscriversi')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-20', 500, 'Donazione 1')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 2, 'barbo02', '2023-03-21', 500, 'Donazione 2')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2003-02-22', 350, 'Quota per iscriversi')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 4, 'murru02', '2023-02-22', 350, 'Quota per iscriversi')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 5, 'ema', '2002-04-25', 9167, 'Iscrizione')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 6, 'jade', '2002-04-01', 4869, 'Iscrizione')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 7, 'saraLeo', '2003-01-01', 1000, 'Iscrizione')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 7, 'saraLeo', '2013-01-01', 1000, 'Nuova iscrizione')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2012-11-01', 350, 'Rinnovo')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 3, 'griso02', '2022-11-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'admin', '2023-07-04', 10000, 'Fondo base')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'barbo02', '2023-02-20', 350, 'Quota per iscriversi')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'barbo02', '2023-03-20', 500, 'Donazione 1')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'barbo02', '2023-03-21', 500, 'Donazione 2')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2003-02-22', 350, 'Quota per iscriversi')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'jade', '2002-04-01', 4869, 'Iscrizione')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2012-11-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2022-11-01', 350, 'Rinnovo')");
 
 
             } catch (SQLException e) {
@@ -174,7 +170,7 @@ public class connect {
         }
 
         if (needToCreate(connection, "ISCRIZIONIATTIVITATABLE")){
-            String queryCreazione = "CREATE TABLE ISCRIZIONIATTIVITATABLE (ID_ISCRIZIONE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), ID_UTENTE INTEGER, USERNAME_UTENTE VARCHAR(30), ATTIVITA VARCHAR(100), FOREIGN KEY (ID_UTENTE, USERNAME_UTENTE) REFERENCES LOGINTABLE(ID, USERNAME))"; //query per creare la tabella
+            String queryCreazione = "CREATE TABLE ISCRIZIONIATTIVITATABLE (ID_ISCRIZIONE INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), ID_UTENTE INTEGER, USERNAME_UTENTE VARCHAR(30), ATTIVITA VARCHAR(100), FOREIGN KEY (ID_UTENTE, USERNAME_UTENTE) REFERENCES LOGINTABLE(ID, USERNAME) ON DELETE CASCADE )"; //query per creare la tabella
             ps = connection.createStatement();              // creo la query
             ps.executeUpdate(queryCreazione);               // eseguo la query
         }

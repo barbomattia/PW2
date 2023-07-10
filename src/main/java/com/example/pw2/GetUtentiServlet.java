@@ -27,29 +27,27 @@ public class GetUtentiServlet extends HttpServlet {
 
         try {
 
-            if(scelta.equals("simpatizzante") || scelta.equals("aderente")){    //Solo una categoria
-                System.out.println("Scelto una categoria");
+            if(scelta.equals("aderente")||scelta.equals("simpatizzante")){    //Solo una categoria
                 query = "SELECT ID, USERNAME, ROLE, NAME, SURNAME, BIRTH, MAIL, PHONE_NUMBER, totSum AS sumDonation " +
                         "FROM LOGINTABLE " +
                         "LEFT JOIN (" +
-                        "   SELECT ID_DONATORE, USERNAME_DONATORE, SUM(IMPORTO) AS totSum" +
+                        "   SELECT USERNAME_DONATORE, SUM(IMPORTO) AS totSum" +
                         "   FROM DONATIONTABLE " +
-                        "   GROUP BY ID_DONATORE, USERNAME_DONATORE" +
-                        ") AS D ON LOGINTABLE.ID = D.ID_DONATORE AND LOGINTABLE.USERNAME = D.USERNAME_DONATORE " +
-                        "WHERE ROLE = ?";
+                        "   GROUP BY USERNAME_DONATORE" +
+                        ") AS D ON LOGINTABLE.USERNAME = D.USERNAME_DONATORE " +
+                        "WHERE ROLE = ? ";
                 ps = conn.prepareStatement(query);
                 ps.setString(1, scelta);
-                System.out.println("PS=" + ps);
             }
             else{   //Entrambe le categorie
-                System.out.println("Scelte entrambe le categorie");
+                //System.out.println("Scelte entrambe le categorie");
                 query = "SELECT ID, USERNAME, ROLE, NAME, SURNAME, BIRTH, MAIL, PHONE_NUMBER, totSum AS sumDonation " +
                         "FROM LOGINTABLE " +
                         "LEFT JOIN (" +
-                        "   SELECT ID_DONATORE, USERNAME_DONATORE, SUM(IMPORTO) AS totSum" +
+                        "   SELECT USERNAME_DONATORE, SUM(IMPORTO) AS totSum" +
                         "   FROM DONATIONTABLE " +
-                        "   GROUP BY ID_DONATORE, USERNAME_DONATORE" +
-                        ") AS D ON LOGINTABLE.ID = D.ID_DONATORE AND LOGINTABLE.USERNAME = D.USERNAME_DONATORE ";
+                        "   GROUP BY USERNAME_DONATORE" +
+                        ") AS D ON LOGINTABLE.USERNAME = D.USERNAME_DONATORE ";
                 ps = conn.prepareStatement(query);
             }
 

@@ -1,4 +1,4 @@
-function effettuaDonazione(id, username){
+function effettuaDonazione(username){
     let tmp = document.getElementById("idImportoDonazione").value;
     let message = document.getElementById("idMessaggioDonazione").value;
     let importo = Number(tmp);
@@ -29,7 +29,7 @@ function effettuaDonazione(id, username){
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         // Crea i dati da inviare come stringa nel formato chiave=valore
-        let data = "id=" + id + "&username=" + username + "&importoDonazione=" + importo + "&messaggioDonazione=" + message;
+        let data = "username=" + username + "&importoDonazione=" + importo + "&messaggioDonazione=" + message;
 
         // Invia la richiesta
         xhr.send(data);
@@ -44,7 +44,7 @@ function eliminaAccount(id){
     xhr.open("GET", "/PW2_war_exploded/eliminaAccount?id=" + id, true);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            console.log("Account eliminato correttamente");
+            //console.log("Account eliminato correttamente");
             alert(xhr.getResponseHeader("message"));
             window.location.href = "login.jsp";
         }
@@ -86,4 +86,6 @@ function iscriviti(attivita, id, username){
     // Invia la richiesta
     xhr.send(data);
 }
+
+
 
