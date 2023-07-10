@@ -7,7 +7,7 @@
 
     <sectionLogin>
         <div class="riquadro">
-            <form action="${pageContext.request.contextPath}/login" method="POST">
+            <form action="${pageContext.request.contextPath}/login" method="POST" id="formLogin">
                 <h2>Login</h2>
                 <div class="inputLogin">
                     <ion-icon name="mail-outline"></ion-icon>

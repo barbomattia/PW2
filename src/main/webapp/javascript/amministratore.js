@@ -1,10 +1,10 @@
 function elencaUtenti(richiesta){
 
+
     //console.log("Richiesta = " + richiesta);
 
     let popup = document.getElementById("idPopup_"+richiesta);
     popup.classList.add("open-popup");
-
     //console.log("Invoco la get");
 
     let xhr = new XMLHttpRequest();

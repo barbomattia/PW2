@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
             ps.setString(1, username);
             ps.setString(2, request.getParameter("password"));
             rs = ps.executeQuery();
+
             if(rs.next()){
 
                 System.out.println("Cerco attivita associate all'utente " + username);
@@ -114,12 +115,26 @@ public class LoginServlet extends HttpServlet {
 
             else {
                 //Torno alla pagina di login
-                String popupScript = "<script> alert('21: Account inesistente'); window.location.href = 'login.jsp'; </script>";
+                //String popupScript = "<script> alert('21: Account inesistente'); window.location.href = 'login.jsp'; </script>";
+                String popupScript ="<script> \n" +
+                        "testo_errore = document.createElement(\"h3\")\n" +
+                        "testo_errore.innerText = \"21: Account inesistente\" \n" +
+                        "testo_errore.style.color = \"red\" \n" +
+                        "testo_errore.style.textAlign=\"center\" \n"+
+                        "testo_errore.style.margin = \"0\" \n"+
+                        "testo_errore.style.padding = \"0\" \n"+
+                        "var form = document.getElementById(\"formLogin\") \n" +
+                        "form.appendChild(testo_errore) \n" +
+                        "</script>";
                 response.setContentType("text/html");
+
+                RequestDispatcher requestDispatcher;
+                requestDispatcher=request.getRequestDispatcher("login.jsp");
+                requestDispatcher.include(request, response);
+
                 PrintWriter out = response.getWriter();
                 out.println(popupScript);
             }
-
 
 
         } catch (SQLException e) {

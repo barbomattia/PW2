@@ -9,7 +9,7 @@
 
     <div class="cover">
         <h1> CONTATTI </h1>
-        <h3> Istituto Tecnico Tum4World</h3>
+        <h3 class="h3"> Istituto Tecnico Tum4World</h3>
     </div>
 
     <section>
@@ -33,7 +33,7 @@
 
     </section>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>   <!-- libreria per inviare mail -->
 
     <div id="finestra-Ricontattami" pop-up="false">
         <div id="Pop-Up-Ricontattami">

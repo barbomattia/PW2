@@ -1,10 +1,17 @@
 colContForm = document.getElementById("colContForm");
 pop_up = document.getElementById("finestra-Ricontattami");
+pop_up_element = document.getElementById("Pop-Up-Ricontattami");
 form = document.getElementById("formRicontattami");
 finestra_conferma = document.getElementById("finestra-invioConfermato");
 
+titolo_errore = document.createElement("h3")
+titolo_errore.style.color = "red"
+titolo_errore.style.marginTop = "10px"
+titolo_errore.style.marginBottom = "0"
+
 testo_errore = document.createElement("p")
 testo_errore.style.color = "red"
+testo_errore.style.margin ="0"
 
 
 /* SHOW POP-UP */
@@ -13,21 +20,14 @@ colContForm.addEventListener("click", showFormRicontattami);
 function showFormRicontattami(){
     pop_up.setAttribute("pop-up","true")
     auto_fill()                                                               //imposto automaticamente gli input in base ai cookies
-    window.scrollTo(window.innerWidth/2,window.innerHeight/2)           //scrolla la pagina in centro alla finestra
-    window.onscroll = function() {
-        window.scrollTo(window.innerWidth/2, window.innerHeight/2);     //sovrascrivo la funzione di scroll per sbloccare lo scroll
-    };
 }
 
 function closeFormRicontattami(){
     pop_up.setAttribute("pop-up","false")
-    window.onscroll = function() {}                                          // riattivo lo scroll
 }
 
 
 //AUTO FILL: compila automaticamente i campi nome ed email se trova i corrispettivi cookies
-
-
 function auto_fill(){
 
     if (document.cookie !== ""){                                 //controllo che ci siano dei cookies
@@ -54,8 +54,6 @@ function auto_fill(){
 
 
 //INVIO MAIL: abbiamo deciso che tutta l'operazione d'invio email sarà implementata nel front-end.
-
-
 function inviaMail(){
 
     let nome_cognome = form.nome_cognome.value;
@@ -101,9 +99,10 @@ function controllaCampi(nome_cognome,mail){
         document.getElementById("nome_cognome").setAttribute("class","inputError")
         document.getElementById("label_nome_cognome").setAttribute("class","labelError")
         //window.alert("Errore: nome e cognome inserito con un formato invalido");
-        testo_errore.innerText = "Errore nome cognome"
-        form.appendChild(testo_errore)
-
+        titolo_errore.innerText = "Errore nome cognome"
+        testo_errore.innerText = "il nome e cognome devono essere separati da uno spazio"
+        pop_up_element.appendChild(titolo_errore)
+        pop_up_element.appendChild(testo_errore)
 
         check=false
     }
@@ -112,8 +111,8 @@ function controllaCampi(nome_cognome,mail){
         document.getElementById("label_contatti-mail").setAttribute("class","labelError")
         document.getElementById("contatti-mail").setAttribute("class","inputError")
         //window.alert("Errore: mail inserita con un formato invalido");
-        testo_errore.innerText = "Errore mail"
-        form.appendChild(testo_errore)
+        titolo_errore.innerText = "Errore mail"
+        pop_up_element.appendChild(titolo_errore)
 
         check=false
     }
@@ -146,11 +145,15 @@ function reset_style(){
     document.getElementById("nome_cognome").setAttribute("class","input")
     document.getElementById("label_nome_cognome").setAttribute("class","label")
 
-    console.log(form.children)
+    //console.log(form.children)
 
-    if(form.contains(testo_errore)){
-        console.log(form.children)
-        form.removeChild(testo_errore)
+    if(pop_up_element.contains(testo_errore)){
+        //console.log(form.children)
+        pop_up_element.removeChild(testo_errore)
+    }
+
+    if(pop_up_element.contains(titolo_errore)){
+        pop_up_element.removeChild(titolo_errore)
     }
 
 }
