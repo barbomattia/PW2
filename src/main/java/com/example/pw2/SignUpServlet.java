@@ -78,13 +78,10 @@ public class SignUpServlet extends HttpServlet {
                 ps.setString(8, request.getParameter("phone_number"));
 
                 if(ps.executeUpdate() > 0){
-                    //Genero il codice JavaScript per il popup
 
-                    popupScript = "<script> alert('Registrazione avvenuta con successo!'); window.location.href = 'login.jsp'; </script>";
-
-                    response.setContentType("text/html");
-                    PrintWriter out = response.getWriter();
-                    out.println(popupScript);
+                    RequestDispatcher requestDispatcher;
+                    requestDispatcher=request.getRequestDispatcher("/registrazioneCofermata.jsp");
+                    requestDispatcher.forward(request, response);
 
                 }
                 else {
