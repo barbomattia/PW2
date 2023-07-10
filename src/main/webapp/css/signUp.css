@@ -1,3 +1,8 @@
+main{
+    background-image: url("../Images/volontari.jpg");
+    background-size: cover;
+}
+
 section .signUp{
     display: flex;
     justify-content: center;
@@ -12,7 +17,8 @@ section .signUp{
     max-width: 700px;
     width: 100%;
     padding: 30px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    /*background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));*/
+    background-color: white;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -28,7 +34,6 @@ h2{
     margin-top: 20px;
 }
 .form .inputRegistrazione label{
-    color: rgb(88, 129, 87);
     font-size: 1em;
 }
 .form .inputRegistrazione input{
@@ -38,10 +43,8 @@ h2{
     outline: none;
     font-size: 1em;
     margin-top: 8px;
-    border: 1px solid rgb(88, 129, 87);
     border-radius: 6px;
     padding: 0 15px;
-    background: none;
 }
 
 .form .column{
@@ -109,3 +112,22 @@ h2{
     }
 }
 
+
+[error="false"]{
+    background: none;
+    border: 1px solid rgb(88, 129, 87);
+}
+
+[error="true"]{
+    background-color: rgba(200, 0, 0, 0.5);
+    border: 1px solid rgb(200, 0, 0);
+}
+
+
+[error_label="false"]{
+    color: rgb(88, 129, 87);
+}
+
+[error_label="true"]{
+    color: red;
+}
