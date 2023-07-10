@@ -1,6 +1,6 @@
 function effettuaDonazione(username){
-    let tmp = document.getElementById("idImportoDonazione").value;
-    let message = document.getElementById("idMessaggioDonazione").value;
+    var tmp = document.getElementById("idImportoDonazione").value;
+    var message = document.getElementById("idMessaggioDonazione").value;
     let importo = Number(tmp);
 
 
@@ -19,6 +19,8 @@ function effettuaDonazione(username){
                 // Si è verificato un errore nella richiesta
                 console.error(xhr.status);
                 alert(xhr.getResponseHeader("message"));
+                message.value = "";
+
             }
         }
 
@@ -66,6 +68,7 @@ function iscriviti(attivita, id, username){
             // La richiesta è stata completata con successo
             console.log(xhr.responseText);
             alert(xhr.getResponseHeader("message"));
+
         }
         else {
             // Si è verificato un errore nella richiesta

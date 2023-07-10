@@ -1,8 +1,15 @@
 colContForm = document.getElementById("colContForm");
+
+main_page = document.getElementById("mainContatti")
 pop_up = document.getElementById("finestra-Ricontattami");
+section = document.getElementById("sectionContatti");
+footer = document.getElementById("divFooter")
+
 pop_up_element = document.getElementById("Pop-Up-Ricontattami");
 form = document.getElementById("formRicontattami");
 finestra_conferma = document.getElementById("finestra-invioConfermato");
+
+
 
 titolo_errore = document.createElement("h3")
 titolo_errore.style.color = "red"
@@ -15,15 +22,21 @@ testo_errore.style.margin ="0"
 
 
 /* SHOW POP-UP */
+
+main_page.removeChild(pop_up);
+
 colContForm.addEventListener("click", showFormRicontattami);
 
 function showFormRicontattami(){
-    pop_up.setAttribute("pop-up","true")
+    main_page.removeChild(section);
+    main_page.insertBefore(pop_up,footer)
+
     auto_fill()                                                               //imposto automaticamente gli input in base ai cookies
 }
 
 function closeFormRicontattami(){
-    pop_up.setAttribute("pop-up","false")
+    main_page.removeChild(pop_up);
+    main_page.insertBefore(section,footer)
 }
 
 

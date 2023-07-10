@@ -5,14 +5,14 @@
 <link rel="stylesheet" type="text/css" href="css/contatti.css">
 <link rel="stylesheet" type="text/css" href="css/struttura.css">
 
-<main>
+<main id="mainContatti">
 
     <div class="cover">
         <h1> CONTATTI </h1>
         <h3 class="h3"> Istituto Tecnico Tum4World</h3>
     </div>
 
-    <section>
+    <section id="sectionContatti">
         <h1 class="titolo">Contatti</h1>
         <p>Contattaci come preferisci</p>
 
@@ -35,7 +35,7 @@
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>   <!-- libreria per inviare mail -->
 
-    <div id="finestra-Ricontattami" pop-up="false">
+    <div id="finestra-Ricontattami">
         <div id="Pop-Up-Ricontattami">
 
             <div class="closer" onclick="closeFormRicontattami()">

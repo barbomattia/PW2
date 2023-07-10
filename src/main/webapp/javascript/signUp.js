@@ -22,6 +22,9 @@ function mostraOrNascondiPassword(id){
 }
 function controllaCampi(){
     let check = true;
+
+    reset_style()
+
     if(!isMaggiorenne()){
         //console.log("L'utente non è maggiorenne");
         titolo_errore.innerText="21:Non Maggiorenne"
