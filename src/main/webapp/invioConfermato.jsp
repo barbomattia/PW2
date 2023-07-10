@@ -18,8 +18,6 @@
     }
   </script>
 
-  <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('invioConfermato.jsp')"></script>
-
 </main>
 
 <jsp:include page="footer.jsp"/>
