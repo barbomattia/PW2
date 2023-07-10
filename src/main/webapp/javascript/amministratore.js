@@ -65,8 +65,6 @@ function elencaUtenti(richiesta){
                 td9.textContent = elemento.LISTA_ATTIVITA;
                 tr.appendChild(td9);
 
-                console.log("LISTA_ATTIVITA=" + elemento.LISTA_ATTIVITA);
-
                 tbody.appendChild(tr);
             });
         }

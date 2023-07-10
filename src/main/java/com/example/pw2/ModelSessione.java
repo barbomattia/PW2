@@ -68,7 +68,7 @@ public class ModelSessione {
         ps2.setString(1, username);
         rs2 = ps2.executeQuery();
 
-        StringBuilder listaAttivita = new StringBuilder("[");
+        StringBuilder listaAttivita = new StringBuilder("");
         boolean anotherOne = rs2.next();
         while (anotherOne) {
             //System.out.println("Attivita trovata: " + rs2.getString("ATTIVITA"));
@@ -79,7 +79,7 @@ public class ModelSessione {
                 listaAttivita.append(" - ");
             }
         }
-        listaAttivita.append("]");
+
 
         return listaAttivita.toString();
     }

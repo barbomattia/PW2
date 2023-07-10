@@ -19,7 +19,7 @@
         <table>
           <thead>
           <tr>
-            <th>ID</th><th>USERNAME</th><th>ROLE</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th><th>LISTA ATTIVITA</th>
+            <th>ID</th><th>USERNAME</th><th>TIPOLOGIA USER</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th><th>ISCRIZIONI</th>
           </tr>
           </thead>
           <tbody id="idElenco_registrati">
@@ -38,7 +38,7 @@
         <table>
           <thead>
           <tr>
-            <th>ID</th><th>USERNAME</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th>
+            <th>ID</th><th>USERNAME</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th><th>ISCRIZIONI</th>
           </tr>
           </thead>
           <tbody id="idElenco_simpatizzante">
@@ -57,7 +57,7 @@
         <table>
           <thead>
           <tr>
-            <th>ID</th><th>USERNAME</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th>
+            <th>ID</th><th>USERNAME</th><th>NAME</th><th>SURNAME</th><th>BIRTH</th><th>MAIL</th><th>PHONE_NUMBER</th><th>SUM DONATION</th><th>ISCRIZIONI</th>
           </tr>
           </thead>
           <tbody id="idElenco_aderente">

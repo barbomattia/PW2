@@ -65,7 +65,7 @@ public class SignUpServlet extends HttpServlet {
                 out.println(popupScript);
             }
             else {
-                query = "INSERT INTO loginTable VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)";
+                query = "INSERT INTO LOGINTABLE VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 ps = conn.prepareStatement(query);
                 ps.setString(1, request.getParameter("username"));
