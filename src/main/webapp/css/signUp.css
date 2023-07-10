@@ -59,6 +59,18 @@ h2{
     font-weight: 600;
     border-radius: 6px;
 }
+.mostra-password{
+    width: 100%;
+    height: 50px;
+    font-size: .9em;
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: rgb(88, 129, 87);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
 .form .bottoni{
     display: flex;
     column-gap: 30px;

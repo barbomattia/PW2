@@ -26,7 +26,7 @@
                     <label for="loginPassword"></label><input type="password" required value="21Adm1n!" name="password" id="loginPassword">
                     <label>Password</label>
                 </div>
-                <button class="button-standard" type="button" onclick="mostraOrNascondiPassword('loginPassword')">Mostra/Nascondi password</button>
+                <button type="button" class="mostra-password" onclick="mostraOrNascondiPassword('loginPassword')">Mostra/Nascondi password</button>
                 <button class="button-standard" type="submit">Login</button>
                 <div class="registrazione">
                     <p>Non hai un account? <a href="signUp.jsp">Registrati</a></p>

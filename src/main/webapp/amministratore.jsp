@@ -25,7 +25,7 @@
           <tbody id="idElenco_registrati">
           </tbody>
         </table>
-        <button onclick="chiudiElencaUtenti('registrati')">Chiudi</button>
+        <button class="chiudi" onclick="chiudiElencaUtenti('registrati')">Chiudi</button>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
           <tbody id="idElenco_simpatizzante">
           </tbody>
         </table>
-        <button onclick="chiudiElencaUtenti('simpatizzante')">Chiudi</button>
+        <button class="chiudi" onclick="chiudiElencaUtenti('simpatizzante')">Chiudi</button>
       </div>
     </div>
 
@@ -63,7 +63,7 @@
           <tbody id="idElenco_aderente">
           </tbody>
         </table>
-        <button onclick="chiudiElencaUtenti('aderente')">Chiudi</button>
+        <button class="chiudi" onclick="chiudiElencaUtenti('aderente')">Chiudi</button>
       </div>
     </div>
 

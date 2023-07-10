@@ -47,12 +47,12 @@
                     <div class="inputRegistrazione">
                         <label for="idPassword1" id="idPassword1_label" error_label="false">Password</label>
                         <input type="password" placeholder="Password" required name="password" id="idPassword1" error="false">
-                        <button type="button" class="button-standard" onclick="mostraOrNascondiPassword('idPassword1')">Mostra/Nascondi</button>
+                        <button type="button" class="mostra-password" onclick="mostraOrNascondiPassword('idPassword1')">Mostra/Nascondi password</button>
                     </div>
                     <div class="inputRegistrazione">
                         <label for="idPassword2" id="idPassword2_label" error_label="false">Conferma Password</label>
                         <input type="password" placeholder="Conferma password" required id="idPassword2" error="false">
-                        <button type="button" class="button-standard" onclick="mostraOrNascondiPassword('idPassword2')">Mostra/Nascondi</button>
+                        <button type="button" class="mostra-password" onclick="mostraOrNascondiPassword('idPassword2')">Mostra/Nascondi password</button>
                     </div>
                 </div>
 
