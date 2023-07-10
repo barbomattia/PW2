@@ -13,11 +13,11 @@
                 <div class="column">
                     <div class="inputRegistrazione">
                         <label error_label="false">Nome</label>
-                        <input type="text" placeholder="Nome" required name="name" error="false">
+                        <input type="text" placeholder="Nome" required name="name" id="idName" error="false">
                     </div>
                     <div class="inputRegistrazione">
                         <label error_label="false">Cognome</label>
-                        <input type="text" placeholder="Cognome" required name="surname" error="false">
+                        <input type="text" placeholder="Cognome" required name="surname" id="idSurname" error="false">
                     </div>
                 </div>
 

@@ -1,5 +1,7 @@
 package com.example.pw2;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -36,7 +38,31 @@ public class SignUpServlet extends HttpServlet {
             rs = ps.executeQuery();
 
             if(rs.next()){  //Esiste già un utente con quel nome
-                popupScript = "<script> alert('21: Errore: username già presente!'); window.location.href = 'signUp.jsp'; </script>";
+                popupScript ="<script> \n" +
+                        "titolo_errore.innerText = \"21: Username: " + request.getParameter("username") + " gia utilizzato\" \n" +
+                        "var form = document.getElementById(\"formSignUp\") \n" +
+                        "form.appendChild(titolo_errore) \n" +
+                        "let input = document.getElementById(\"idUsername\");\n" +
+                        "input.setAttribute(\"error\",\"true\")\n" +
+                        "let input_label = document.getElementById(\"idUsername_label\")\n" +
+                        "input_label.setAttribute(\"error_label\",\"true\") \n" +
+                        "document.getElementById(\"idName\").value=\"" + request.getParameter("name") + "\" \n" +
+                        "document.getElementById(\"idSurname\").value=\"" + request.getParameter("surname") + "\" \n" +
+                        "document.getElementById(\"idMail\").value=\"" + request.getParameter("mail") + "\" \n" +
+                        "document.getElementById(\"idUsername\").value=\"" + request.getParameter("username") + "\" \n" +
+                        "document.getElementById(\"idNumeroDiTelefono\").value=\"" + request.getParameter("phone_number") + "\" \n" +
+                        "document.getElementById(\"idDataDiNascita\").value=\"" + request.getParameter("birth") + "\" \n" +
+                        "document.getElementById(\"idPassword1\").value=\"" + request.getParameter("password") + "\" \n" +
+                        "document.getElementById(\"idPassword2\").value=\"" + request.getParameter("password") + "\" \n" +
+                        "</script>";
+                response.setContentType("text/html");
+
+                RequestDispatcher requestDispatcher;
+                requestDispatcher=request.getRequestDispatcher("signUp.jsp");
+                requestDispatcher.include(request, response);
+
+                PrintWriter out = response.getWriter();
+                out.println(popupScript);
             }
             else {
                 query = "INSERT INTO loginTable VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -53,21 +79,25 @@ public class SignUpServlet extends HttpServlet {
 
                 if(ps.executeUpdate() > 0){
                     //Genero il codice JavaScript per il popup
+
                     popupScript = "<script> alert('Registrazione avvenuta con successo!'); window.location.href = 'login.jsp'; </script>";
+
+                    response.setContentType("text/html");
+                    PrintWriter out = response.getWriter();
+                    out.println(popupScript);
+
                 }
                 else {
                     popupScript = "<script> alert('21: Errore nella registrazione!'); window.location.href = 'signUp.jsp'; </script>";
                 }
             }
 
-            response.setContentType("text/html");
 
-            PrintWriter out = response.getWriter();
-
-            out.println(popupScript);
 
         } catch (SQLException e) {
             System.out.println("(SignUpServlet) Errore: " + e);
+            throw new RuntimeException(e);
+        } catch (ServletException e) {
             throw new RuntimeException(e);
         }
 
