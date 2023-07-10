@@ -13,14 +13,6 @@
                     <ion-icon name="mail-outline"></ion-icon>
                     <label for="loginUsername"></label><input type="text" required value="admin" name="username" id="loginUsername">
                     <label>Username</label>
-                    <!--
-                        <input type="text" required value="admin" name="username" id="loginUsername">
-                        <input type="password" required value="21Adm1n!" name="password" id="loginPassword">
-
-                        <input type="text" required value="barbo02" name="username" id="loginUsername">
-                        <input type="password" required value="rinoGattuso" name="password" id="loginPassword">
-
-                     -->
                 </div>
                 <div class="inputLogin">
                     <ion-icon name="lock-closed-outline"></ion-icon>

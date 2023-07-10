@@ -20,9 +20,6 @@
         <jsp:include page="simpOrAd.jsp" />
         <br>
         <br>
-        <br>
-        <br>
-        <br>
         <div class="pagina">
             <div class="box">
                 <div class="titolo">
@@ -33,7 +30,7 @@
                 </div>
                 <div class="input-donazioni">
                     <label>
-                        <input type="number" class="input-testo" placeholder="Inserisci l'importo" id="idImportoDonazione" autocomplete="off" required>
+                        <input type="text" class="input-testo" placeholder="Inserisci l'importo" id="idImportoDonazione" autocomplete="off" required>
                     </label>
                 </div>
                 <div class="input-donazioni">

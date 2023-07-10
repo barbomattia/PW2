@@ -5,15 +5,14 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 50vh;
 }
 .box{
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 1000px;
-    height: 300px;
     padding: 30px;
     align-items: center;
     /*justify-content: center;*/
