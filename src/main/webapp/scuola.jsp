@@ -43,7 +43,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Chimica</h3>
-                    <button class="bottoneCard" value="chimica">READ</button>
+                    <button class="button-standard" value="chimica">READ</button>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Meccanica</h3>
-                    <button class="bottoneCard" value="meccanica">READ</button>
+                    <button class="button-standard" value="meccanica">READ</button>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Alberghiero</h3>
-                    <button class="bottoneCard" value="alberghiero">READ</button>
+                    <button class="button-standard" value="alberghiero">READ</button>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                 </div>
                 <div class="tendinaCard" >
                     <h3>Corso Informatica</h3>
-                    <button class="bottoneCard" value="informatica">READ</button>
+                    <button class="button-standard" value="informatica">READ</button>
                 </div>
             </div>
         </div>

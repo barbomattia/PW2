@@ -1,4 +1,4 @@
-let myButtonCards = document.getElementsByClassName("bottoneCard");
+let myButtonCards = document.getElementsByClassName("button-standard");
 let section = document.getElementsByTagName("section")[0];
 
 // Aggiungo il listener del click

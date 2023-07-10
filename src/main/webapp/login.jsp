@@ -19,7 +19,7 @@
 
                         <input type="text" required value="barbo02" name="username" id="loginUsername">
                         <input type="password" required value="rinoGattuso" name="password" id="loginPassword">
-                        /*prova*/
+
                      -->
                 </div>
                 <div class="inputLogin">
