@@ -16,26 +16,6 @@ public class ModelSessione {
 
         String listaAttivita = takeAttivita(username,conn);
 
-        /*
-        query2 = "SELECT ATTIVITA FROM ISCRIZIONIATTIVITATABLE WHERE USERNAME_UTENTE = ?";
-        ps2 = conn.prepareStatement(query2);
-        ps2.setString(1, username);
-        rs2 = ps2.executeQuery();
-
-        StringBuilder listaAttivita = new StringBuilder("[");
-        boolean anotherOne = rs2.next();
-        while (anotherOne) {
-            System.out.println("Attivita trovata: " + rs2.getString("ATTIVITA"));
-            listaAttivita.append(rs2.getString("ATTIVITA"));
-            System.out.println("Ora la stringa è: " + listaAttivita);
-            anotherOne = rs2.next();
-            if (anotherOne) {
-                listaAttivita.append(" - ");
-            }
-        }
-        listaAttivita.append("]");
-        */
-
         //Recupero la sessione
         HttpSession oldSession = request.getSession(false); //Verifico se esiste già una sessione (false mi permette di evitare che se ne crei una nuova nel caso non ce ne sia una già esistente)
         if (oldSession != null) {
@@ -84,8 +64,7 @@ public class ModelSessione {
         return listaAttivita.toString();
     }
 
-    static public boolean updateSessionAttivita(HttpSession session) throws SQLException {
-        Connection conn = connect.connectDb();
+    static public boolean updateSessionAttivita(HttpSession session, Connection conn) throws SQLException {
         String username = session.getAttribute("username").toString();
         if(session.getAttribute("listaAttivita") == null){
             return false;

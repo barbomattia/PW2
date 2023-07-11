@@ -6,10 +6,6 @@ import java.io.IOException;
 
 @WebServlet(name = "LogoutServlet", value = "/logout")
 public class LogoutServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response){
-
-    }
 
 
     @Override

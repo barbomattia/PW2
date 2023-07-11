@@ -11,7 +11,7 @@ import java.sql.Connection;
 @WebServlet(name = "GestoreFrasi", value = "/GestoreFrasi")
 public class GestoreFrasi extends HttpServlet {
 
-    Connection conn;
+    Connection conn  = connect.connectDb("GestoriFrasi");
     FrasiModel fm;
     String[] frasi;   // array delle frasi
     String[] cit;     // array delle citazioni delle frasi
@@ -21,7 +21,6 @@ public class GestoreFrasi extends HttpServlet {
         super.init();
         System.out.println("Dentro GestoreFrasi");
         // prendo dal DataBase le frasi e citazioni da mostrare
-        Connection conn = connect.connectDb();
         if(conn != null){
             fm = new FrasiModel(conn);
             frasi= fm.getFrasi();
@@ -57,12 +56,5 @@ public class GestoreFrasi extends HttpServlet {
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    public void destroy(){
-        connect.closeConnection(conn);
-    } //chiudo la connessione
+    public void destroy() { super.destroy(); connect.closeConnection(conn); } //chiudo la connessione
 }

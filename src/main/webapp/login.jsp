@@ -11,12 +11,12 @@
                 <h2>Login</h2>
                 <div class="inputLogin">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <label for="loginUsername"></label><input type="text" required value="admin" name="username" id="loginUsername">
+                    <label for="loginUsername"></label><input type="text" required name="username" id="loginUsername">
                     <label>Username</label>
                 </div>
                 <div class="inputLogin">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <label for="loginPassword"></label><input type="password" required value="21Adm1n!" name="password" id="loginPassword">
+                    <label for="loginPassword"></label><input type="password" required name="password" id="loginPassword">
                     <label>Password</label>
                 </div>
                 <button type="button" class="mostra-password" onclick="mostraOrNascondiPassword('loginPassword')">Mostra/Nascondi password</button>

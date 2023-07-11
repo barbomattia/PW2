@@ -6,17 +6,17 @@ public class connect {
 
     static boolean init = false;            //variabile per vedere se il database è gia stato inizializzato
 
-    public static Connection connectDb() {
+    public static Connection connectDb(String origine) {
         Connection conn;
         try {
-            System.out.println("Tentativo di connessione");
+            System.out.println("Tentativo di connessione" + origine);
             Class.forName("org.apache.derby.jdbc.ClientDriver");                                    // definisco il Driver
             conn = DriverManager.getConnection("jdbc:derby://localhost:1527/DataBasePW;create=true");    // creo la connessione
             System.out.println("Connesso");
 
-            if(!init) {                     // inizializzo il database
-                initDataBase(conn);
+            if(!init) { // inizializzo il database
                 init = true;
+                initDataBase(conn);
             }else{
                 System.out.println("DATABASE GIA ESISTENTE");
             }
@@ -144,14 +144,21 @@ public class connect {
             System.out.println("Table 'donationTable' creata");
 
             try {                                           // Inizializzo la tabella
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'admin', '2023-07-04', 10000, 'Fondo base')");
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'barbo02', '2023-02-20', 350, 'Quota per iscriversi')");
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'barbo02', '2023-03-20', 500, 'Donazione 1')");
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'barbo02', '2023-03-21', 500, 'Donazione 2')");
+                //Creo un piccolo sotrico per i grafici di amministratore
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2003-02-22', 350, 'Quota per iscriversi')");
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'jade', '2002-04-01', 4869, 'Iscrizione')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'jade', '2005-08-01', 4869, 'Iscrizione')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'jade', '2007-09-01', 4869, 'Iscrizione')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'jade', '2009-02-01', 4869, 'Iscrizione')");
                 ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2012-11-01', 350, 'Rinnovo')");
-                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2022-11-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2012-12-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2018-10-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2004-07-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2012-01-01', 350, 'Rinnovo')");
+                ps.executeUpdate("INSERT INTO DONATIONTABLE VALUES (DEFAULT, 'griso02', '2015-03-01', 350, 'Rinnovo')");
 
 
             } catch (SQLException e) {

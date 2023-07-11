@@ -1,4 +1,3 @@
-
 let frasi = [];             // array delle frasi
 let cits = [];              // array delle citazioni
 
@@ -14,14 +13,13 @@ function getFrasi(){            // Richiesta al Server delle frasi (più precisa
     xhttp.open("GET","/PW2_war_exploded/GestoreFrasi", true );
     //xhttp.open("GET","/PW2/GestoreFrasi", true );
 
-    //Invio richiesta
-    xhttp.send();
-
     //Callback
     xhttp.onreadystatechange = function (){
         //Controllo lo stato della risposta
         let done=4, ok=200;
         if(xhttp.readyState === done && xhttp.status===ok){
+
+            console.log(this.response.frasi);
 
             // prendo il contenuto della risposta e lo salvo nei relativi array
             frasi=this.response.frasi;
@@ -34,6 +32,9 @@ function getFrasi(){            // Richiesta al Server delle frasi (più precisa
             initFrase();
         }
     }
+
+    //Invio richiesta
+    xhttp.send();
 
 
 }

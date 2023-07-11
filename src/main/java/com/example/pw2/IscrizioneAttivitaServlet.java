@@ -12,7 +12,7 @@ import java.sql.SQLException;
 @WebServlet(name = "iscrizioneAttivitaServlet", value = "/iscrizioneAttivita")
 public class IscrizioneAttivitaServlet extends HttpServlet {
 
-    Connection conn = connect.connectDb();
+    Connection conn = connect.connectDb("IscrizioneAttivitaSportiva");
     PreparedStatement ps = null;
     ResultSet rs = null;
 
@@ -55,7 +55,7 @@ public class IscrizioneAttivitaServlet extends HttpServlet {
                     response.setHeader("message", "Ti sei iscritto correttamente all'attività " + attivita);
                     response.setStatus(HttpServletResponse.SC_OK);
 
-                    ms.updateSessionAttivita(request.getSession(false));
+                    ms.updateSessionAttivita(request.getSession(false),conn);
 
                 } else {
                     response.setHeader("message", "Errore, impossibile iscriversi all'attività");
@@ -72,4 +72,6 @@ public class IscrizioneAttivitaServlet extends HttpServlet {
         }
 
     }
+
+    public void destroy() { super.destroy(); connect.closeConnection(conn); }
 }

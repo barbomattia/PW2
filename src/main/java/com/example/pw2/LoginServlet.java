@@ -13,7 +13,7 @@ import java.sql.*;
 public class LoginServlet extends HttpServlet {
 
 
-    Connection conn = connect.connectDb();
+    Connection conn = connect.connectDb("Login");
     PreparedStatement ps = null, ps2 = null;
     ResultSet rs = null, rs2 = null;
     ModelSessione ms;
@@ -95,7 +95,7 @@ public class LoginServlet extends HttpServlet {
         }
     }
 
-
+    public void destroy() { super.destroy(); connect.closeConnection(conn); }
 
 
 

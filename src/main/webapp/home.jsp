@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page session="false" %>     <!-- impedisce la creazione automatica della sessione -->
+
 <jsp:include page="intestazione.jsp" />
-<%@ page session="false" %>
 
 <link rel="stylesheet" type="text/css" href="css/home.css">
 <link rel="stylesheet" type="text/css" href="css/struttura.css">

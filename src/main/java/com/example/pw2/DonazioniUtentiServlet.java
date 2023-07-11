@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 @WebServlet(name = "DonazioniUtenti", value = "/DonazioniUtenti")
 public class DonazioniUtentiServlet extends HttpServlet {
 
-    Connection conn = connect.connectDb();
+    Connection conn = connect.connectDb("DonazioniUtente");
 
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -160,5 +160,8 @@ public class DonazioniUtentiServlet extends HttpServlet {
 
 
     }
+
+    @Override
+    public void destroy() { super.destroy(); connect.closeConnection(conn); }
 }
 

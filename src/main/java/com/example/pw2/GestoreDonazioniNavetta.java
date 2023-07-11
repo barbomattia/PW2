@@ -9,7 +9,7 @@ import java.sql.Connection;
 @WebServlet(name = "GestoreDonazioniNavetta", urlPatterns ={"/GestoreDonazioniNavetta"} )
 public class GestoreDonazioniNavetta extends HttpServlet {
 
-    Connection conn = connect.connectDb();
+    Connection conn = connect.connectDb("GestoreDonazioniNavette");
     DonazioniNavettaModel dn = new DonazioniNavettaModel();    //model per le donazioni navetta
     int donazioniNavetta;
     int obbiettivoDonazioni = 100000;

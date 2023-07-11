@@ -10,7 +10,7 @@ import java.sql.SQLException;
 @WebServlet(name = "UtenteServlet", value = "/UtenteServlet")
 public class UtenteServlet extends HttpServlet {
 
-    Connection conn = connect.connectDb();
+    Connection conn = connect.connectDb("UtenteServlet");
     ModelUtente mu = new ModelUtente();
 
     @Override
@@ -45,5 +45,6 @@ public class UtenteServlet extends HttpServlet {
         }
     }
 
+    public void destroy() { super.destroy(); connect.closeConnection(conn); }
 
 }

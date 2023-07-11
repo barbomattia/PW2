@@ -45,12 +45,6 @@ p{
 
 /*RIGA E COLONNA PER IMMAGINE*/
 .row{
-    /*
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
-    */
-
     padding: 0;
     margin-top: 5%;
     max-width: 1250px;
@@ -60,11 +54,6 @@ p{
     flex-wrap: wrap;
 }
 .col{
-    /*
-    flex-basis: 48%;
-    padding: 30px 2px;
-    */
-
     flex: 1;
     width: 50%;
     height: auto;

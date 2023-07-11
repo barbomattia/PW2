@@ -16,7 +16,7 @@ public class PagineVisitateServlet extends HttpServlet {
 
     PreparedStatement ps, ps2;
     ResultSet rs;
-    Connection conn = connect.connectDb();
+    Connection conn = connect.connectDb("PagineVisitateServlet");
     String query;
 
     @Override
@@ -99,4 +99,7 @@ public class PagineVisitateServlet extends HttpServlet {
 
 
     }
+
+    public void destroy() { super.destroy(); connect.closeConnection(conn); }
+
 }

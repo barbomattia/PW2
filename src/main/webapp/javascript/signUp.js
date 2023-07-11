@@ -74,11 +74,8 @@ function controllaCampi(){
         //Se almeno una delle condizioni non è stata rispettata (mi dice che event è deprecato ma non ho capito il perché)
         event.preventDefault();
 
-        /*  La funzione event.preventDefault() è un metodo JavaScript che viene
-        utilizzato per prevenire il comportamento predefinito di un evento. In altre
-        parole, viene utilizzata per impedire l'azione predefinita associata a un
-        determinato evento.
-         */
+        /*  La funzione event.preventDefault() è un metodo JavaScript che viene utilizzato per prevenire il
+        comportamento predefinito di un evento */
 
     }
     return check;
