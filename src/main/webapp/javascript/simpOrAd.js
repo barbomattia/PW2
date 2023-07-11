@@ -43,7 +43,7 @@ function effettuaDonazione(username){
 
 function eliminaAccount(id){
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "/PW2_war_exploded/eliminaAccount?id=" + id, true);
+    xhr.open("DELETE", "/PW2_war_exploded/UtenteServlet?id=" + id, true);
     xhr.onload = function () {
         if (xhr.status === 200) {
             //console.log("Account eliminato correttamente");

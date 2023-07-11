@@ -8,7 +8,7 @@ function elencaUtenti(richiesta){
     //console.log("Invoco la get");
 
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "/PW2_war_exploded/GetUtentiServlet?categoriaCercata="+richiesta, true);
+    xhr.open("GET", "/PW2_war_exploded/UtenteServlet?categoriaCercata="+richiesta, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
 
@@ -153,7 +153,7 @@ function getDonazioni() {
 
     let xhr = new XMLHttpRequest();
     xhr.responseType = "json";
-    xhr.open("GET", "/PW2_war_exploded/GetDonazioniServlet", true);
+    xhr.open("GET", "/PW2_war_exploded/DonazioniUtenti", true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             this.response.donazioniDenaroTot = undefined;

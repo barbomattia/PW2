@@ -36,7 +36,7 @@ public class GestoreDonazioniNavetta extends HttpServlet {
         // chiama il file JSP per la parte view
         try{
             RequestDispatcher requestDispatcher;
-            requestDispatcher=request.getRequestDispatcher("/navetta.jsp");
+            requestDispatcher=request.getRequestDispatcher("navetta.jsp");
             requestDispatcher.forward(request, response);
         }
         catch( Exception ex){
@@ -62,7 +62,7 @@ public class GestoreDonazioniNavetta extends HttpServlet {
         request.setAttribute("percentualeDonazioni",percentualeDonazioni);
 
         RequestDispatcher requestDispatcher;
-        requestDispatcher=request.getRequestDispatcher("/navetta.jsp");
+        requestDispatcher=request.getRequestDispatcher("navetta.jsp");
         requestDispatcher.forward(request, response);
 
     }

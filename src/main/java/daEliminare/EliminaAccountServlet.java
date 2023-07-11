@@ -1,4 +1,6 @@
-package com.example.pw2;
+package daEliminare;
+
+import com.example.pw2.connect;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

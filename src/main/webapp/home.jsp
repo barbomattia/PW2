@@ -7,7 +7,10 @@
 
 <main>
     <div class="cover">
-        <h1>Tum4World</h1>
+        <div id="titoloHome">
+            <img src="Images/Logo.png" alt="Logo Image">
+            <h1>Tum4World</h1>
+        </div>
     </div>
 
     <section>

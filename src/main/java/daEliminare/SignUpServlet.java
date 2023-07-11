@@ -1,4 +1,7 @@
-package com.example.pw2;
+package daEliminare;
+
+import com.example.pw2.ModelUtente;
+import com.example.pw2.connect;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,9 +18,7 @@ import java.sql.SQLException;
 public class SignUpServlet extends HttpServlet {
 
     Connection conn = connect.connectDb();
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    String query;
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
@@ -28,9 +29,10 @@ public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String popupScript;
+        ModelUtente mu = new ModelUtente();
 
         try {
-
+        /*
             query = "SELECT * FROM LOGINTABLE WHERE USERNAME=?";
 
             ps = conn.prepareStatement(query);
@@ -88,8 +90,8 @@ public class SignUpServlet extends HttpServlet {
                     popupScript = "<script> alert('21: Errore nella registrazione!'); window.location.href = 'signUp.jsp'; </script>";
                 }
             }
-
-
+        */
+        mu.registraNuovoUtente(conn,request,response);
 
         } catch (SQLException e) {
             System.out.println("(SignUpServlet) Errore: " + e);

@@ -9,7 +9,7 @@
     <section class="signUp">
         <div class="riquadro">
             <h2>Registrazione</h2>
-            <form id="formSignUp" class="form" onsubmit="return controllaCampi()" onreset="over_reset()" action="${pageContext.request.contextPath}/signUp" method="POST">
+            <form id="formSignUp" class="form" onsubmit="return controllaCampi()" onreset="over_reset()" action="${pageContext.request.contextPath}/UtenteServlet" method="POST">
                 <div class="column">
                     <div class="inputRegistrazione">
                         <label error_label="false">Nome</label>

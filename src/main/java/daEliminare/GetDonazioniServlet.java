@@ -1,5 +1,6 @@
-package com.example.pw2;
+package daEliminare;
 
+import com.example.pw2.connect;
 import org.json.JSONObject;
 
 import javax.servlet.*;

@@ -1,11 +1,25 @@
 .cover{
     background-image: linear-gradient(rgba(100,100,100,0.7),rgba(100,100,100,0.7)), url("../Images/sfondoHome.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .titolo{
     font-size: 36px;
     font-weight: 600;
     justify-content: center;
     text-align: center;
+}
+
+#titoloHome{
+    display: flex;
+    flex-direction: row;
+}
+
+#titoloHome img{
+    height: 10vw;
+    margin: auto;
+    padding-right: 20px;
 }
 
 #labelVolantino{
