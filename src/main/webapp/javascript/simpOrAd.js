@@ -47,12 +47,11 @@ function eliminaAccount(id){
     xhr.onload = function () {
         if (xhr.status === 200) {
             //console.log("Account eliminato correttamente");
-            alert(xhr.getResponseHeader("message"));
+            alert("Account eliminato con successo");
             window.location.href = "login.jsp";
         }
         else {
-            console.log("Errore nell'eliminazione dell'account");
-            alert(xhr.getResponseHeader("message"));
+            alert("Errore nell'eliminazione dell'account");
         }
     }
     // Invia la richiesta

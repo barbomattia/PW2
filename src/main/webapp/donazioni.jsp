@@ -39,7 +39,7 @@
                     </label>
                 </div>
                 <div class="bottone">
-                    <button class="button-standard" id="bottone" onclick="effettuaDonazione(<%=id%>, '<%=username%>')">Dona</button>
+                    <button class="button-standard" id="bottone" onclick="effettuaDonazione('<%=username%>')">Dona</button>
                 </div>
             </div>
         </div>

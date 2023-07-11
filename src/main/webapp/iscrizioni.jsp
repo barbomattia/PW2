@@ -8,7 +8,7 @@
     String username = "notLogged";
     String attivita = "notLogged";
     String role = "notLogged";
-    ArrayList<String> arrayAttivita = new ArrayList<>();
+    ArrayList<String> arrayAttivita = new ArrayList<String>();
     if(session!=null){
         id = Integer.parseInt(session.getAttribute("id").toString());
         username = session.getAttribute("username").toString();
