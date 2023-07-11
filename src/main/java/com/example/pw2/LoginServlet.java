@@ -86,6 +86,10 @@ public class LoginServlet extends HttpServlet {
                 currentSession.setAttribute("listaAttivita", listaAttivita.toString());
                 currentSession.setAttribute("logged",true);
 
+
+                */
+
+                HttpSession currentSession = ms.initSessione(request,rs,conn);
                 //Ritorno i cookie "nome_cognome" e "menu" usati nel form contatti solo se l'utente ha consentito l'uso di cookie
                 if(ModelCookies.checkCookiesAllowed(request)){
                     Cookie nome_cognome = new Cookie("nome_cognome",currentSession.getAttribute("name").toString() +  currentSession.getAttribute("surname").toString());
@@ -95,9 +99,6 @@ public class LoginServlet extends HttpServlet {
                     response.addCookie(nome_cognome);
                     response.addCookie(mail);
                 }
-                */
-
-                HttpSession currentSession = ms.initSessione(request,rs,conn);
 
                 currentSession.setMaxInactiveInterval(5*60);    //5 minuti e poi elimina la sessione automaticamente
 

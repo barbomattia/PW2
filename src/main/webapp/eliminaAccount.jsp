@@ -3,13 +3,14 @@
 <jsp:include page="intestazione.jsp" />
 
 <%  HttpSession session = request.getSession(false); %>
-<%  int id = 0;
+<%  int id = 0; String role ="notLogged";
   if(session!=null){
     id = Integer.parseInt(session.getAttribute("id").toString());
+    role = session.getAttribute("role").toString();
   } %>
 
 <link rel="stylesheet" type="text/css" href="css/struttura.css">
-<link rel="stylesheet" type="text/css" href="css/donazioni.css">
+<link rel="stylesheet" type="text/css" href="css/<%=role%>/donazioni.css">
 <script src="javascript/simpOrAd.js"></script>
 
 <main>

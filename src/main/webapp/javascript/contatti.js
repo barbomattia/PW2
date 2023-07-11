@@ -30,7 +30,6 @@ colContForm.addEventListener("click", showFormRicontattami);
 function showFormRicontattami(){
     main_page.removeChild(section);
     main_page.insertBefore(pop_up,footer)
-
     auto_fill()                                                               //imposto automaticamente gli input in base ai cookies
 }
 
@@ -113,7 +112,7 @@ function controllaCampi(nome_cognome,mail){
         document.getElementById("label_nome_cognome").setAttribute("class","labelError")
         //window.alert("Errore: nome e cognome inserito con un formato invalido");
         titolo_errore.innerText = "Errore nome cognome"
-        testo_errore.innerText = "il nome e cognome devono essere separati da uno spazio"
+        testo_errore.innerText = "il nome e cognome possono contenere solo lettere e spazi"
         pop_up_element.appendChild(titolo_errore)
         pop_up_element.appendChild(testo_errore)
 

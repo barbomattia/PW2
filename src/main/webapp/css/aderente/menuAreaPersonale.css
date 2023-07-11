@@ -3,7 +3,7 @@ h2{
 }
 
 h2 span{
-    color: rgb(0, 119, 182);;
+    color: rgb(0, 119, 182);
 }
 
 .barra{
@@ -82,7 +82,6 @@ h2 span{
 .lista .elemento a:hover .testo span{
     transform: translateY(20px);
 }
-
 
 
 

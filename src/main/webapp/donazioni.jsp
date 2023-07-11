@@ -11,7 +11,7 @@
     } %>
 
 <link rel="stylesheet" type="text/css" href="css/struttura.css">
-<link rel="stylesheet" type="text/css" href="css/donazioni.css">
+<link rel="stylesheet" type="text/css" href="css/aderente/donazioni.css">
 <script src="javascript/simpOrAd.js"></script>
 
 <main>

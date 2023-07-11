@@ -16,7 +16,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/struttura.css">
-<link rel="stylesheet" type="text/css" href="css/profilo.css">
+<link rel="stylesheet" type="text/css" href="css/<%=role%>/profilo.css">
 
 <main>
     <section>
@@ -57,6 +57,7 @@
       </div>
   </section>
 
+    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('profilo.jsp')"></script>
 
 </main>
 

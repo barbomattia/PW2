@@ -12,7 +12,8 @@
     } %>
 
 <main>
-    <link rel="stylesheet" type="text/css" href="css/<%=role%>.css">
+
+    <link rel="stylesheet" type="text/css" href="css/<%=role%>/menuAreaPersonale.css">
 
     <h2>Utente: <span><%=username%></span></h2>
     <h2>Area: <span><%=role%></span></h2>
@@ -63,8 +64,6 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <script src="./javascript/paginaVisitata.js" onload="incrementaCounterPagina('simpOrAd.jsp')"></script>
 
 </main>
 
